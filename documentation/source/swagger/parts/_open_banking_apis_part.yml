@@ -1190,7 +1190,7 @@ paths:
         '504':
           $ref: './schemas/ErrorHTTP.yaml#/504'
 
-  /bank-borrowing/v1/contract:
+  /credit-operations/v1/contracts/{contractId}:
     get:
       tags:
         - API - Operações de Crédito
@@ -1239,6 +1239,7 @@ paths:
 
       operationId: "getBankBorrowingContract"
       parameters:
+        - $ref: "#/components/parameters/ContractId"
         - $ref: "#/components/parameters/Page"
         - $ref: "#/components/parameters/PageSize"
       responses:
@@ -1273,7 +1274,7 @@ paths:
         '504':
           $ref: './schemas/ErrorHTTP.yaml#/504'
 
-  /bank-borrowing/v1/warranties:
+  /credit-operations/v1/contracts/{contractId}/warranties:
     get:
       tags:
         - API - Operações de Crédito
@@ -1320,8 +1321,9 @@ paths:
 
         <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getBankBorrowingWarranties"
+      operationId: "getContractsContractIdWarranties"
       parameters:
+        - $ref: "#/components/parameters/ContractId"
         - $ref: "#/components/parameters/Page"
         - $ref: "#/components/parameters/PageSize"
       responses:
@@ -1343,18 +1345,10 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
 
   /bank-borrowing/v1/payments:
     get:
@@ -1887,6 +1881,8 @@ components:
       $ref: ./parameters/CreditCardPayeeMCC.yaml
     CreditCardTransactionType:
       $ref: ./parameters/CreditCardTransactionType.yaml
+    ContractId:
+      $ref: ./parameters/ContractId.yaml
     FromBookingDate:
       $ref: ./parameters/FromBookingDate.yaml
     FromDueDate:
