@@ -1550,10 +1550,14 @@ components:
       $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractBank.yaml
     BankBorrowingContractData:
       $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractData.yaml
+    BankBorrowingContractedFee:
+      $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractedFee.yaml
     BankBorrowingContractedWarranty:
       $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractedWarranty.yaml
     BankBorrowingContractInterestRate:
       $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractInterestRate.yaml
+    BankBorrowingFinanceCharge:
+      $ref: ./schemas/bank_borrowing_apis/BankBorrowingFinanceCharge.yaml
     BankBorrowingInstalments:
       $ref: ./schemas/bank_borrowing_apis/BankBorrowingInstalments.yaml
     BankBorrowingInstalmentsBank:
@@ -1666,6 +1670,10 @@ components:
       $ref: ./schemas/enum/EnumBankBorrowingContractAmortizationSchedule.yaml
     EnumBankBorrowingContractCalculation:
       $ref: ./schemas/enum/EnumBankBorrowingContractCalculation.yaml
+    EnumBankBorrowingContractFeeCharge:
+      $ref: ./schemas/enum/EnumBankBorrowingContractFeeCharge.yaml
+    EnumBankBorrowingContractFeeChargeType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractFeeChargeType.yaml
     EnumBankBorrowingContractFinanceChargeType:
       $ref: ./schemas/enum/EnumBankBorrowingContractFinanceChargeType.yaml
     EnumBankBorrowingContractInstalmentPeriodicity:
@@ -1674,6 +1682,8 @@ components:
       $ref: ./schemas/enum/EnumBankBorrowingContractInterestRateType.yaml
     EnumBankBorrowingContractProductType:
       $ref: ./schemas/enum/EnumBankBorrowingContractProductType.yaml
+    EnumBankBorrowingContractProductSubType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractProductSubType.yaml
     EnumBankBorrowingContractReferentialRateIndexerType:
       $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerType.yaml
     EnumBankBorrowingContractTaxPeriodicity:
@@ -1684,6 +1694,8 @@ components:
       $ref: ./schemas/enum/EnumBankBorrowingFinanceChargeType.yaml
     EnumBankBorrowingInstalmentPeriodicity:
       $ref: ./schemas/enum/EnumBankBorrowingInstalmentPeriodicity.yaml
+    EnumBankBorrowingContractReferentialRateIndexerSubType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerSubType.yaml
     EnumBankBorrowingWarrantySubType:
       $ref: ./schemas/enum/EnumBankBorrowingWarrantySubType.yaml
     EnumBankBorrowingWarrantyType:
