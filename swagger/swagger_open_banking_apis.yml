@@ -73,29 +73,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /customers/v1/business-customers/qualification:
     get:
       tags:
@@ -155,29 +155,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /customers/v1/business-customers/financial-relation:
     get:
       tags:
@@ -237,29 +237,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /customers/v1/personal-customers/identification:
     get:
       tags:
@@ -318,29 +318,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /customers/v1/personal-customers/qualification:
     get:
       tags:
@@ -400,29 +400,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /customers/v1/personal-customers/financial-relation:
     get:
       tags:
@@ -482,29 +482,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /credit-card/v1/accounts/identification:
     get:
       tags:
@@ -561,29 +561,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /credit-card/v1/accounts/limits:
     get:
       tags:
@@ -640,29 +640,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /credit-card/v1/accounts/transactions:
     get:
       tags:
@@ -719,29 +719,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /credit-card/v1/accounts/bill:
     get:
       tags:
@@ -797,29 +797,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsBilling'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /accounts/v1/accounts/identification:
     get:
       tags:
@@ -881,29 +881,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountIdentification'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /accounts/v1/accounts/balances:
     get:
       tags:
@@ -963,29 +963,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountBalances'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /accounts/v1/accounts/transactions:
     get:
       tags:
@@ -1045,29 +1045,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountTransactions'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
   /accounts/v1/accounts/overdraft-limits:
     get:
       tags:
@@ -1127,30 +1127,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
-  /bank-borrowing/v1/contract:
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
+  '/credit-operations/v1/contracts/{contractId}':
     get:
       tags:
         - API - Operações de Crédito
@@ -1190,7 +1190,6 @@ paths:
 
         <a href='dictionary/bank_borrowing_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
         <a href="dictionary/example/examples_bank_borrowing_contract.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
@@ -1198,6 +1197,7 @@ paths:
         <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getBankBorrowingContract
       parameters:
+        - $ref: '#/components/parameters/ContractId'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -1208,30 +1208,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBankBorrowingContract'
         '400':
-          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          description: O token tem escopo incorreto ou uma política de segurança foi violada.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          description: O recurso solicitado não existe ou não foi implementado.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          description: O consumidor tentou acessar o recurso com um método não suportado.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          description: Indica que o recurso não está mais disponível.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          description: 'A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          description: Ocorreu um erro no gateway da API ou no microsserviço.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          description: O serviço está indisponível no momento.
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          description: O servidor não pôde responder em tempo hábil.
-  /bank-borrowing/v1/warranties:
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
+  '/credit-operations/v1/contracts/{contractId}/warranties':
     get:
       tags:
         - API - Operações de Crédito
@@ -1271,14 +1271,14 @@ paths:
 
         <a href='dictionary/bank_borrowing_warranties.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
         <a href="dictionary/example/examples_bank_borrowing_warranties.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getBankBorrowingWarranties
+      operationId: getContractsContractIdWarranties
       parameters:
+        - $ref: '#/components/parameters/ContractId'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -1289,29 +1289,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBankBorrowingWarranties'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
-        '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
-        '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
-        '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
-        '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
   /bank-borrowing/v1/payments:
     get:
       tags:
@@ -1352,7 +1344,6 @@ paths:
 
         <a href='dictionary/bank_borrowing_payments.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
         <a href="dictionary/example/examples_bank_borrowing_payments.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
@@ -1370,29 +1361,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBankBorrowingPayments'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          description: O token tem escopo incorreto ou uma política de segurança foi violada.
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          description: O recurso solicitado não existe ou não foi implementado.
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          description: O consumidor tentou acessar o recurso com um método não suportado.
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          description: Indica que o recurso não está mais disponível.
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          description: 'A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          description: Ocorreu um erro no gateway da API ou no microsserviço.
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          description: O serviço está indisponível no momento.
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          description: O servidor não pôde responder em tempo hábil.
   /bank-borrowing/v1/instalments:
     get:
       tags:
@@ -1433,7 +1424,6 @@ paths:
 
         <a href='dictionary/bank_borrowing_instalments.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
         <a href="dictionary/example/examples_bank_borrowing_instalments.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
@@ -1451,29 +1441,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBankBorrowingInstalments'
         '400':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/400'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/400'
         '401':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/401'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/401'
         '403':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/403'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/403'
         '404':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/404'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/404'
         '405':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/405'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/405'
         '406':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/406'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/406'
         '410':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/410'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/410'
         '422':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/422'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/422'
         '429':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/429'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/429'
         '500':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/500'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/500'
         '503':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/503'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/503'
         '504':
-          $ref: '#/paths/~1bank-borrowing~1v1~1contract/get/responses/504'
+          $ref: '#/paths/~1bank-borrowing~1v1~1payments/get/responses/504'
 components:
   schemas:
     AccountBalances:
@@ -1706,22 +1696,24 @@ components:
       type: object
       description: Conjunto de informações referentes à identificação da operação de crédito
       required:
-        - contractId
+        - ipocCode
         - requestDateTime
         - productName
         - productType
+        - productSubType
         - contractDate
         - disbursementDate
         - contractAmount
         - currency
         - dueDate
         - instalmentPeriodicity
-        - dueFirstInstalmentDate
+        - firstInstalmentDueDate
         - totalNumberOfInstalments
+        - paidInstalments
+        - CET
         - interestRates
-        - financeChargeType
       properties:
-        contractId:
+        ipocCode:
           type: string
           maxLength: 67
           description: |
@@ -1734,12 +1726,13 @@ components:
               2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
               3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
             - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
+        example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
           format: DateTimeString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
+          example: '2020-01-05T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         productName:
           type: string
@@ -1747,25 +1740,30 @@ components:
           pattern: \w*\W*
           description: |
             Denominação/Identificação do nome da Modalidade da Operação de Crédito divulgado ao cliente
+          example: AD
         productType:
           $ref: '#/components/schemas/EnumBankBorrowingContractProductType'
+        productSubType:
+          $ref: '#/components/schemas/EnumBankBorrowingContractProductSubType'
         contractDate:
           type: string
           description: Data de contratação da operação de crédito. Especificação RFC-3339
           maxLength: 10
           format: DateString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          example: '2018-01-05T08:30:00Z'
         disbursementDate:
           type: string
           description: Data do Desembolso do valor contratado. Especificação RFC-3339
           maxLength: 10
           format: DateString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          example: '2018-01-15T08:30:00Z'
         contractAmount:
-          type: string
-          maxLength: 12
-          format: AmountString
+          type: number
+          maxLength: 19
           description: Valor contratado da operação. Expresso em valor monetário com 2 casas decimais
+          example: 26000
         currency:
           type: string
           pattern: '^(\w{3}){1}$'
@@ -1781,40 +1779,52 @@ components:
           format: DateString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: Data de vencimento Final da operação. Especificação RFC-3339
+          example: '2028-01-15T08:30:00Z'
         instalmentPeriodicity:
           $ref: '#/components/schemas/EnumBankBorrowingContractInstalmentPeriodicity'
-        dueFirstInstalmentDate:
+        firstInstalmentDueDate:
           type: string
           maxLength: 10
           format: DateString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          description: Data de vencimento primeira parcela
+          description: Data de vencimento primeira parcela do principal
+          example: '2018-02-15'
         totalNumberOfInstalments:
-          type: string
+          type: number
           description: Prazo Total em meses do contrato referente à Modalidade de Crédito informada
           maxLength: 3
+          example: 130
+        paidInstalments:
+          type: number
+          description: 'Quantidade de prestações pagas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
+          maxLength: 3
+          example: 73
+        CET:
+          type: number
+          description: |
+            CET – Custo Efetivo Total deve ser expresso na forma de taxa percentual anual e   incorpora todos os encargos e despesas incidentes nas operações de crédito (taxa de juro, mas também tarifas, tributos, seguros e outras despesas cobradas).
+            O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+            (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+          maxLength: 19
+          example: 0.29
+        amortizationSchedule:
+          $ref: '#/components/schemas/EnumBankBorrowingContractAmortizationSchedule'
         interestRates:
           type: array
           items:
             $ref: '#/components/schemas/BankBorrowingContractInterestRate'
+        contractedFees:
+          type: array
+          items:
+            $ref: '#/components/schemas/BankBorrowingContractedFee'
           minItems: 1
-        feeName:
-          type: string
-          maxLength: 140
-          pattern: \w*\W*
-          description: Denominação da Tarifa avulsa
-        feeCode:
-          type: string
-          maxLength: 140
-          pattern: \w*\W*
-          description: Sigla identificadora da tarifa avulsa
-        financeChargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFinanceChargeType'
-        financeChargeAdditionalInfo:
-          type: string
-          description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo avulso
-          pattern: \w*\W*
-        cnpjGuarantor:
+        financeCharges:
+          type: array
+          description: Lista que traz os encargos pactuados no contrato
+          items:
+            $ref: '#/components/schemas/BankBorrowingFinanceCharge'
+          minItems: 1
+        cnpjConsignee:
           type: string
           description: |
             CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado
@@ -1836,6 +1846,41 @@ components:
       properties:
         bankBorrowing:
           $ref: '#/components/schemas/BankBorrowingContractBank'
+    BankBorrowingContractedFee:
+      type: object
+      description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
+      required:
+        - feeName
+        - feeCode
+      properties:
+        feeName:
+          type: string
+          maxLength: 140
+          pattern: \w*\W*
+          description: Denominação da Tarifa avulsa
+          example: Excesso em Conta
+        feeCode:
+          type: string
+          maxLength: 140
+          pattern: \w*\W*
+          description: Sigla identificadora da tarifa avulsa
+          example: EXCESSO_CONTA
+        feeChargeType:
+          $ref: '#/components/schemas/EnumBankBorrowingContractFeeChargeType'
+        feeCharge:
+          $ref: '#/components/schemas/EnumBankBorrowingContractFeeCharge'
+        feeAmount:
+          type: number
+          description: |
+            Valor monetário da tarifa pactuada no contrato. Preenchimento obrigatório quando a forma de cobrança for: Mínimo, Máximo ou Fixo
+          maxLength: 19
+          example: 50
+        feeRate:
+          type: number
+          description: |
+            Percentual que representa o valor da tarifa pactuada para o contrato. Preenchimento obrigatório quando a forma de cobrança por Percentual
+          maxLength: 19
+          example: 50
     BankBorrowingContractedWarranty:
       type: object
       description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
@@ -1849,14 +1894,14 @@ components:
         warrantySubType:
           $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
         warrantyAmount:
-          type: string
-          maxLength: 12
-          format: AmountString
+          type: number
+          maxLength: 19
           nullable: true
           description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
+          example: 200
     BankBorrowingContractInterestRate:
       type: object
-      description: 'Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios, do CET e do sistema de Amortização da Modalidade de crédito'
+      description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
       required:
         - referentialRateIndexerType
         - preFixedRate
@@ -1866,58 +1911,63 @@ components:
         - calculation
         - additionalInfo
         - taxType
-        - CET
-        - amortizationSchedule
       properties:
+        taxType:
+          $ref: '#/components/schemas/EnumBankBorrowingContractTaxType'
+        interestRateType:
+          $ref: '#/components/schemas/EnumBankBorrowingContractInterestRateType'
+        taxPeriodicity:
+          $ref: '#/components/schemas/EnumBankBorrowingContractTaxPeriodicity'
+        calculation:
+          $ref: '#/components/schemas/EnumBankBorrowingContractCalculation'
         referentialRateIndexerType:
           $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerType'
+        referentialRateIndexerSubType:
+          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerSubType'
         referentialRateIndexerAdditionalInfo:
           type: string
           description: 'Campo livre de preenchimento obrigatório para complementar a informação relativa ao Tipo de taxa referencial ou indexador, quando selecionada o tipo ou subtipo OUTRO'
           maxLength: 140
           pattern: \w*\W*
         preFixedRate:
-          type: string
+          type: number
           description: |
             Taxa pré fixada aplicada sob o contrato da modalidade crédito. 
             p.ex. 0.0045. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
             (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
-          maxLength: 6
-          pattern: '(^[0-9](\.[0-9]{4})$|^NA$)'
-          example: 0.15
+          maxLength: 19
+          example: 0.6
         postFixedRate:
-          type: string
+          type: number
           description: |
             Taxa pós fixada aplicada sob o contrato da modalidade crédito. 
             p.ex. 0.0045 .O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
             (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%) 
-          maxLength: 6
-          pattern: '(^[0-9](\.[0-9]{4})$|^NA$)'
-          example: 0.15
-        taxPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxPeriodicity'
-        interestRateType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInterestRateType'
-        calculation:
-          $ref: '#/components/schemas/EnumBankBorrowingContractCalculation'
+          maxLength: 19
+          example: 0.55
         additionalInfo:
           type: string
           maxLength: 1200
           description: Texto com informações adicionais sobre a composição das taxas de juros pactuadas
           pattern: \w*\W*
-        taxType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxType'
-        CET:
+    BankBorrowingFinanceCharge:
+      type: object
+      description: Conjunto de informações referentes à identificação da operação de crédito
+      required:
+        - chargeType
+      properties:
+        chargeType:
+          $ref: '#/components/schemas/EnumBankBorrowingContractFinanceChargeType'
+        chargeAdditionalInfo:
           type: string
+          description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato
+          pattern: \w*\W*
+        chargerate:
+          type: number
           description: |
-            CET – Custo Efetivo Total deve ser expresso na forma de taxa percentual anual e   incorpora todos os encargos e despesas incidentes nas operações de crédito (taxa de juro, mas também tarifas, tributos, seguros e outras despesas cobradas).
-            O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-            (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
-          maxLength: 6
-          pattern: '(^[0-9](\.[0-9]{4})$|^NA$)'
-          example: 0.15
-        amortizationSchedule:
-          $ref: '#/components/schemas/EnumBankBorrowingContractAmortizationSchedule'
+            Percentual que representa o valor do encargo pactuado no contrato. Preenchimento obrigatório quando a forma de cobrança for: Mínimo, Máximo ou Fixo
+          maxLength: 19
+          example: 0.07
     BankBorrowingInstalments:
       type: object
       description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
@@ -2110,19 +2160,6 @@ components:
         - requestDateTime
         - currency
       properties:
-        contractId:
-          type: string
-          maxLength: 67
-          description: |
-            Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: 
-            - **CNPJ da instituição:** 8 (oito) posições iniciais;
-            - **Modalidade da operação:** 4 (quatro) posições;
-            - **Tipo do cliente:** 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);
-            - **Código do cliente:** O número de posições varia conforme o tipo do cliente:
-              1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;
-              2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
-              3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
-            - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
         requestDateTime:
           type: string
           maxLength: 20
@@ -3185,13 +3222,15 @@ components:
       type: string
       description: |
         Sistema de amortização (Vide Enum)
-        - SAC 
-        - PRICE
-        - SAM
+        - SAC (Sistema de Amortização Constante -   é aquele em que o valor da amortização permanece igual até o final. Os juros  cobrados sobre o parcelamento não entram nesta conta)
+        - PRICE (Sistema Francês de Amortização - As parcelas são fixas do início ao fim do contrato. Ou seja, todas as parcelas terão o mesmo valor, desde a primeira até a última. Nos primeiros pagamentos, a maior parte do valor da prestação corresponde aos juros. Ao longo do tempo, a taxa de juros vai decrescendo. Como o valor da prestação é fixo, com o passar das parcelas, o valor de amortização vai aumentando)
+        - SAM (Sociedade de arrendamento mercantil) - realiza arrendamento de bens móveis e imóveis adquiridos por ela, segundo as especificações da arrendatária (cliente), para fins de uso próprio desta. Assim, os contratantes deste serviço podem usufruir de determinado bem sem serem proprietários dele. As operações de arrendamento mercantil podem ser divididas em duas modalidades: leasing financeiro e leasing operacional. A diferença básica é que no leasing financeiro o prazo é usualmente maior e o arrendatário tem a possibilidade de adquirir o bem por um valor pré-estabelecido. Ao final do contrato, o arrendatário tem as opções de efetivar a aquisição do bem arrendado ou devolvê-lo. Ao final do leasing financeiro, em geral o cliente já terá pago a maior parte do valor do bem, não sendo a devolução, embora possível, financeiramente vantajosa)
+        - SEM SISTEMA DE AMORTIZAÇÃO
       enum:
         - SAC
         - PRICE
         - SAM
+        - SEM_SISTEMA_AMORTIZACAO
       example: SAC
     EnumBankBorrowingContractCalculation:
       type: string
@@ -3205,23 +3244,49 @@ components:
         - 2.30/360
         - 3.30/365
       example: 1.21/25
+    EnumBankBorrowingContractFeeCharge:
+      type: string
+      description: |
+        Forma de cobrança relativa a tarifa pactuada no contrato. (Vide Enum)
+        - Mínimo
+        - Máximo
+        - Fixo
+        - Percentual Cardinalidade de (1-N)
+      enum:
+        - MINIMO
+        - MAXIMO
+        - FIXO
+        - PERCENTUAL_CARDINALIDADE_1_N
+      example: MINIMO
+    EnumBankBorrowingContractFeeChargeType:
+      type: string
+      description: |
+        Tipo de cobrança para a tarifa pactuada no contrato. (Vide Enum)
+        - Única 
+        - Por Parcela
+      enum:
+        - UNICA
+        - POR_PARCELA
+      example: UNICA
     EnumBankBorrowingContractFinanceChargeType:
       type: string
       description: |
-        Tipo de encargo avulso 
+        Tipo de encargo pactuado no contrato. (Vide Enum) 
       enum:
         - JUROS_REMUNERATORIOS_POR_ATRASO
         - MULTA_ATRASO_PAGAMENTO
         - JUROS_MORA_ATRASO
         - IOF_CONTRATACAO
+        - IOF_POR_ATRASO
         - OUTROS
       example: JUROS_REMUNERATORIOS_POR_ATRASO
     EnumBankBorrowingContractInstalmentPeriodicity:
       type: string
       description: |
         Informação relativa à periodicidade regular das parcelas. (Vide Enum)
-        mensal, trimestral, semestral, anual
+        sem periodicidade regular, semanal, quinzenal, mensal, trimestral, semestral, anual
       enum:
+        - SEM_PERIODICIDADE_REGULAR
         - SEMANAL
         - QUINZENAL
         - MENSAL
@@ -3234,8 +3299,8 @@ components:
       type: string
       description: |
         Tipo de Juros  (vide  Enum)
-        - SIMPLES
-        - COMPOSTO
+        - SIMPLES (aplicada/cobrada sempre sobre o capital inicial, que é o valor emprestado/investido. Não há cobrança de juros sobre juros acumulados no(s) período(s) anterior(es). Exemplo: em um empréstimo de R$1.000, com taxa de juros simples de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano e R$ 80 no segundo ano. Ao final do contrato, o tomador irá devolver o principal e os juros simples de cada ano: R$1.000+R$80+R$80=R$1.160)
+        - COMPOSTO (para cada período do contrato (diário, mensal, anual etc.), há um “novo capital” para a cobrança da taxa de juros contratada. Esse “novo capital” é a soma do capital e do juro cobrado no período anterior. Exemplo: em um empréstimo de R$1.000, com taxa de juros composta de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano. No segundo ano, os juros vão ser somados ao capital (R$1.000 + R$ 80 = R$ 1.080), resultando em juros de R$ 86 (8%de R$ 1.080))
       enum:
         - SIMPLES
         - COMPOSTO
@@ -3243,34 +3308,47 @@ components:
     EnumBankBorrowingContractProductType:
       type: string
       description: |
-        Modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
-        Adiantamento a depositante, Direitos creditórios descontados antecipação fatura de cartão de crédito, direitos creditórios descontados desconto de cheques, direitos creditórios descontados desconto de duplicatas, direitos creditórios descontados outros direitos creditórios descontados, direitos creditórios descontados outros títulos descontados, empréstimo capital de giro prazo vencimento até 365 dias, empréstimo capital de giro prazo de vencimento superior a 365 dias, empréstimo capital de giro rotativo, empréstimo de cheque especial, empréstimo de conta garantida, empréstimo de crédito pessoal sem consignação, empréstimo de crédito pessoal consignado, empréstimo home equity, empréstimo microcrédito produtivo orientado, financiamento aquisição de bens outros bens, financiamento aquisição de bens veículos automotores, financiamento imobiliário do sistema financeiro habitação SFH, sistema financeiro da habitação SFI, financiamento microcrédito, financiamento rural comercialização, financiamento rural custeio, financiamento rural industrialização, financiamento rural investimento
+        Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+        Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários  
       enum:
-        - ADIANTAMENTO_A_DEPOSITANTE
-        - DIREITOS_CREDITORIOS_DESCONTADOS_ANTECIPACAO_FATURA_CARTAO_CREDITO
-        - DIREITOS_CREDITORIOS_DESCONTADOS_DESCONTO_CHEQUES
-        - DIREITOS_CREDITORIOS_DESCONTADOS_DESCONTO_DUPLICATAS
-        - DIREITOS_CREDITORIOS_DESCONTADOS_OUTROS_DIREITOS_CREDITORIOS_DESCONTADOS
-        - DIREITOS_CREDITORIOS_DESCONTADOS_OUTROS_TITULOS_DESCONTADOS
-        - EMPRESTIMO_CAPITAL_GIRO_PRAZO_VENCIMENTO_ATE_365_DIAS
-        - EMPRESTIMO_CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS
-        - EMPRESTIMO_CAPITAL_GIRO_ROTATIVO
-        - EMPRESTIMO_CHEQUE_ESPECIAL
-        - EMPRESTIMO_CONTA_GARANTIDA
-        - EMPRESTIMO_CREDITO_PESSOAL_SEM_CONSIGNACAO
-        - EMPRESTIMO_CREDITO_PESSOAL_CONSIGNADO
-        - EMPRESTIMO_HOME_EQUITY
-        - EMPRESTIMO_MICROCREDITO_PRODUTIVO_ORIENTADO
-        - FINANCIAMENTO_AQUISICAO_BENS_OUTROS_BENS
-        - FINANCIAMENTO_AQUISICAO_BENS_VEICULOS_AUTOMOTORES
-        - FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO-SFH
-        - FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO-SFI
-        - FINANCIAMENTO-MICROCREDITO
-        - FINANCIAMENTO_RURAL_COMERCIALIZACAO
-        - FINANCIAMENTO_RURAL_CUSTEIO
-        - FINANCIAMENTO_RURAL_INDUSTRIALIZACAO
-        - FINANCIAMENTO_RURAL_INVESTIMENTO
-      example: ADIANTAMENTO_A_DEPOSITANTE
+        - ADIANTAMENTO_A_DEPOSITANTES
+        - DIREITOS_CREDITORIOS_DESCONTADOS
+        - EMPRESTIMO
+        - FINANCIAMENTOS
+        - FINANCIAMENTOS_RURAIS
+        - FINANCIAMENTOS_IMOBILIARIOS
+      example: ADIANTAMENTO_A_DEPOSITANTES
+    EnumBankBorrowingContractProductSubType:
+      type: string
+      description: |
+        Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+        Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH
+      enum:
+        - ADIANTAMENTO_A_DEPOSITANTES
+        - CREDITO_PESSOAL_SEM_CONSIGNACAO
+        - CREDITO_PESSOAL_COM_CONSIGNACAO
+        - HOME_EQUITY
+        - MICROCREDITO_PRODUTIVO_ORIENTADO
+        - CHEQUE_ESPECIAL
+        - CONTA_GARANTIDA
+        - CAPITAL_GIRO_PRAZO_VENCIMENTO_ATE_365_DIAS
+        - CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS
+        - CAPITAL_GIRO_TETO_ROTATIVO
+        - DESCONTO_DUPLICATAS
+        - DESCONTO_CHEQUES
+        - ANTECIPACAO_FATURA_CARTAO_CREDITO
+        - OUTROS_DIREITOS_CREDITORIOS_DESCONTADOS
+        - OUTROS_TITULOS_DESCONTADOS
+        - AQUISICAO_BENS_VEICULOS_AUTOMOTORES
+        - AQUISICAO_BENS_OUTROS_BENS
+        - MICROCREDITO
+        - CUSTEIO
+        - INVESTIMENTO
+        - INDUSTRIALIZACAO
+        - COMERCIALIZACAO
+        - FINANCIAMENTO_HABITACIONAL_SFH
+        - FINANCIAMENTO_HABITACIONAL_EXCETO_SFH
+      example: ADIANTAMENTO_A_DEPOSITANTES
     EnumBankBorrowingContractReferentialRateIndexerType:
       type: string
       description: |
@@ -3278,24 +3356,12 @@ components:
       enum:
         - SEM_INDEXADOR_TAXA
         - PRE_FIXADO
-        - POS_FIXADO_TR_TBF
-        - POS_FIXADO_TJLP
-        - POS_FIXADO_LIBOR
-        - POS_FIXADO_TLP
-        - OUTRAS_TAXAS_POS_FIXADAS
-        - FLUTUANTES_CDI
-        - FLUTUANTES_SELIC
-        - OUTRAS_TAXAS_FLUTUANTES
-        - INDICES_PRECOS_IGPM
-        - INDICES_PRECOS_IPCA
-        - INDICES_PRECOS_IPCC
-        - OUTROS_INDICES_PRECO
-        - CREDITO_RURAL_TCR_PRE
-        - CREDITO_RURAL_TCR_POS
-        - CREDITO_RURAL_TRFC_PRE
-        - CREDITO_RURAL_TRFC_POS
+        - POS_FIXADO
+        - FLUTUANTES
+        - INDICES_PRECOS
+        - CREDITO_RURAL
         - OUTROS_INDEXADORES
-      example: SEM_INDEXADOR_TAXA
+      example: PRE_FIXADO
     EnumBankBorrowingContractTaxPeriodicity:
       type: string
       description: |
@@ -3305,17 +3371,17 @@ components:
       enum:
         - AM
         - AA
-      example: AM
+      example: AA
     EnumBankBorrowingContractTaxType:
       type: string
       description: |
         Tipo de Taxa (vide  Enum)
-        - NOMINAL
-        - EFETIVA
+        - NOMINAL (taxa nominal é uma taxa de juros em que a unidade referencial não coincide com a unidade de tempo da capitalização. Ela é sempre fornecida em termos anuais, e seus períodos de capitalização podem ser diários, mensais, trimestrais ou semestrais. p.ex. Uma taxa de 12% ao ano com capitalização mensal)
+        - EFETIVA (É a taxa de juros em que a unidade referencial coincide com a unidade de tempo da capitalização. Como as unidades de medida de tempo da taxa de juros e dos períodos de capitalização são iguais, usa-se exemplos simples como 1% ao mês, 60% ao ano)
       enum:
         - NOMINAL
         - EFETIVA
-      example: NOMINAL
+      example: EFETIVA
     EnumBankBorrowingFinanceChargeType:
       type: string
       description: Tipo de encargo avulso
@@ -3338,6 +3404,31 @@ components:
         - SEMESTRAL
         - ANUAL
       example: SEMANAL
+    EnumBankBorrowingContractReferentialRateIndexerSubType:
+      type: string
+      description: |
+        Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040
+      enum:
+        - SEM_INDEXADOR_TAXA
+        - PRE_FIXADO
+        - TR_TBF
+        - TJLP
+        - LIBOR
+        - TLP
+        - OUTRAS_TAXAS_POS_FIXADAS
+        - CDI
+        - SELIC
+        - OUTRAS_TAXAS_FLUTUANTES
+        - IGPM
+        - IPCA
+        - IPCC
+        - OUTROS_INDICES_PRECO
+        - TCR_PRE
+        - TCR_POS
+        - TRFC_PRE
+        - TRFC_POS
+        - OUTROS_INDEXADORES
+      example: TJLP
     EnumBankBorrowingWarrantySubType:
       type: string
       description: |
@@ -3393,7 +3484,7 @@ components:
         - TRIBUTOS_RECEITAS_ORCAMENTARIAS
         - VEICULOS
         - VEICULOS_AUTOMOTORES
-      example: ACOES_DEBENTURES
+      example: NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO
     EnumBankBorrowingWarrantyType:
       type: string
       description: |
@@ -5326,6 +5417,15 @@ components:
         maxLength: 20
         pattern: '\d{20}|^NA$'
       required: true
+    ContractId:
+      name: contractId
+      in: path
+      description: |
+        Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
+      required: true
+      schema:
+        type: string
+        maxLength: 40
     page:
       name: page
       in: query

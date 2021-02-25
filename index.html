@@ -472,10 +472,16 @@
                     <a href="#tocS_BankBorrowingContractData" class="toc-h2 toc-link" data-title="BankBorrowingContractData">BankBorrowingContractData</a>
                   </li>
                   <li>
+                    <a href="#tocS_BankBorrowingContractedFee" class="toc-h2 toc-link" data-title="BankBorrowingContractedFee">BankBorrowingContractedFee</a>
+                  </li>
+                  <li>
                     <a href="#tocS_BankBorrowingContractedWarranty" class="toc-h2 toc-link" data-title="BankBorrowingContractedWarranty">BankBorrowingContractedWarranty</a>
                   </li>
                   <li>
                     <a href="#tocS_BankBorrowingContractInterestRate" class="toc-h2 toc-link" data-title="BankBorrowingContractInterestRate">BankBorrowingContractInterestRate</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_BankBorrowingFinanceCharge" class="toc-h2 toc-link" data-title="BankBorrowingFinanceCharge">BankBorrowingFinanceCharge</a>
                   </li>
                   <li>
                     <a href="#tocS_BankBorrowingInstalments" class="toc-h2 toc-link" data-title="BankBorrowingInstalments">BankBorrowingInstalments</a>
@@ -646,6 +652,12 @@
                     <a href="#tocS_EnumBankBorrowingContractCalculation" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractCalculation">EnumBankBorrowingContractCalculation</a>
                   </li>
                   <li>
+                    <a href="#tocS_EnumBankBorrowingContractFeeCharge" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractFeeCharge">EnumBankBorrowingContractFeeCharge</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumBankBorrowingContractFeeChargeType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractFeeChargeType">EnumBankBorrowingContractFeeChargeType</a>
+                  </li>
+                  <li>
                     <a href="#tocS_EnumBankBorrowingContractFinanceChargeType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractFinanceChargeType">EnumBankBorrowingContractFinanceChargeType</a>
                   </li>
                   <li>
@@ -656,6 +668,9 @@
                   </li>
                   <li>
                     <a href="#tocS_EnumBankBorrowingContractProductType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractProductType">EnumBankBorrowingContractProductType</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumBankBorrowingContractProductSubType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractProductSubType">EnumBankBorrowingContractProductSubType</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumBankBorrowingContractReferentialRateIndexerType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractReferentialRateIndexerType">EnumBankBorrowingContractReferentialRateIndexerType</a>
@@ -671,6 +686,9 @@
                   </li>
                   <li>
                     <a href="#tocS_EnumBankBorrowingInstalmentPeriodicity" class="toc-h2 toc-link" data-title="EnumBankBorrowingInstalmentPeriodicity">EnumBankBorrowingInstalmentPeriodicity</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumBankBorrowingContractReferentialRateIndexerSubType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractReferentialRateIndexerSubType">EnumBankBorrowingContractReferentialRateIndexerSubType</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumBankBorrowingWarrantySubType" class="toc-h2 toc-link" data-title="EnumBankBorrowingWarrantySubType">EnumBankBorrowingWarrantySubType</a>
@@ -6330,7 +6348,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/bank-borrowing/v1/contract</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/credit-operations/v1/contracts/string</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -6340,18 +6358,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/bank-borrowing/v1/contract"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/credit-operations/v1/contracts/string"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/bank-borrowing/v1/contract"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/credit-operations/v1/contracts/string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /bank-borrowing/v1/contract</code></p>
+<p><code>GET /credit-operations/v1/contracts/{contractId}</code></p>
 
 <table><thead>
 <tr>
@@ -6397,8 +6415,7 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 
 <p><a href='dictionary/bank_borrowing_contract.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p>A definir.
-<a href="dictionary/example/examples_bank_borrowing_contract.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_bank_borrowing_contract.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-contrato-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -6416,6 +6433,13 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 </tr>
 </thead><tbody>
 <tr>
+<td>contractId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.</td>
+</tr>
+<tr>
 <td>page</td>
 <td>query</td>
 <td>integer</td>
@@ -6431,6 +6455,10 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 </tr>
 </tbody></table>
 
+<h4 id='apis-diretorio-e-service-desk-contrato-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>contractId</strong>: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.</p>
+
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
 
@@ -6441,38 +6469,55 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"instalmentPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEMANAL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"dueFirstInstalmentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstInstalmentDueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-15"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.29</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"interestRates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFETIVA"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"interestRateType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLES"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"calculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.21/25"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOMINAL"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="w">
+            </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRE_FIXADO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"referentialRateIndexerSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TJLP"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"financeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"cnpjGuarantor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="nl">"contractedFees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excesso em Conta"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCESSO_CONTA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNICA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MINIMO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chargerate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -6586,7 +6631,7 @@ This operation does not require authentication
 
 <h2 id='apis-diretorio-e-service-desk-garantias-do-contrato'>Garantias do Contrato</h2>
 
-<p><a id="opIdgetBankBorrowingWarranties"></a></p>
+<p><a id="opIdgetContractsContractIdWarranties"></a></p>
 
 <blockquote>
 <p>Exemplo de código</p>
@@ -6603,7 +6648,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/bank-borrowing/v1/warranties</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/credit-operations/v1/contracts/string/warranties</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -6613,18 +6658,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/bank-borrowing/v1/warranties"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/credit-operations/v1/contracts/string/warranties"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/bank-borrowing/v1/warranties"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/credit-operations/v1/contracts/string/warranties"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /bank-borrowing/v1/warranties</code></p>
+<p><code>GET /credit-operations/v1/contracts/{contractId}/warranties</code></p>
 
 <table><thead>
 <tr>
@@ -6670,8 +6715,7 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 
 <p><a href='dictionary/bank_borrowing_warranties.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p>A definir.
-<a href="dictionary/example/examples_bank_borrowing_warranties.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_bank_borrowing_warranties.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-garantias-do-contrato-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -6689,6 +6733,13 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 </tr>
 </thead><tbody>
 <tr>
+<td>contractId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.</td>
+</tr>
+<tr>
 <td>page</td>
 <td>query</td>
 <td>integer</td>
@@ -6704,6 +6755,10 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 </tr>
 </tbody></table>
 
+<h4 id='apis-diretorio-e-service-desk-garantias-do-contrato-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>contractId</strong>: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.</p>
+
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
 
@@ -6714,14 +6769,13 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"warranties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractedWarranties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"warrantyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CESSAO_DIREITOS_CREDITORIOS"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACOES_DEBENTURES"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -6794,18 +6848,6 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 <td>None</td>
 </tr>
 <tr>
-<td>410</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Indica que o recurso não está mais disponível.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
 <td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
@@ -6815,18 +6857,6 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
 <td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>503</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>O serviço está indisponível no momento.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>504</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -6921,8 +6951,7 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 
 <p><a href='dictionary/bank_borrowing_payments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p>A definir.
-<a href="dictionary/example/examples_bank_borrowing_payments.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_bank_borrowing_payments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-pagamentos-do-contrato-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -7183,8 +7212,7 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 
 <p><a href='dictionary/bank_borrowing_instalments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p>A definir.
-<a href="dictionary/example/examples_bank_borrowing_instalments.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_bank_borrowing_instalments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-parcelas-do-contrato-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -8029,38 +8057,55 @@ This operation does not require authentication
 <a id="tocSbankborrowingcontract"></a>
 <a id="tocsbankborrowingcontract"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTE"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"instalmentPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEMANAL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"dueFirstInstalmentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstInstalmentDueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-15"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.29</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"interestRates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AM"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFETIVA"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"interestRateType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLES"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"calculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.21/25"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOMINAL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="w">
+      </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRE_FIXADO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"referentialRateIndexerSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TJLP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"financeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cnpjGuarantor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="nl">"contractedFees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excesso em Conta"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCESSO_CONTA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNICA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MINIMO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"chargerate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -8078,10 +8123,16 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>contractId</td>
+<td>ipocCode</td>
 <td>string</td>
 <td>true</td>
 <td>Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: <br>- <strong>CNPJ da instituição:</strong> 8 (oito) posições iniciais;<br>- <strong>Modalidade da operação:</strong> 4 (quatro) posições;<br>- <strong>Tipo do cliente:</strong> 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);<br>- <strong>Código do cliente:</strong> O número de posições varia conforme o tipo do cliente:<br>  1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;<br>  2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;<br>  3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;<br>- <strong>Código do contrato:</strong> 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.</td>
+</tr>
+<tr>
+<td>example</td>
+<td>any</td>
+<td>false</td>
+<td></td>
 </tr>
 <tr>
 <td>requestDateTime</td>
@@ -8099,7 +8150,13 @@ This operation does not require authentication
 <td>productType</td>
 <td><a href="#schemaenumbankborrowingcontractproducttype">EnumBankBorrowingContractProductType</a></td>
 <td>true</td>
-<td>Modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositante, Direitos creditórios descontados antecipação fatura de cartão de crédito, direitos creditórios descontados desconto de cheques, direitos creditórios descontados desconto de duplicatas, direitos creditórios descontados outros direitos creditórios descontados, direitos creditórios descontados outros títulos descontados, empréstimo capital de giro prazo vencimento até 365 dias, empréstimo capital de giro prazo de vencimento superior a 365 dias, empréstimo capital de giro rotativo, empréstimo de cheque especial, empréstimo de conta garantida, empréstimo de crédito pessoal sem consignação, empréstimo de crédito pessoal consignado, empréstimo home equity, empréstimo microcrédito produtivo orientado, financiamento aquisição de bens outros bens, financiamento aquisição de bens veículos automotores, financiamento imobiliário do sistema financeiro habitação SFH, sistema financeiro da habitação SFI, financiamento microcrédito, financiamento rural comercialização, financiamento rural custeio, financiamento rural industrialização, financiamento rural investimento</td>
+<td>Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários</td>
+</tr>
+<tr>
+<td>productSubType</td>
+<td><a href="#schemaenumbankborrowingcontractproductsubtype">EnumBankBorrowingContractProductSubType</a></td>
+<td>true</td>
+<td>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</td>
 </tr>
 <tr>
 <td>contractDate</td>
@@ -8115,7 +8172,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>contractAmount</td>
-<td>string(AmountString)</td>
+<td>number</td>
 <td>true</td>
 <td>Valor contratado da operação. Expresso em valor monetário com 2 casas decimais</td>
 </tr>
@@ -8135,52 +8192,58 @@ This operation does not require authentication
 <td>instalmentPeriodicity</td>
 <td><a href="#schemaenumbankborrowingcontractinstalmentperiodicity">EnumBankBorrowingContractInstalmentPeriodicity</a></td>
 <td>true</td>
-<td>Informação relativa à periodicidade regular das parcelas. (Vide Enum)<br>mensal, trimestral, semestral, anual</td>
+<td>Informação relativa à periodicidade regular das parcelas. (Vide Enum)<br>sem periodicidade regular, semanal, quinzenal, mensal, trimestral, semestral, anual</td>
 </tr>
 <tr>
-<td>dueFirstInstalmentDate</td>
+<td>firstInstalmentDueDate</td>
 <td>string(DateString)</td>
 <td>true</td>
-<td>Data de vencimento primeira parcela</td>
+<td>Data de vencimento primeira parcela do principal</td>
 </tr>
 <tr>
 <td>totalNumberOfInstalments</td>
-<td>string</td>
+<td>number</td>
 <td>true</td>
 <td>Prazo Total em meses do contrato referente à Modalidade de Crédito informada</td>
+</tr>
+<tr>
+<td>paidInstalments</td>
+<td>number</td>
+<td>true</td>
+<td>Quantidade de prestações pagas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)</td>
+</tr>
+<tr>
+<td>CET</td>
+<td>number</td>
+<td>true</td>
+<td>CET – Custo Efetivo Total deve ser expresso na forma de taxa percentual anual e   incorpora todos os encargos e despesas incidentes nas operações de crédito (taxa de juro, mas também tarifas, tributos, seguros e outras despesas cobradas).<br>O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros<br>(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)</td>
+</tr>
+<tr>
+<td>amortizationSchedule</td>
+<td><a href="#schemaenumbankborrowingcontractamortizationschedule">EnumBankBorrowingContractAmortizationSchedule</a></td>
+<td>false</td>
+<td>Sistema de amortização (Vide Enum)<br>- SAC (Sistema de Amortização Constante -   é aquele em que o valor da amortização permanece igual até o final. Os juros  cobrados sobre o parcelamento não entram nesta conta)<br>- PRICE (Sistema Francês de Amortização - As parcelas são fixas do início ao fim do contrato. Ou seja, todas as parcelas terão o mesmo valor, desde a primeira até a última. Nos primeiros pagamentos, a maior parte do valor da prestação corresponde aos juros. Ao longo do tempo, a taxa de juros vai decrescendo. Como o valor da prestação é fixo, com o passar das parcelas, o valor de amortização vai aumentando)<br>- SAM (Sociedade de arrendamento mercantil) - realiza arrendamento de bens móveis e imóveis adquiridos por ela, segundo as especificações da arrendatária (cliente), para fins de uso próprio desta. Assim, os contratantes deste serviço podem usufruir de determinado bem sem serem proprietários dele. As operações de arrendamento mercantil podem ser divididas em duas modalidades: leasing financeiro e leasing operacional. A diferença básica é que no leasing financeiro o prazo é usualmente maior e o arrendatário tem a possibilidade de adquirir o bem por um valor pré-estabelecido. Ao final do contrato, o arrendatário tem as opções de efetivar a aquisição do bem arrendado ou devolvê-lo. Ao final do leasing financeiro, em geral o cliente já terá pago a maior parte do valor do bem, não sendo a devolução, embora possível, financeiramente vantajosa)<br>- SEM SISTEMA DE AMORTIZAÇÃO</td>
 </tr>
 <tr>
 <td>interestRates</td>
 <td>[<a href="#schemabankborrowingcontractinterestrate">BankBorrowingContractInterestRate</a>]</td>
 <td>true</td>
-<td>[Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios, do CET e do sistema de Amortização da Modalidade de crédito]</td>
+<td>[Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito]</td>
 </tr>
 <tr>
-<td>feeName</td>
-<td>string</td>
+<td>contractedFees</td>
+<td>[<a href="#schemabankborrowingcontractedfee">BankBorrowingContractedFee</a>]</td>
 <td>false</td>
-<td>Denominação da Tarifa avulsa</td>
+<td>[Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito]</td>
 </tr>
 <tr>
-<td>feeCode</td>
-<td>string</td>
+<td>financeCharges</td>
+<td>[<a href="#schemabankborrowingfinancecharge">BankBorrowingFinanceCharge</a>]</td>
 <td>false</td>
-<td>Sigla identificadora da tarifa avulsa</td>
+<td>Lista que traz os encargos pactuados no contrato</td>
 </tr>
 <tr>
-<td>financeChargeType</td>
-<td><a href="#schemaenumbankborrowingcontractfinancechargetype">EnumBankBorrowingContractFinanceChargeType</a></td>
-<td>true</td>
-<td>Tipo de encargo avulso</td>
-</tr>
-<tr>
-<td>financeChargeAdditionalInfo</td>
-<td>string</td>
-<td>false</td>
-<td>Campo de preenchimento obrigatório se selecionada a opção &#39;OUTROS&#39; em Tipo de encargo avulso</td>
-</tr>
-<tr>
-<td>cnpjGuarantor</td>
+<td>cnpjConsignee</td>
 <td>string</td>
 <td>false</td>
 <td>CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado</td>
@@ -8196,38 +8259,55 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTE"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"instalmentPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEMANAL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dueFirstInstalmentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"firstInstalmentDueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-15"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.29</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"interestRates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AM"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFETIVA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"interestRateType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"calculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.21/25"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOMINAL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="w">
+        </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRE_FIXADO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"referentialRateIndexerSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TJLP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"financeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cnpjGuarantor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="nl">"contractedFees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excesso em Conta"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCESSO_CONTA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNICA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MINIMO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chargerate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -8263,38 +8343,55 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTE"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"instalmentPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEMANAL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"dueFirstInstalmentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"firstInstalmentDueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-15"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.29</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"interestRates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AM"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFETIVA"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"interestRateType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLES"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"calculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.21/25"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOMINAL"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="w">
+          </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRE_FIXADO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"referentialRateIndexerSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TJLP"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"financeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"cnpjGuarantor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"contractedFees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excesso em Conta"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCESSO_CONTA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNICA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MINIMO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"chargerate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -8316,16 +8413,84 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_BankBorrowingContractedFee">BankBorrowingContractedFee</h2>
+
+<p><a id="schemabankborrowingcontractedfee"></a>
+<a id="schema_BankBorrowingContractedFee"></a>
+<a id="tocSbankborrowingcontractedfee"></a>
+<a id="tocsbankborrowingcontractedfee"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excesso em Conta"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCESSO_CONTA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"feeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNICA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"feeCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MINIMO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito</p>
+
+<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>feeName</td>
+<td>string</td>
+<td>true</td>
+<td>Denominação da Tarifa avulsa</td>
+</tr>
+<tr>
+<td>feeCode</td>
+<td>string</td>
+<td>true</td>
+<td>Sigla identificadora da tarifa avulsa</td>
+</tr>
+<tr>
+<td>feeChargeType</td>
+<td><a href="#schemaenumbankborrowingcontractfeechargetype">EnumBankBorrowingContractFeeChargeType</a></td>
+<td>false</td>
+<td>Tipo de cobrança para a tarifa pactuada no contrato. (Vide Enum)<br>- Única <br>- Por Parcela</td>
+</tr>
+<tr>
+<td>feeCharge</td>
+<td><a href="#schemaenumbankborrowingcontractfeecharge">EnumBankBorrowingContractFeeCharge</a></td>
+<td>false</td>
+<td>Forma de cobrança relativa a tarifa pactuada no contrato. (Vide Enum)<br>- Mínimo<br>- Máximo<br>- Fixo<br>- Percentual Cardinalidade de (1-N)</td>
+</tr>
+<tr>
+<td>feeAmount</td>
+<td>number</td>
+<td>false</td>
+<td>Valor monetário da tarifa pactuada no contrato. Preenchimento obrigatório quando a forma de cobrança for: Mínimo, Máximo ou Fixo</td>
+</tr>
+<tr>
+<td>feeRate</td>
+<td>number</td>
+<td>false</td>
+<td>Percentual que representa o valor da tarifa pactuada para o contrato. Preenchimento obrigatório quando a forma de cobrança por Percentual</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_BankBorrowingContractedWarranty">BankBorrowingContractedWarranty</h2>
 
 <p><a id="schemabankborrowingcontractedwarranty"></a>
 <a id="schema_BankBorrowingContractedWarranty"></a>
 <a id="tocSbankborrowingcontractedwarranty"></a>
 <a id="tocsbankborrowingcontractedwarranty"></a></p>
+
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"warrantyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CESSAO_DIREITOS_CREDITORIOS"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACOES_DEBENTURES"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -8356,7 +8521,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>warrantyAmount</td>
-<td>string(AmountString)¦null</td>
+<td>number¦null</td>
 <td>true</td>
 <td>Valor original da garantia. Valor monetário, expresso com 2 casas decimais</td>
 </tr>
@@ -8370,22 +8535,21 @@ This operation does not require authentication
 <a id="tocsbankborrowingcontractinterestrate"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AM"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFETIVA"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"interestRateType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLES"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"calculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.21/25"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOMINAL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="w">
+  </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRE_FIXADO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"referentialRateIndexerSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TJLP"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios, do CET e do sistema de Amortização da Modalidade de crédito</p>
+<p>Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito</p>
 
 <h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -8398,10 +8562,40 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
+<td>taxType</td>
+<td><a href="#schemaenumbankborrowingcontracttaxtype">EnumBankBorrowingContractTaxType</a></td>
+<td>true</td>
+<td>Tipo de Taxa (vide  Enum)<br>- NOMINAL (taxa nominal é uma taxa de juros em que a unidade referencial não coincide com a unidade de tempo da capitalização. Ela é sempre fornecida em termos anuais, e seus períodos de capitalização podem ser diários, mensais, trimestrais ou semestrais. p.ex. Uma taxa de 12% ao ano com capitalização mensal)<br>- EFETIVA (É a taxa de juros em que a unidade referencial coincide com a unidade de tempo da capitalização. Como as unidades de medida de tempo da taxa de juros e dos períodos de capitalização são iguais, usa-se exemplos simples como 1% ao mês, 60% ao ano)</td>
+</tr>
+<tr>
+<td>interestRateType</td>
+<td><a href="#schemaenumbankborrowingcontractinterestratetype">EnumBankBorrowingContractInterestRateType</a></td>
+<td>true</td>
+<td>Tipo de Juros  (vide  Enum)<br>- SIMPLES (aplicada/cobrada sempre sobre o capital inicial, que é o valor emprestado/investido. Não há cobrança de juros sobre juros acumulados no(s) período(s) anterior(es). Exemplo: em um empréstimo de R$1.000, com taxa de juros simples de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano e R$ 80 no segundo ano. Ao final do contrato, o tomador irá devolver o principal e os juros simples de cada ano: R$1.000+R$80+R$80=R$1.160)<br>- COMPOSTO (para cada período do contrato (diário, mensal, anual etc.), há um “novo capital” para a cobrança da taxa de juros contratada. Esse “novo capital” é a soma do capital e do juro cobrado no período anterior. Exemplo: em um empréstimo de R$1.000, com taxa de juros composta de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano. No segundo ano, os juros vão ser somados ao capital (R$1.000 + R$ 80 = R$ 1.080), resultando em juros de R$ 86 (8%de R$ 1.080))</td>
+</tr>
+<tr>
+<td>taxPeriodicity</td>
+<td><a href="#schemaenumbankborrowingcontracttaxperiodicity">EnumBankBorrowingContractTaxPeriodicity</a></td>
+<td>true</td>
+<td>Periodicidade da taxa . (Vide  Enum)<br>a.m - ao mês<br>a.a. - ao ano</td>
+</tr>
+<tr>
+<td>calculation</td>
+<td><a href="#schemaenumbankborrowingcontractcalculation">EnumBankBorrowingContractCalculation</a></td>
+<td>true</td>
+<td>Base de cálculo (Vide Enum)<br>- 1.21/25<br>- 2.30/360<br>- 3.30/365</td>
+</tr>
+<tr>
 <td>referentialRateIndexerType</td>
 <td><a href="#schemaenumbankborrowingcontractreferentialrateindexertype">EnumBankBorrowingContractReferentialRateIndexerType</a></td>
 <td>true</td>
 <td>Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</td>
+</tr>
+<tr>
+<td>referentialRateIndexerSubType</td>
+<td><a href="#schemaenumbankborrowingcontractreferentialrateindexersubtype">EnumBankBorrowingContractReferentialRateIndexerSubType</a></td>
+<td>false</td>
+<td>Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</td>
 </tr>
 <tr>
 <td>referentialRateIndexerAdditionalInfo</td>
@@ -8411,33 +8605,15 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>preFixedRate</td>
-<td>string</td>
+<td>number</td>
 <td>true</td>
 <td>Taxa pré fixada aplicada sob o contrato da modalidade crédito. <br>p.ex. 0.0045. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros<br>(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)</td>
 </tr>
 <tr>
 <td>postFixedRate</td>
-<td>string</td>
+<td>number</td>
 <td>true</td>
 <td>Taxa pós fixada aplicada sob o contrato da modalidade crédito. <br>p.ex. 0.0045 .O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros<br>(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)</td>
-</tr>
-<tr>
-<td>taxPeriodicity</td>
-<td><a href="#schemaenumbankborrowingcontracttaxperiodicity">EnumBankBorrowingContractTaxPeriodicity</a></td>
-<td>true</td>
-<td>Periodicidade da taxa . (Vide  Enum)<br>a.m - ao mês<br>a.a. - ao ano</td>
-</tr>
-<tr>
-<td>interestRateType</td>
-<td><a href="#schemaenumbankborrowingcontractinterestratetype">EnumBankBorrowingContractInterestRateType</a></td>
-<td>true</td>
-<td>Tipo de Juros  (vide  Enum)<br>- SIMPLES<br>- COMPOSTO</td>
-</tr>
-<tr>
-<td>calculation</td>
-<td><a href="#schemaenumbankborrowingcontractcalculation">EnumBankBorrowingContractCalculation</a></td>
-<td>true</td>
-<td>Base de cálculo (Vide Enum)<br>- 1.21/25<br>- 2.30/360<br>- 3.30/365</td>
 </tr>
 <tr>
 <td>additionalInfo</td>
@@ -8445,23 +8621,52 @@ This operation does not require authentication
 <td>true</td>
 <td>Texto com informações adicionais sobre a composição das taxas de juros pactuadas</td>
 </tr>
+</tbody></table>
+
+<h2 id="tocS_BankBorrowingFinanceCharge">BankBorrowingFinanceCharge</h2>
+
+<p><a id="schemabankborrowingfinancecharge"></a>
+<a id="schema_BankBorrowingFinanceCharge"></a>
+<a id="tocSbankborrowingfinancecharge"></a>
+<a id="tocsbankborrowingfinancecharge"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"chargerate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Conjunto de informações referentes à identificação da operação de crédito</p>
+
+<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
 <tr>
-<td>taxType</td>
-<td><a href="#schemaenumbankborrowingcontracttaxtype">EnumBankBorrowingContractTaxType</a></td>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chargeType</td>
+<td><a href="#schemaenumbankborrowingcontractfinancechargetype">EnumBankBorrowingContractFinanceChargeType</a></td>
 <td>true</td>
-<td>Tipo de Taxa (vide  Enum)<br>- NOMINAL<br>- EFETIVA</td>
+<td>Tipo de encargo pactuado no contrato. (Vide Enum)</td>
 </tr>
 <tr>
-<td>CET</td>
+<td>chargeAdditionalInfo</td>
 <td>string</td>
-<td>true</td>
-<td>CET – Custo Efetivo Total deve ser expresso na forma de taxa percentual anual e   incorpora todos os encargos e despesas incidentes nas operações de crédito (taxa de juro, mas também tarifas, tributos, seguros e outras despesas cobradas).<br>O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros<br>(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)</td>
+<td>false</td>
+<td>Campo de preenchimento obrigatório se selecionada a opção &#39;OUTROS&#39; em Tipo de encargo pactuado no contrato</td>
 </tr>
 <tr>
-<td>amortizationSchedule</td>
-<td><a href="#schemaenumbankborrowingcontractamortizationschedule">EnumBankBorrowingContractAmortizationSchedule</a></td>
-<td>true</td>
-<td>Sistema de amortização (Vide Enum)<br>- SAC <br>- PRICE<br>- SAM</td>
+<td>chargerate</td>
+<td>number</td>
+<td>false</td>
+<td>Percentual que representa o valor do encargo pactuado no contrato. Preenchimento obrigatório quando a forma de cobrança for: Mínimo, Máximo ou Fixo</td>
 </tr>
 </tbody></table>
 
@@ -8980,14 +9185,13 @@ This operation does not require authentication
 <a id="tocsbankborrowingwarranties"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contractedWarranties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"warrantyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CESSAO_DIREITOS_CREDITORIOS"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACOES_DEBENTURES"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -9006,12 +9210,6 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>contractId</td>
-<td>string</td>
-<td>true</td>
-<td>Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: <br>- <strong>CNPJ da instituição:</strong> 8 (oito) posições iniciais;<br>- <strong>Modalidade da operação:</strong> 4 (quatro) posições;<br>- <strong>Tipo do cliente:</strong> 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);<br>- <strong>Código do cliente:</strong> O número de posições varia conforme o tipo do cliente:<br>  1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;<br>  2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;<br>  3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;<br>- <strong>Código do contrato:</strong> 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.</td>
-</tr>
 <tr>
 <td>requestDateTime</td>
 <td>string(DateTimeString)</td>
@@ -9041,14 +9239,13 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"warranties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contractedWarranties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"warrantyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CESSAO_DIREITOS_CREDITORIOS"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACOES_DEBENTURES"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -9086,14 +9283,13 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"warranties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contractedWarranties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"warrantyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CESSAO_DIREITOS_CREDITORIOS"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACOES_DEBENTURES"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -12295,9 +12491,10 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </span></code></pre></div>
 
 <p>Sistema de amortização (Vide Enum)
-- SAC 
-- PRICE
-- SAM</p>
+- SAC (Sistema de Amortização Constante -   é aquele em que o valor da amortização permanece igual até o final. Os juros  cobrados sobre o parcelamento não entram nesta conta)
+- PRICE (Sistema Francês de Amortização - As parcelas são fixas do início ao fim do contrato. Ou seja, todas as parcelas terão o mesmo valor, desde a primeira até a última. Nos primeiros pagamentos, a maior parte do valor da prestação corresponde aos juros. Ao longo do tempo, a taxa de juros vai decrescendo. Como o valor da prestação é fixo, com o passar das parcelas, o valor de amortização vai aumentando)
+- SAM (Sociedade de arrendamento mercantil) - realiza arrendamento de bens móveis e imóveis adquiridos por ela, segundo as especificações da arrendatária (cliente), para fins de uso próprio desta. Assim, os contratantes deste serviço podem usufruir de determinado bem sem serem proprietários dele. As operações de arrendamento mercantil podem ser divididas em duas modalidades: leasing financeiro e leasing operacional. A diferença básica é que no leasing financeiro o prazo é usualmente maior e o arrendatário tem a possibilidade de adquirir o bem por um valor pré-estabelecido. Ao final do contrato, o arrendatário tem as opções de efetivar a aquisição do bem arrendado ou devolvê-lo. Ao final do leasing financeiro, em geral o cliente já terá pago a maior parte do valor do bem, não sendo a devolução, embora possível, financeiramente vantajosa)
+- SEM SISTEMA DE AMORTIZAÇÃO</p>
 
 <h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -12313,7 +12510,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Sistema de amortização (Vide Enum)<br>- SAC <br>- PRICE<br>- SAM</td>
+<td>Sistema de amortização (Vide Enum)<br>- SAC (Sistema de Amortização Constante -   é aquele em que o valor da amortização permanece igual até o final. Os juros  cobrados sobre o parcelamento não entram nesta conta)<br>- PRICE (Sistema Francês de Amortização - As parcelas são fixas do início ao fim do contrato. Ou seja, todas as parcelas terão o mesmo valor, desde a primeira até a última. Nos primeiros pagamentos, a maior parte do valor da prestação corresponde aos juros. Ao longo do tempo, a taxa de juros vai decrescendo. Como o valor da prestação é fixo, com o passar das parcelas, o valor de amortização vai aumentando)<br>- SAM (Sociedade de arrendamento mercantil) - realiza arrendamento de bens móveis e imóveis adquiridos por ela, segundo as especificações da arrendatária (cliente), para fins de uso próprio desta. Assim, os contratantes deste serviço podem usufruir de determinado bem sem serem proprietários dele. As operações de arrendamento mercantil podem ser divididas em duas modalidades: leasing financeiro e leasing operacional. A diferença básica é que no leasing financeiro o prazo é usualmente maior e o arrendatário tem a possibilidade de adquirir o bem por um valor pré-estabelecido. Ao final do contrato, o arrendatário tem as opções de efetivar a aquisição do bem arrendado ou devolvê-lo. Ao final do leasing financeiro, em geral o cliente já terá pago a maior parte do valor do bem, não sendo a devolução, embora possível, financeiramente vantajosa)<br>- SEM SISTEMA DE AMORTIZAÇÃO</td>
 </tr>
 </tbody></table>
 
@@ -12336,6 +12533,10 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 <tr>
 <td>**</td>
 <td>SAM</td>
+</tr>
+<tr>
+<td>**</td>
+<td>SEM_SISTEMA_AMORTIZACAO</td>
 </tr>
 </tbody></table>
 
@@ -12395,18 +12596,22 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h2 id="tocS_EnumBankBorrowingContractFinanceChargeType">EnumBankBorrowingContractFinanceChargeType</h2>
+<h2 id="tocS_EnumBankBorrowingContractFeeCharge">EnumBankBorrowingContractFeeCharge</h2>
 
-<p><a id="schemaenumbankborrowingcontractfinancechargetype"></a>
-<a id="schema_EnumBankBorrowingContractFinanceChargeType"></a>
-<a id="tocSenumbankborrowingcontractfinancechargetype"></a>
-<a id="tocsenumbankborrowingcontractfinancechargetype"></a></p>
+<p><a id="schemaenumbankborrowingcontractfeecharge"></a>
+<a id="schema_EnumBankBorrowingContractFeeCharge"></a>
+<a id="tocSenumbankborrowingcontractfeecharge"></a>
+<a id="tocsenumbankborrowingcontractfeecharge"></a></p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"MINIMO"</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Tipo de encargo avulso </p>
+<p>Forma de cobrança relativa a tarifa pactuada no contrato. (Vide Enum)
+- Mínimo
+- Máximo
+- Fixo
+- Percentual Cardinalidade de (1-N)</p>
 
 <h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -12422,7 +12627,115 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Tipo de encargo avulso</td>
+<td>Forma de cobrança relativa a tarifa pactuada no contrato. (Vide Enum)<br>- Mínimo<br>- Máximo<br>- Fixo<br>- Percentual Cardinalidade de (1-N)</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>MINIMO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>MAXIMO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>FIXO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>PERCENTUAL_CARDINALIDADE_1_N</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumBankBorrowingContractFeeChargeType">EnumBankBorrowingContractFeeChargeType</h2>
+
+<p><a id="schemaenumbankborrowingcontractfeechargetype"></a>
+<a id="schema_EnumBankBorrowingContractFeeChargeType"></a>
+<a id="tocSenumbankborrowingcontractfeechargetype"></a>
+<a id="tocsenumbankborrowingcontractfeechargetype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"UNICA"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Tipo de cobrança para a tarifa pactuada no contrato. (Vide Enum)
+- Única 
+- Por Parcela</p>
+
+<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Tipo de cobrança para a tarifa pactuada no contrato. (Vide Enum)<br>- Única <br>- Por Parcela</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>UNICA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>POR_PARCELA</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumBankBorrowingContractFinanceChargeType">EnumBankBorrowingContractFinanceChargeType</h2>
+
+<p><a id="schemaenumbankborrowingcontractfinancechargetype"></a>
+<a id="schema_EnumBankBorrowingContractFinanceChargeType"></a>
+<a id="tocSenumbankborrowingcontractfinancechargetype"></a>
+<a id="tocsenumbankborrowingcontractfinancechargetype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Tipo de encargo pactuado no contrato. (Vide Enum) </p>
+
+<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Tipo de encargo pactuado no contrato. (Vide Enum)</td>
 </tr>
 </tbody></table>
 
@@ -12452,6 +12765,10 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 <tr>
 <td>**</td>
+<td>IOF_POR_ATRASO</td>
+</tr>
+<tr>
+<td>**</td>
 <td>OUTROS</td>
 </tr>
 </tbody></table>
@@ -12468,7 +12785,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </span></code></pre></div>
 
 <p>Informação relativa à periodicidade regular das parcelas. (Vide Enum)
-mensal, trimestral, semestral, anual</p>
+sem periodicidade regular, semanal, quinzenal, mensal, trimestral, semestral, anual</p>
 
 <h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -12484,7 +12801,7 @@ mensal, trimestral, semestral, anual</p>
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Informação relativa à periodicidade regular das parcelas. (Vide Enum)<br>mensal, trimestral, semestral, anual</td>
+<td>Informação relativa à periodicidade regular das parcelas. (Vide Enum)<br>sem periodicidade regular, semanal, quinzenal, mensal, trimestral, semestral, anual</td>
 </tr>
 </tbody></table>
 
@@ -12496,6 +12813,10 @@ mensal, trimestral, semestral, anual</p>
 <th>Código</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>**</td>
+<td>SEM_PERIODICIDADE_REGULAR</td>
+</tr>
 <tr>
 <td>**</td>
 <td>SEMANAL</td>
@@ -12538,8 +12859,8 @@ mensal, trimestral, semestral, anual</p>
 </span></code></pre></div>
 
 <p>Tipo de Juros  (vide  Enum)
-- SIMPLES
-- COMPOSTO</p>
+- SIMPLES (aplicada/cobrada sempre sobre o capital inicial, que é o valor emprestado/investido. Não há cobrança de juros sobre juros acumulados no(s) período(s) anterior(es). Exemplo: em um empréstimo de R$1.000, com taxa de juros simples de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano e R$ 80 no segundo ano. Ao final do contrato, o tomador irá devolver o principal e os juros simples de cada ano: R$1.000+R$80+R$80=R$1.160)
+- COMPOSTO (para cada período do contrato (diário, mensal, anual etc.), há um “novo capital” para a cobrança da taxa de juros contratada. Esse “novo capital” é a soma do capital e do juro cobrado no período anterior. Exemplo: em um empréstimo de R$1.000, com taxa de juros composta de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano. No segundo ano, os juros vão ser somados ao capital (R$1.000 + R$ 80 = R$ 1.080), resultando em juros de R$ 86 (8%de R$ 1.080))</p>
 
 <h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -12555,7 +12876,7 @@ mensal, trimestral, semestral, anual</p>
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Tipo de Juros  (vide  Enum)<br>- SIMPLES<br>- COMPOSTO</td>
+<td>Tipo de Juros  (vide  Enum)<br>- SIMPLES (aplicada/cobrada sempre sobre o capital inicial, que é o valor emprestado/investido. Não há cobrança de juros sobre juros acumulados no(s) período(s) anterior(es). Exemplo: em um empréstimo de R$1.000, com taxa de juros simples de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano e R$ 80 no segundo ano. Ao final do contrato, o tomador irá devolver o principal e os juros simples de cada ano: R$1.000+R$80+R$80=R$1.160)<br>- COMPOSTO (para cada período do contrato (diário, mensal, anual etc.), há um “novo capital” para a cobrança da taxa de juros contratada. Esse “novo capital” é a soma do capital e do juro cobrado no período anterior. Exemplo: em um empréstimo de R$1.000, com taxa de juros composta de 8% a.a., com duração de 2 anos, o total de juros será R$80 no primeiro ano. No segundo ano, os juros vão ser somados ao capital (R$1.000 + R$ 80 = R$ 1.080), resultando em juros de R$ 86 (8%de R$ 1.080))</td>
 </tr>
 </tbody></table>
 
@@ -12584,12 +12905,12 @@ mensal, trimestral, semestral, anual</p>
 <a id="tocSenumbankborrowingcontractproducttype"></a>
 <a id="tocsenumbankborrowingcontractproducttype"></a></p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"ADIANTAMENTO_A_DEPOSITANTE"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
-Adiantamento a depositante, Direitos creditórios descontados antecipação fatura de cartão de crédito, direitos creditórios descontados desconto de cheques, direitos creditórios descontados desconto de duplicatas, direitos creditórios descontados outros direitos creditórios descontados, direitos creditórios descontados outros títulos descontados, empréstimo capital de giro prazo vencimento até 365 dias, empréstimo capital de giro prazo de vencimento superior a 365 dias, empréstimo capital de giro rotativo, empréstimo de cheque especial, empréstimo de conta garantida, empréstimo de crédito pessoal sem consignação, empréstimo de crédito pessoal consignado, empréstimo home equity, empréstimo microcrédito produtivo orientado, financiamento aquisição de bens outros bens, financiamento aquisição de bens veículos automotores, financiamento imobiliário do sistema financeiro habitação SFH, sistema financeiro da habitação SFI, financiamento microcrédito, financiamento rural comercialização, financiamento rural custeio, financiamento rural industrialização, financiamento rural investimento</p>
+<p>Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários  </p>
 
 <h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -12605,7 +12926,7 @@ Adiantamento a depositante, Direitos creditórios descontados antecipação fatu
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositante, Direitos creditórios descontados antecipação fatura de cartão de crédito, direitos creditórios descontados desconto de cheques, direitos creditórios descontados desconto de duplicatas, direitos creditórios descontados outros direitos creditórios descontados, direitos creditórios descontados outros títulos descontados, empréstimo capital de giro prazo vencimento até 365 dias, empréstimo capital de giro prazo de vencimento superior a 365 dias, empréstimo capital de giro rotativo, empréstimo de cheque especial, empréstimo de conta garantida, empréstimo de crédito pessoal sem consignação, empréstimo de crédito pessoal consignado, empréstimo home equity, empréstimo microcrédito produtivo orientado, financiamento aquisição de bens outros bens, financiamento aquisição de bens veículos automotores, financiamento imobiliário do sistema financeiro habitação SFH, sistema financeiro da habitação SFI, financiamento microcrédito, financiamento rural comercialização, financiamento rural custeio, financiamento rural industrialização, financiamento rural investimento</td>
+<td>Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários</td>
 </tr>
 </tbody></table>
 
@@ -12619,99 +12940,165 @@ Adiantamento a depositante, Direitos creditórios descontados antecipação fatu
 </thead><tbody>
 <tr>
 <td>**</td>
-<td>ADIANTAMENTO_A_DEPOSITANTE</td>
+<td>ADIANTAMENTO_A_DEPOSITANTES</td>
 </tr>
 <tr>
 <td>**</td>
-<td>DIREITOS_CREDITORIOS_DESCONTADOS_ANTECIPACAO_FATURA_CARTAO_CREDITO</td>
+<td>DIREITOS_CREDITORIOS_DESCONTADOS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>DIREITOS_CREDITORIOS_DESCONTADOS_DESCONTO_CHEQUES</td>
+<td>EMPRESTIMO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>DIREITOS_CREDITORIOS_DESCONTADOS_DESCONTO_DUPLICATAS</td>
+<td>FINANCIAMENTOS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>DIREITOS_CREDITORIOS_DESCONTADOS_OUTROS_DIREITOS_CREDITORIOS_DESCONTADOS</td>
+<td>FINANCIAMENTOS_RURAIS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>DIREITOS_CREDITORIOS_DESCONTADOS_OUTROS_TITULOS_DESCONTADOS</td>
+<td>FINANCIAMENTOS_IMOBILIARIOS</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumBankBorrowingContractProductSubType">EnumBankBorrowingContractProductSubType</h2>
+
+<p><a id="schemaenumbankborrowingcontractproductsubtype"></a>
+<a id="schema_EnumBankBorrowingContractProductSubType"></a>
+<a id="tocSenumbankborrowingcontractproductsubtype"></a>
+<a id="tocsenumbankborrowingcontractproductsubtype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</p>
+
+<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>ADIANTAMENTO_A_DEPOSITANTES</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_CAPITAL_GIRO_PRAZO_VENCIMENTO_ATE_365_DIAS</td>
+<td>CREDITO_PESSOAL_SEM_CONSIGNACAO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS</td>
+<td>CREDITO_PESSOAL_COM_CONSIGNACAO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_CAPITAL_GIRO_ROTATIVO</td>
+<td>HOME_EQUITY</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_CHEQUE_ESPECIAL</td>
+<td>MICROCREDITO_PRODUTIVO_ORIENTADO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_CONTA_GARANTIDA</td>
+<td>CHEQUE_ESPECIAL</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_CREDITO_PESSOAL_SEM_CONSIGNACAO</td>
+<td>CONTA_GARANTIDA</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_CREDITO_PESSOAL_CONSIGNADO</td>
+<td>CAPITAL_GIRO_PRAZO_VENCIMENTO_ATE_365_DIAS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_HOME_EQUITY</td>
+<td>CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>EMPRESTIMO_MICROCREDITO_PRODUTIVO_ORIENTADO</td>
+<td>CAPITAL_GIRO_TETO_ROTATIVO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_AQUISICAO_BENS_OUTROS_BENS</td>
+<td>DESCONTO_DUPLICATAS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_AQUISICAO_BENS_VEICULOS_AUTOMOTORES</td>
+<td>DESCONTO_CHEQUES</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO-SFH</td>
+<td>ANTECIPACAO_FATURA_CARTAO_CREDITO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO-SFI</td>
+<td>OUTROS_DIREITOS_CREDITORIOS_DESCONTADOS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO-MICROCREDITO</td>
+<td>OUTROS_TITULOS_DESCONTADOS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_RURAL_COMERCIALIZACAO</td>
+<td>AQUISICAO_BENS_VEICULOS_AUTOMOTORES</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_RURAL_CUSTEIO</td>
+<td>AQUISICAO_BENS_OUTROS_BENS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_RURAL_INDUSTRIALIZACAO</td>
+<td>MICROCREDITO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>FINANCIAMENTO_RURAL_INVESTIMENTO</td>
+<td>CUSTEIO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>INVESTIMENTO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>INDUSTRIALIZACAO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>COMERCIALIZACAO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>FINANCIAMENTO_HABITACIONAL_SFH</td>
+</tr>
+<tr>
+<td>**</td>
+<td>FINANCIAMENTO_HABITACIONAL_EXCETO_SFH</td>
 </tr>
 </tbody></table>
 
@@ -12722,7 +13109,7 @@ Adiantamento a depositante, Direitos creditórios descontados antecipação fatu
 <a id="tocSenumbankborrowingcontractreferentialrateindexertype"></a>
 <a id="tocsenumbankborrowingcontractreferentialrateindexertype"></a></p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"PRE_FIXADO"</span><span class="w">
 
 </span></code></pre></div>
 
@@ -12764,67 +13151,19 @@ Adiantamento a depositante, Direitos creditórios descontados antecipação fatu
 </tr>
 <tr>
 <td>**</td>
-<td>POS_FIXADO_TR_TBF</td>
+<td>POS_FIXADO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>POS_FIXADO_TJLP</td>
+<td>FLUTUANTES</td>
 </tr>
 <tr>
 <td>**</td>
-<td>POS_FIXADO_LIBOR</td>
+<td>INDICES_PRECOS</td>
 </tr>
 <tr>
 <td>**</td>
-<td>POS_FIXADO_TLP</td>
-</tr>
-<tr>
-<td>**</td>
-<td>OUTRAS_TAXAS_POS_FIXADAS</td>
-</tr>
-<tr>
-<td>**</td>
-<td>FLUTUANTES_CDI</td>
-</tr>
-<tr>
-<td>**</td>
-<td>FLUTUANTES_SELIC</td>
-</tr>
-<tr>
-<td>**</td>
-<td>OUTRAS_TAXAS_FLUTUANTES</td>
-</tr>
-<tr>
-<td>**</td>
-<td>INDICES_PRECOS_IGPM</td>
-</tr>
-<tr>
-<td>**</td>
-<td>INDICES_PRECOS_IPCA</td>
-</tr>
-<tr>
-<td>**</td>
-<td>INDICES_PRECOS_IPCC</td>
-</tr>
-<tr>
-<td>**</td>
-<td>OUTROS_INDICES_PRECO</td>
-</tr>
-<tr>
-<td>**</td>
-<td>CREDITO_RURAL_TCR_PRE</td>
-</tr>
-<tr>
-<td>**</td>
-<td>CREDITO_RURAL_TCR_POS</td>
-</tr>
-<tr>
-<td>**</td>
-<td>CREDITO_RURAL_TRFC_PRE</td>
-</tr>
-<tr>
-<td>**</td>
-<td>CREDITO_RURAL_TRFC_POS</td>
+<td>CREDITO_RURAL</td>
 </tr>
 <tr>
 <td>**</td>
@@ -12839,7 +13178,7 @@ Adiantamento a depositante, Direitos creditórios descontados antecipação fatu
 <a id="tocSenumbankborrowingcontracttaxperiodicity"></a>
 <a id="tocsenumbankborrowingcontracttaxperiodicity"></a></p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"AM"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"AA"</span><span class="w">
 
 </span></code></pre></div>
 
@@ -12890,13 +13229,13 @@ a.a. - ao ano</p>
 <a id="tocSenumbankborrowingcontracttaxtype"></a>
 <a id="tocsenumbankborrowingcontracttaxtype"></a></p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"NOMINAL"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"EFETIVA"</span><span class="w">
 
 </span></code></pre></div>
 
 <p>Tipo de Taxa (vide  Enum)
-- NOMINAL
-- EFETIVA</p>
+- NOMINAL (taxa nominal é uma taxa de juros em que a unidade referencial não coincide com a unidade de tempo da capitalização. Ela é sempre fornecida em termos anuais, e seus períodos de capitalização podem ser diários, mensais, trimestrais ou semestrais. p.ex. Uma taxa de 12% ao ano com capitalização mensal)
+- EFETIVA (É a taxa de juros em que a unidade referencial coincide com a unidade de tempo da capitalização. Como as unidades de medida de tempo da taxa de juros e dos períodos de capitalização são iguais, usa-se exemplos simples como 1% ao mês, 60% ao ano)</p>
 
 <h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -12912,7 +13251,7 @@ a.a. - ao ano</p>
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Tipo de Taxa (vide  Enum)<br>- NOMINAL<br>- EFETIVA</td>
+<td>Tipo de Taxa (vide  Enum)<br>- NOMINAL (taxa nominal é uma taxa de juros em que a unidade referencial não coincide com a unidade de tempo da capitalização. Ela é sempre fornecida em termos anuais, e seus períodos de capitalização podem ser diários, mensais, trimestrais ou semestrais. p.ex. Uma taxa de 12% ao ano com capitalização mensal)<br>- EFETIVA (É a taxa de juros em que a unidade referencial coincide com a unidade de tempo da capitalização. Como as unidades de medida de tempo da taxa de juros e dos períodos de capitalização são iguais, usa-se exemplos simples como 1% ao mês, 60% ao ano)</td>
 </tr>
 </tbody></table>
 
@@ -13064,6 +13403,123 @@ a.a. - ao ano</p>
 </tr>
 </tbody></table>
 
+<h2 id="tocS_EnumBankBorrowingContractReferentialRateIndexerSubType">EnumBankBorrowingContractReferentialRateIndexerSubType</h2>
+
+<p><a id="schemaenumbankborrowingcontractreferentialrateindexersubtype"></a>
+<a id="schema_EnumBankBorrowingContractReferentialRateIndexerSubType"></a>
+<a id="tocSenumbankborrowingcontractreferentialrateindexersubtype"></a>
+<a id="tocsenumbankborrowingcontractreferentialrateindexersubtype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"TJLP"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</p>
+
+<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>SEM_INDEXADOR_TAXA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>PRE_FIXADO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TR_TBF</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TJLP</td>
+</tr>
+<tr>
+<td>**</td>
+<td>LIBOR</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TLP</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTRAS_TAXAS_POS_FIXADAS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CDI</td>
+</tr>
+<tr>
+<td>**</td>
+<td>SELIC</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTRAS_TAXAS_FLUTUANTES</td>
+</tr>
+<tr>
+<td>**</td>
+<td>IGPM</td>
+</tr>
+<tr>
+<td>**</td>
+<td>IPCA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>IPCC</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTROS_INDICES_PRECO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TCR_PRE</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TCR_POS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TRFC_PRE</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TRFC_POS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTROS_INDEXADORES</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_EnumBankBorrowingWarrantySubType">EnumBankBorrowingWarrantySubType</h2>
 
 <p><a id="schemaenumbankborrowingwarrantysubtype"></a>
@@ -13071,7 +13527,7 @@ a.a. - ao ano</p>
 <a id="tocSenumbankborrowingwarrantysubtype"></a>
 <a id="tocsenumbankborrowingwarrantysubtype"></a></p>
 
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"ACOES_DEBENTURES"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO"</span><span class="w">
 
 </span></code></pre></div>
 
@@ -18147,38 +18603,55 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028-01-15T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"instalmentPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEMANAL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"dueFirstInstalmentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstInstalmentDueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-15"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.29</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"interestRates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EFETIVA"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"interestRateType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLES"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"taxPeriodicity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"calculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.21/25"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"taxType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOMINAL"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"CET"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"amortizationSchedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAC"</span><span class="w">
+            </span><span class="nl">"referentialRateIndexerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRE_FIXADO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"referentialRateIndexerSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TJLP"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"referentialRateIndexerAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"postFixedRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"financeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"cnpjGuarantor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="nl">"contractedFees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"feeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excesso em Conta"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCESSO_CONTA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeChargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNICA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MINIMO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chargerate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -18381,14 +18854,13 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"warranties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractedWarranties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"warrantyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CESSAO_DIREITOS_CREDITORIOS"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACOES_DEBENTURES"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="nl">"warrantySubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"warrantyAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
