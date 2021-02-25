@@ -27,6 +27,7 @@ paths:
         - $ref: ./parameters/AccountsCheckDigit.yaml
         - $ref: ./parameters/Page.yaml
         - $ref: ./parameters/PageSize.yaml
+        - $ref: ./parameters/AccountsType.yaml
       responses:
         "200":
           description: Dados de identificação de conta obtidos com sucesso.
@@ -120,6 +121,9 @@ paths:
         - $ref: ./parameters/AccountsCheckDigit.yaml
         - $ref: ./parameters/Page.yaml
         - $ref: ./parameters/PageSize.yaml
+        - $ref: ./parameters/FromBookingDate.yaml
+        - $ref: ./parameters/ToBookingDate.yaml
+        - $ref: ./parameters/AccountsCreditDebitIndicator.yaml
       responses:
         "200":
           description: Dados de Transações de crédito e débito realizadas e autorizadas obtidos com sucesso.

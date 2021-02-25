@@ -21,6 +21,7 @@ paths:
       parameters:
         - $ref: ./parameters/Page.yaml
         - $ref: ./parameters/PageSize.yaml
+        - $ref: ./parameters/CreditCardNetwork.yaml
       responses:
         '200':
           description: Dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
@@ -107,6 +108,10 @@ paths:
       parameters:
         - $ref: ./parameters/Page.yaml
         - $ref: ./parameters/PageSize.yaml
+        - $ref: ./parameters/FromTransactionDate.yaml
+        - $ref: ./parameters/ToTransactionDate.yaml
+        - $ref: ./parameters/CreditCardTransactionType.yaml
+        - $ref: ./parameters/CreditCardPayeeMCC.yaml
       responses:
         '200':
           description: Dados das transações relativas à conta de pagamento pós-paga.
@@ -138,6 +143,7 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/503'
         '504':
           $ref: './schemas/ErrorHTTP.yaml#/504'
+
   /credit-cards/bill:
     get:
       tags:
@@ -148,6 +154,8 @@ paths:
       parameters:
         - $ref: ./parameters/Page.yaml
         - $ref: ./parameters/PageSize.yaml
+        - $ref: ./parameters/FromDueDate.yaml
+        - $ref: ./parameters/ToDueDate.yaml
       responses:
         '200':
           description: Dados referentes à fatura da conta de pagamento pós-paga.
