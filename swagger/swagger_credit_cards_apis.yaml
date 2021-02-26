@@ -150,14 +150,14 @@ paths:
                                     description: |
                                       Número de identificação do cartão:  corresponde aos 4 últimos dígitos
                                     maxLength: 4
-                                    example: '4453'
+                                    example: 4453
                                   isMultipleCreditCard:
                                     type: boolean
                                     description: |
                                       Informa se a conta de Pagamento pós paga é Múltipla. "Cartões  denominados múltiplos possuem tanto a função crédito quanto a débito, devendo o proprietário do cartão, no momento de sua utilização, informar se o pagamento é na função crédito (que leva a um pagamento futuro, por meio de uma fatura do cartão de crédito) ou na função débito".
                                       Fonte: Tipos de cartão - Banco Central do Brasilwww.bcb.gov.br › port ›folder_serie_I_tipos_de_
                                       cartao
-                                    example: 'true'
+                                    example: true
                   links:
                     $ref: '#/paths/~1accounts~1bill/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
@@ -332,7 +332,7 @@ paths:
                     $ref: '#/paths/~1accounts~1bill/get/responses/200/content/application~1json/schema/properties/meta'
                 example:
                   data:
-                    creditCardAccount:
+                    creditCardAccounts:
                       limits:
                         creditCardAccountId: XXZTR3459087
                         requestDateTime: '2020-07-21T08:30:00Z'

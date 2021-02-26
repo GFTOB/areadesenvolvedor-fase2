@@ -1585,10 +1585,10 @@ components:
         number:
           type: string
           maxLength: 20
-          pattern: '\d{20}|^NA$'
+          pattern: '^\d{8,20}$|^NA$'
           description: |
             Número da conta
-          example: '24550245'
+          example: '94088392'
         checkDigit:
           type: string
           maxLength: 1
@@ -1733,14 +1733,14 @@ components:
           maxLength: 10
           format: DateString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          example: '2018-01-05T08:30:00Z'
+          example: '2018-01-05'
         disbursementDate:
           type: string
           description: Data do Desembolso do valor contratado. Especificação RFC-3339
           maxLength: 10
           format: DateString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          example: '2018-01-15T08:30:00Z'
+          example: '2018-01-15'
         contractAmount:
           type: number
           maxLength: 19
@@ -1761,7 +1761,7 @@ components:
           format: DateString
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: Data de vencimento Final da operação. Especificação RFC-3339
-          example: '2028-01-15T08:30:00Z'
+          example: '2028-01-15'
         instalmentPeriodicity:
           $ref: '#/components/schemas/EnumBankBorrowingContractInstalmentPeriodicity'
         firstInstalmentDueDate:
@@ -1970,17 +1970,17 @@ components:
           type: number
           maxLength: 3
           description: Prazo Remanescente em meses do contrato referente à Modalidade de Crédito informada
-          example: '57'
+          example: 57
         dueInstalments:
           type: number
           maxLength: 3
           description: 'Quantidade de prestações a vencer. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
-          example: '57'
+          example: 57
         pastDueInstalments:
           type: number
           maxLength: 3
           description: 'Quantidade de prestações vencidas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
-          example: '73'
+          example: 73
         ballonPayment:
           $ref: '#/components/schemas/BankBorrowingBallonPayment'
     BankBorrowingInstalmentsBank:
@@ -2043,7 +2043,7 @@ components:
           type: number
           maxLength: 3
           description: Quantidade total de parcelas pagas do contrato referente à Modalidade de Crédito informada
-          example: '73'
+          example: 73
         nonRegulatedCharge:
           $ref: '#/components/schemas/BankBorrowingNonRegulatedCharge'
         contractOutstandingBalance:
@@ -2192,7 +2192,7 @@ components:
         businessCustomers:
           $ref: '#/components/schemas/BusinessFinancialRelationCustomers'
     BusinessFinancialRelationCustomers:
-      type: array
+      type: object
       description: Conjunto de informações cadastrais do Cliente pessoa jurídica.
       items:
         type: object
@@ -2215,7 +2215,6 @@ components:
         - requestDateTime
         - updateDateTime
         - cnpjNumber
-        - otherDocuments
         - companyName
         - parties
         - contacts
@@ -2480,30 +2479,30 @@ components:
           type: number
           maxLength: 12
           description: Valor da transação. Expresso em valor monetário com 2 casas decimais
-          example: '100.87'
+          example: 100.87
         transactionDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: Data lançamento da transação
           maxLength: 10
-          example: 2020-12-30'
+          example: '2020-12-30'
         postBillDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: Data de postagem na fatura
           maxLength: 10
-          example: 2020-12-30'
+          example: '2020-12-30'
         payeeMCC:
           type: number
           maxLength: 4
           description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
-          example: 8299'
+          example: 8299
         payeeAdditionalInfo:
           type: string
           pattern: \w*\W*
           maxLength: 100
           description: Identificação do Recebedor da transação
-          example: MIYQZ86345'
+          example: MIYQZ86345
     CreditCardAccountsBilling:
       type: object
       description: Conjunto de informações de conta de pagamento pós-paga
@@ -2890,14 +2889,14 @@ components:
           description: |
             Número de identificação do cartão:  corresponde aos 4 últimos dígitos
           maxLength: 4
-          example: '4453'
+          example: 4453
         isMultipleCreditCard:
           type: boolean
           description: |
             Informa se a conta de Pagamento pós paga é Múltipla. "Cartões  denominados múltiplos possuem tanto a função crédito quanto a débito, devendo o proprietário do cartão, no momento de sua utilização, informar se o pagamento é na função crédito (que leva a um pagamento futuro, por meio de uma fatura do cartão de crédito) ou na função débito".
             Fonte: Tipos de cartão - Banco Central do Brasilwww.bcb.gov.br › port ›folder_serie_I_tipos_de_
             cartao
-          example: 'true'
+          example: true
     CreditCardTransactionAccount:
       type: object
       required:
@@ -3966,7 +3965,7 @@ components:
         number:
           type: string
           maxLength: 20
-          pattern: '\d{20}|^NA$'
+          pattern: '^\d{8,20}$|^NA$'
           description: |
             Número da conta
           example: '24550245'
@@ -4119,7 +4118,7 @@ components:
         hasBrazilianNationality:
           type: boolean
           description: Informa se o Cliente tem nacionalidade brasileira.
-          example: 'false'
+          example: false
         otherNationality:
           $ref: '#/components/schemas/NationalityOther'
     NationalityComplementaryDocuments:
@@ -4280,10 +4279,10 @@ components:
         number:
           type: string
           maxLength: 20
-          pattern: '\d{20}|^NA$'
+          pattern: '^\d{8,20}$|^NA$'
           description: |
             Número da conta
-          example: '24550245245502452455'
+          example: '94088392'
         checkDigit:
           type: string
           maxLength: 1
@@ -4348,7 +4347,7 @@ components:
           nullable: true
           maxLength: 12
           description: Valor do saldo. Expressa em valor monetário com 2 casas decimais.
-          example: '500.00'
+          example: 500
     PersonalFinancialRelationBrand:
       type: object
       description: Objeto que define a Organização controladora do grupo de instituições financeiras
@@ -4875,42 +4874,33 @@ components:
           brand:
             name: Organização A
             companies:
-              - name: Empresa da Organização A
-                cnpjNumber: '50685362000135'
+              - name: Empresa A
+                cnpjNumber: '21128159000166'
                 businessCustomers:
                   identification:
                     requestDateTime: '2020-07-21T08:30:00Z'
-                    updateDateTime: '2020-07-21T08:30:00Z'
+                    updateDateTime: '2020-07-21T08:58:00Z'
                     cnpjNumber: '50685362000135'
-                    otherDocuments:
-                      - type: string
-                        number: string
-                        country: CAN
-                        expirationDate: '2014-03-19'
-                    companyName: string
-                    tradeName: string
-                    incorporationDate: '2014-03-19'
+                    companyName: Severino e Pedro Henrique Eletrônica Ltda
+                    incorporationDate: '2019-02-02'
                     parties:
                       - type: SOCIO
-                        civilName: Juan Kaique Cláudio Fernandes
-                        socialName: Karina
-                        startDate: string
-                        shareholding: stri
+                        civilName: Elza Milena Stefany Teixeira
+                        startDate: '2019-02-02'
+                        shareholding: '0.51'
                         documentType: CPF
-                        documentNumber: string
-                        documentAdditionalInfo: string
-                        documentCountry: CAN
-                        documentExpirationDate: '2014-03-19'
+                        documentNumber: '73677831148'
+                        documentCountry: BRA
                     contacts:
                       postalAddresses:
                         - isMain: true
-                          address: 'Av Naburo Ykesaki, 1270'
-                          additionalInfo: Fundos
-                          districtName: Centro
-                          townName: Marília
-                          ibgeTownCode: '3550308'
+                          address: 'Rua Ormando Chisto, 395'
+                          additionalInfo: Loja B
+                          districtName: São Judas Tadeu
+                          townName: Colatina
+                          ibgeTownCode: '3201506'
                           countrySubDivision: SP
-                          postCode: '17500001'
+                          postCode: '29700650'
                           country: Brasil
                           countryCode: BRA
                           geographicCoordinates:
@@ -4921,12 +4911,12 @@ components:
                           type: FIXO
                           additionalInfo: string
                           countryCallingCode: '55'
-                          areaCode: '19'
+                          areaCode: '27'
                           number: '29875132'
-                          phoneExtension: string
+                          phoneExtension: '932'
                       emails:
                         - isMain: true
-                          email: karinafernandes-81@br.inter.net
+                          email: elzamilenastefanyteixeira-81@br.inter.net
         links:
           self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
           first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
@@ -5021,7 +5011,7 @@ components:
           $ref: '#/components/schemas/Meta'
       example:
         data:
-          creditCardAccount:
+          creditCardAccounts:
             limits:
               creditCardAccountId: XXZTR3459087
               requestDateTime: '2020-07-21T08:30:00Z'
@@ -5100,68 +5090,63 @@ components:
       example:
         data:
           brand:
-            name: Organização A
+            name: Organização D
             companies:
-              - name: Empresa da Organização A
-                cnpjNumber: '50685362000135'
+              - name: Empresa D
+                cnpjNumber: '68005525000153'
                 personalCustomers:
                   identification:
-                    requestDateTime: '2020-07-21T08:30:00Z'
-                    updateDateTime: '2020-07-21T08:30:00Z'
+                    requestDateTime: '2021-01-28T08:30:00Z'
+                    updateDateTime: '2021-01-28T08:30:00Z'
                     documents:
-                      cpfNumber: '25872252137'
-                      passportNumber: '75253468744594820620'
+                      cpfNumber: NA
+                      passportNumber: '79416097'
                       passportCountry: CAN
-                      passportExpirationDate: '2014-03-19'
+                      passportExpirationDate: '2024-04-31'
                     otherDocuments:
-                      - type: CNH
-                        typeAdditionalInfo: string
-                        number: string
-                        checkDigit: string
-                        additionalInfo: string
-                        expirationDate: '2014-03-19'
+                      - type: RNE
+                        number: '15291908'
+                        checkDigit: P
+                        expirationDate: '2025-03-19'
                     nationality:
                       hasBrazilianNationality: false
                       otherNationality:
-                        additionalInfo: USA
+                        additionalInfo: CAN
                         complementaryDocuments:
                           - type: SOCIAL SEC
                             number: '423929299'
-                            expirationDate: '2014-03-19'
+                            expirationDate: '2030-03-19'
                     civilName: Juan Kaique Cláudio Fernandes
-                    socialName: string
+                    socialName: Karina
                     filiation:
-                      - type: MAE
-                        additionalInfo: string
-                        civilName: string
-                        socialName: string
-                    birthDate: '2014-03-19'
-                    maritalStatusCode: SOLTEIRO
-                    maritalStatusAdditionalInfo: string
-                    gender: FEMININO
+                      - type: 1_FILIACAO
+                        civilName: Luís Fernando Caio Fernandes
+                      - type: 2_FILIACAO
+                        civilName: Yolanda Penteado
+                    birthDate: '1958-05-02'
+                    maritalStatusCode: OUTROS
+                    maritalStatusAdditionalInfo: SEPARADO_EXTRAJUDICIALMENTE
+                    sex: MASCULINO
                     contacts:
                       postalAddresses:
                         - isMain: true
-                          address: 'Av Naburo Ykesaki, 1270'
-                          additionalInfo: Fundos
-                          districtName: Centro
-                          townName: Marília
-                          ibgeTownCode: '3550308'
-                          countrySubDivision: SP
-                          postCode: '17500001'
+                          address: 'Rua Ormando Chisto, 395'
+                          districtName: São Judas Tadeu
+                          townName: Vitória
+                          ibgeTownCode: '3201506'
+                          countrySubDivision: ES
+                          postCode: '29700650'
                           country: Brasil
                           countryCode: BRA
                           geographicCoordinates:
-                            latitude: '-90.8365180'
-                            longitude: '-180.836519'
+                            latitude: '-19.5498025'
+                            longitude: '-40.6272813'
                       phones:
                         - isMain: true
                           type: FIXO
-                          additionalInfo: string
                           countryCallingCode: '55'
-                          areaCode: '19'
+                          areaCode: '27'
                           number: '29875132'
-                          phoneExtension: string
                       emails:
                         - isMain: true
                           email: karinafernandes-81@br.inter.net
@@ -5210,7 +5195,6 @@ components:
         - creditDebitType
         - transactionIdentification
         - type
-        - additionalInfo
         - amount
         - transactionDate
         - payer
@@ -5250,17 +5234,17 @@ components:
         payer:
           type: string
           maxLength: 14
-          pattern: '\d{14}|^NA$'
+          pattern: '^\d{11}$|^\d{14}$|^NA$'
           description: |
             Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
-          example: '3456798700'
+          example: NA
         payee:
           type: string
           maxLength: 14
-          pattern: '\d{14}|^NA$'
+          pattern: '^\d{11}$|^\d{14}$|^NA$'
           description: |
             Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
-          example: '2976798722'
+          example: NA
     Transactions:
       type: object
       description: |
@@ -5293,10 +5277,10 @@ components:
         number:
           type: string
           maxLength: 20
-          pattern: '\d{20}|^NA$'
+          pattern: '^\d{8,20}$|^NA$'
           description: |
             Número da conta
-          example: '24550245'
+          example: '94088392'
         checkDigit:
           type: string
           maxLength: 1
