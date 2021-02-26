@@ -6469,8 +6469,7 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
@@ -8057,8 +8056,7 @@ This operation does not require authentication
 <a id="tocSbankborrowingcontract"></a>
 <a id="tocsbankborrowingcontract"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
@@ -8127,12 +8125,6 @@ This operation does not require authentication
 <td>string</td>
 <td>true</td>
 <td>Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: <br>- <strong>CNPJ da instituição:</strong> 8 (oito) posições iniciais;<br>- <strong>Modalidade da operação:</strong> 4 (quatro) posições;<br>- <strong>Tipo do cliente:</strong> 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);<br>- <strong>Código do cliente:</strong> O número de posições varia conforme o tipo do cliente:<br>  1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;<br>  2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;<br>  3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;<br>- <strong>Código do contrato:</strong> 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.</td>
-</tr>
-<tr>
-<td>example</td>
-<td>any</td>
-<td>false</td>
-<td></td>
 </tr>
 <tr>
 <td>requestDateTime</td>
@@ -8259,8 +8251,7 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
@@ -8343,8 +8334,7 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
@@ -8446,13 +8436,13 @@ This operation does not require authentication
 <td>feeName</td>
 <td>string</td>
 <td>true</td>
-<td>Denominação da Tarifa avulsa</td>
+<td>Denominação da Tarifa pactuada</td>
 </tr>
 <tr>
 <td>feeCode</td>
 <td>string</td>
 <td>true</td>
-<td>Sigla identificadora da tarifa avulsa</td>
+<td>Sigla identificadora da tarifa pactuada</td>
 </tr>
 <tr>
 <td>feeChargeType</td>
@@ -18603,8 +18593,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
