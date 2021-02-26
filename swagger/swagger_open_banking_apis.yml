@@ -1985,6 +1985,7 @@ components:
           $ref: '#/components/schemas/BankBorrowingBallonPayment'
     BankBorrowingInstalmentsBank:
       type: object
+      description: Conjunto de informações de operações de crédito contratadas
       required:
         - instalments
       properties:

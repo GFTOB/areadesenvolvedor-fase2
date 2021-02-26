@@ -920,6 +920,7 @@ paths:
                     properties:
                       bankBorrowing:
                         type: object
+                        description: Conjunto de informações de operações de crédito contratadas
                         required:
                           - instalments
                         properties:
