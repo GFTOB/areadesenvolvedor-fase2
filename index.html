@@ -2421,7 +2421,7 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 
 <h2 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica'>Identificação Pessoa Jurídica</h2>
 
-<p><a id="opIdgetBusinessCustomersIdentification"></a></p>
+<p><a id="opIdgetBusinessCustomersIdentifications"></a></p>
 
 <blockquote>
 <p>Exemplo de código</p>
@@ -2438,7 +2438,7 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/identification</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/identifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -2448,18 +2448,18 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/identification"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/identifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/identification"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/identifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /customers/v1/business-customers/identification</code></p>
+<p><code>GET /customers/v1/business-customers/identifications</code></p>
 
 <table><thead>
 <tr>
@@ -2523,6 +2523,13 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>undefined</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>false</td>
+<td>none</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -2693,18 +2700,6 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <td>None</td>
 </tr>
 <tr>
-<td>410</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Indica que o recurso não está mais disponível.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
 <td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
@@ -2716,18 +2711,6 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
-<tr>
-<td>503</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>O serviço está indisponível no momento.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>504</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>O servidor não pôde responder em tempo hábil.</td>
-<td>None</td>
-</tr>
 </tbody></table>
 
 <aside class="success">
@@ -2736,7 +2719,7 @@ This operation does not require authentication
 
 <h2 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica'>Qualificação Pessoa Jurídica</h2>
 
-<p><a id="opIdgetBusinessCustomersQualification"></a></p>
+<p><a id="opIdgetBusinessCustomersQualifications"></a></p>
 
 <blockquote>
 <p>Exemplo de código</p>
@@ -2753,7 +2736,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/qualification</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/qualifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -2763,18 +2746,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/qualification"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/qualifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/qualification"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/qualifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /customers/v1/business-customers/qualification</code></p>
+<p><code>GET /customers/v1/business-customers/qualifications</code></p>
 
 <table><thead>
 <tr>
@@ -2838,6 +2821,13 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>undefined</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>false</td>
+<td>none</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -2962,18 +2952,6 @@ This operation does not require authentication
 <td>None</td>
 </tr>
 <tr>
-<td>410</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Indica que o recurso não está mais disponível.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
 <td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
@@ -2985,18 +2963,6 @@ This operation does not require authentication
 <td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
-<tr>
-<td>503</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>O serviço está indisponível no momento.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>504</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>O servidor não pôde responder em tempo hábil.</td>
-<td>None</td>
-</tr>
 </tbody></table>
 
 <aside class="success">
@@ -3005,7 +2971,7 @@ This operation does not require authentication
 
 <h2 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica'>Relacionamento Pessoa Jurídica</h2>
 
-<p><a id="opIdgetBusinessCustomersFinancialRelation"></a></p>
+<p><a id="opIdgetBusinessCustomersRelationships"></a></p>
 
 <blockquote>
 <p>Exemplo de código</p>
@@ -3022,7 +2988,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/financial-relation</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/relationships</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -3032,18 +2998,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/financial-relation"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/relationships"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/financial-relation"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/relationships"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /customers/v1/business-customers/financial-relation</code></p>
+<p><code>GET /customers/v1/business-customers/relationships</code></p>
 
 <table><thead>
 <tr>
@@ -3107,6 +3073,13 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>undefined</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>false</td>
+<td>none</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -3230,18 +3203,6 @@ This operation does not require authentication
 <td>None</td>
 </tr>
 <tr>
-<td>410</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Indica que o recurso não está mais disponível.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
 <td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
@@ -3253,18 +3214,6 @@ This operation does not require authentication
 <td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
-<tr>
-<td>503</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>O serviço está indisponível no momento.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>504</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>O servidor não pôde responder em tempo hábil.</td>
-<td>None</td>
-</tr>
 </tbody></table>
 
 <aside class="success">
@@ -3273,7 +3222,7 @@ This operation does not require authentication
 
 <h2 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural'>Identificação Pessoa Natural</h2>
 
-<p><a id="opIdgetPersonalCustomersIdentification"></a></p>
+<p><a id="opIdgetPersonalCustomersIdentifications"></a></p>
 
 <blockquote>
 <p>Exemplo de código</p>
@@ -3290,7 +3239,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/identification</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/identifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -3300,18 +3249,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/identification"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/identifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/identification"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/identifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /customers/v1/personal-customers/identification</code></p>
+<p><code>GET /customers/v1/personal-customers/identifications</code></p>
 
 <table><thead>
 <tr>
@@ -3374,6 +3323,13 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>undefined</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>false</td>
+<td>none</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -3561,18 +3517,6 @@ This operation does not require authentication
 <td>None</td>
 </tr>
 <tr>
-<td>410</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Indica que o recurso não está mais disponível.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
 <td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
@@ -3584,18 +3528,6 @@ This operation does not require authentication
 <td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
-<tr>
-<td>503</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>O serviço está indisponível no momento.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>504</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>O servidor não pôde responder em tempo hábil.</td>
-<td>None</td>
-</tr>
 </tbody></table>
 
 <aside class="success">
@@ -3604,7 +3536,7 @@ This operation does not require authentication
 
 <h2 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural'>Qualificação Pessoa Natural</h2>
 
-<p><a id="opIdgetPersonalCustomersQualification"></a></p>
+<p><a id="opIdgetPersonalCustomersQualifications"></a></p>
 
 <blockquote>
 <p>Exemplo de código</p>
@@ -3621,7 +3553,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/qualification</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/qualifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -3631,18 +3563,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/qualification"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/qualifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/qualification"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/qualifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /customers/v1/personal-customers/qualification</code></p>
+<p><code>GET /customers/v1/personal-customers/qualifications</code></p>
 
 <table><thead>
 <tr>
@@ -3706,6 +3638,13 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>undefined</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>false</td>
+<td>none</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -3826,18 +3765,6 @@ This operation does not require authentication
 <td>None</td>
 </tr>
 <tr>
-<td>410</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Indica que o recurso não está mais disponível.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
 <td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
@@ -3849,18 +3776,6 @@ This operation does not require authentication
 <td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
-<tr>
-<td>503</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>O serviço está indisponível no momento.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>504</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>O servidor não pôde responder em tempo hábil.</td>
-<td>None</td>
-</tr>
 </tbody></table>
 
 <aside class="success">
@@ -3869,7 +3784,7 @@ This operation does not require authentication
 
 <h2 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural'>Relacionamento Pessoa Natural</h2>
 
-<p><a id="opIdgetPersonalCustomersFinancialRelation"></a></p>
+<p><a id="opIdgetPersonalCustomersRelationships"></a></p>
 
 <blockquote>
 <p>Exemplo de código</p>
@@ -3886,7 +3801,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/financial-relation</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/relationships</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -3896,18 +3811,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/financial-relation"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/relationships"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/financial-relation"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/relationships"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /customers/v1/personal-customers/financial-relation</code></p>
+<p><code>GET /customers/v1/personal-customers/relationships</code></p>
 
 <table><thead>
 <tr>
@@ -3971,6 +3886,13 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>undefined</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>false</td>
+<td>none</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -4092,18 +4014,6 @@ This operation does not require authentication
 <td>None</td>
 </tr>
 <tr>
-<td>410</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Indica que o recurso não está mais disponível.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
-<td>None</td>
-</tr>
-<tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
 <td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
@@ -4113,18 +4023,6 @@ This operation does not require authentication
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
 <td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>503</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>O serviço está indisponível no momento.</td>
-<td>None</td>
-</tr>
-<tr>
-<td>504</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
