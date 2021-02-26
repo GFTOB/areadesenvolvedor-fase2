@@ -2440,13 +2440,25 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/identifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-customer-ip-address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-interaction-id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-customer-user-agent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">'authorization'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-auth-date'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-customer-ip-address'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-interaction-id'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
+    <span class="p">}</span>
 
 <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/identifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
@@ -2456,6 +2468,11 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/identifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-customer-ip-address"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-interaction-id"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-customer-user-agent"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
@@ -2524,11 +2541,39 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 </tr>
 </thead><tbody>
 <tr>
-<td>undefined</td>
-<td>undefined</td>
-<td>undefined</td>
+<td>authorization</td>
+<td>header</td>
+<td>string</td>
 <td>false</td>
-<td>none</td>
+<td>à definir</td>
+</tr>
+<tr>
+<td>x-fapi-auth-date</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</td>
+</tr>
+<tr>
+<td>x-fapi-customer-ip-address</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>O endereço IP do usuário se estiver atualmente logado com o receptor.</td>
+</tr>
+<tr>
+<td>x-fapi-interaction-id</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</td>
+</tr>
+<tr>
+<td>x-customer-user-agent</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Indica o user-agent que o usuário utiliza.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -2545,6 +2590,14 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <td>Quantidade total de registros por páginas.</td>
 </tr>
 </tbody></table>
+
+<h4 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>x-fapi-auth-date</strong>: Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</p>
+
+<p><strong>x-fapi-customer-ip-address</strong>: O endereço IP do usuário se estiver atualmente logado com o receptor.</p>
+
+<p><strong>x-fapi-interaction-id</strong>: Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</p>
 
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
@@ -2738,13 +2791,25 @@ This operation does not require authentication
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/qualifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-customer-ip-address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-interaction-id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-customer-user-agent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">'authorization'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-auth-date'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-customer-ip-address'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-interaction-id'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
+    <span class="p">}</span>
 
 <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/qualifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
@@ -2754,6 +2819,11 @@ This operation does not require authentication
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/qualifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-customer-ip-address"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-interaction-id"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-customer-user-agent"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
@@ -2822,11 +2892,39 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>undefined</td>
-<td>undefined</td>
-<td>undefined</td>
+<td>authorization</td>
+<td>header</td>
+<td>string</td>
 <td>false</td>
-<td>none</td>
+<td>à definir</td>
+</tr>
+<tr>
+<td>x-fapi-auth-date</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</td>
+</tr>
+<tr>
+<td>x-fapi-customer-ip-address</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>O endereço IP do usuário se estiver atualmente logado com o receptor.</td>
+</tr>
+<tr>
+<td>x-fapi-interaction-id</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</td>
+</tr>
+<tr>
+<td>x-customer-user-agent</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Indica o user-agent que o usuário utiliza.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -2843,6 +2941,14 @@ This operation does not require authentication
 <td>Quantidade total de registros por páginas.</td>
 </tr>
 </tbody></table>
+
+<h4 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>x-fapi-auth-date</strong>: Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</p>
+
+<p><strong>x-fapi-customer-ip-address</strong>: O endereço IP do usuário se estiver atualmente logado com o receptor.</p>
+
+<p><strong>x-fapi-interaction-id</strong>: Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</p>
 
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
@@ -2990,13 +3096,25 @@ This operation does not require authentication
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/business-customers/relationships</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-customer-ip-address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-interaction-id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-customer-user-agent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">'authorization'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-auth-date'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-customer-ip-address'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-interaction-id'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
+    <span class="p">}</span>
 
 <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/business-customers/relationships"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
@@ -3006,6 +3124,11 @@ This operation does not require authentication
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/business-customers/relationships"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-customer-ip-address"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-interaction-id"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-customer-user-agent"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
@@ -3074,11 +3197,39 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>undefined</td>
-<td>undefined</td>
-<td>undefined</td>
+<td>authorization</td>
+<td>header</td>
+<td>string</td>
 <td>false</td>
-<td>none</td>
+<td>à definir</td>
+</tr>
+<tr>
+<td>x-fapi-auth-date</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</td>
+</tr>
+<tr>
+<td>x-fapi-customer-ip-address</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>O endereço IP do usuário se estiver atualmente logado com o receptor.</td>
+</tr>
+<tr>
+<td>x-fapi-interaction-id</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</td>
+</tr>
+<tr>
+<td>x-customer-user-agent</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Indica o user-agent que o usuário utiliza.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -3095,6 +3246,14 @@ This operation does not require authentication
 <td>Quantidade total de registros por páginas.</td>
 </tr>
 </tbody></table>
+
+<h4 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>x-fapi-auth-date</strong>: Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</p>
+
+<p><strong>x-fapi-customer-ip-address</strong>: O endereço IP do usuário se estiver atualmente logado com o receptor.</p>
+
+<p><strong>x-fapi-interaction-id</strong>: Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</p>
 
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
@@ -3241,13 +3400,25 @@ This operation does not require authentication
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/identifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-customer-ip-address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-interaction-id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-customer-user-agent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">'authorization'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-auth-date'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-customer-ip-address'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-interaction-id'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
+    <span class="p">}</span>
 
 <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/identifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
@@ -3257,6 +3428,11 @@ This operation does not require authentication
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/identifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-customer-ip-address"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-interaction-id"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-customer-user-agent"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
@@ -3324,11 +3500,39 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>undefined</td>
-<td>undefined</td>
-<td>undefined</td>
+<td>authorization</td>
+<td>header</td>
+<td>string</td>
 <td>false</td>
-<td>none</td>
+<td>à definir</td>
+</tr>
+<tr>
+<td>x-fapi-auth-date</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</td>
+</tr>
+<tr>
+<td>x-fapi-customer-ip-address</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>O endereço IP do usuário se estiver atualmente logado com o receptor.</td>
+</tr>
+<tr>
+<td>x-fapi-interaction-id</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</td>
+</tr>
+<tr>
+<td>x-customer-user-agent</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Indica o user-agent que o usuário utiliza.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -3345,6 +3549,14 @@ This operation does not require authentication
 <td>Quantidade total de registros por páginas.</td>
 </tr>
 </tbody></table>
+
+<h4 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>x-fapi-auth-date</strong>: Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</p>
+
+<p><strong>x-fapi-customer-ip-address</strong>: O endereço IP do usuário se estiver atualmente logado com o receptor.</p>
+
+<p><strong>x-fapi-interaction-id</strong>: Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</p>
 
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
@@ -3555,13 +3767,25 @@ This operation does not require authentication
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/qualifications</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-customer-ip-address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-interaction-id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-customer-user-agent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">'authorization'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-auth-date'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-customer-ip-address'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-interaction-id'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
+    <span class="p">}</span>
 
 <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/qualifications"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
@@ -3571,6 +3795,11 @@ This operation does not require authentication
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/qualifications"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-customer-ip-address"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-interaction-id"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-customer-user-agent"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
@@ -3639,11 +3868,39 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>undefined</td>
-<td>undefined</td>
-<td>undefined</td>
+<td>authorization</td>
+<td>header</td>
+<td>string</td>
 <td>false</td>
-<td>none</td>
+<td>à definir</td>
+</tr>
+<tr>
+<td>x-fapi-auth-date</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</td>
+</tr>
+<tr>
+<td>x-fapi-customer-ip-address</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>O endereço IP do usuário se estiver atualmente logado com o receptor.</td>
+</tr>
+<tr>
+<td>x-fapi-interaction-id</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</td>
+</tr>
+<tr>
+<td>x-customer-user-agent</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Indica o user-agent que o usuário utiliza.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -3660,6 +3917,14 @@ This operation does not require authentication
 <td>Quantidade total de registros por páginas.</td>
 </tr>
 </tbody></table>
+
+<h4 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>x-fapi-auth-date</strong>: Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</p>
+
+<p><strong>x-fapi-customer-ip-address</strong>: O endereço IP do usuário se estiver atualmente logado com o receptor.</p>
+
+<p><strong>x-fapi-interaction-id</strong>: Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</p>
 
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
@@ -3803,13 +4068,25 @@ This operation does not require authentication
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/customers/v1/personal-customers/relationships</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-customer-ip-address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-interaction-id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-customer-user-agent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
 
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">'authorization'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-auth-date'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-customer-ip-address'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-interaction-id'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
+    <span class="p">}</span>
 
 <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/customers/v1/personal-customers/relationships"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
@@ -3819,6 +4096,11 @@ This operation does not require authentication
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/customers/v1/personal-customers/relationships"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-customer-ip-address"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-interaction-id"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-customer-user-agent"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
@@ -3887,11 +4169,39 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>undefined</td>
-<td>undefined</td>
-<td>undefined</td>
+<td>authorization</td>
+<td>header</td>
+<td>string</td>
 <td>false</td>
-<td>none</td>
+<td>à definir</td>
+</tr>
+<tr>
+<td>x-fapi-auth-date</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</td>
+</tr>
+<tr>
+<td>x-fapi-customer-ip-address</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>O endereço IP do usuário se estiver atualmente logado com o receptor.</td>
+</tr>
+<tr>
+<td>x-fapi-interaction-id</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</td>
+</tr>
+<tr>
+<td>x-customer-user-agent</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Indica o user-agent que o usuário utiliza.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -3908,6 +4218,14 @@ This operation does not require authentication
 <td>Quantidade total de registros por páginas.</td>
 </tr>
 </tbody></table>
+
+<h4 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural-especificacao-em-oas-3-0-detailed-descriptions'>Detailed descriptions</h4>
+
+<p><strong>x-fapi-auth-date</strong>: Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</p>
+
+<p><strong>x-fapi-customer-ip-address</strong>: O endereço IP do usuário se estiver atualmente logado com o receptor.</p>
+
+<p><strong>x-fapi-interaction-id</strong>: Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</p>
 
 <blockquote>
 <p>O comando acima retorna uma estrutura json como essa:</p>
@@ -8649,12 +8967,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div>
-
-<p>Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada</p>
-
-<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
-
+</span></code></pre></div><h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -8677,7 +8990,6 @@ This operation does not require authentication
 <a id="schema_BankBorrowingInstalmentsData"></a>
 <a id="tocSbankborrowinginstalmentsdata"></a>
 <a id="tocsbankborrowinginstalmentsdata"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"instalments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -8698,12 +9010,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div>
-
-<p>Conjunto de informações de operação de crédito contratadas</p>
-
-<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
-
+</span></code></pre></div><h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -8716,7 +9023,7 @@ This operation does not require authentication
 <td>bankBorrowing</td>
 <td><a href="#schemabankborrowinginstalmentsbank">BankBorrowingInstalmentsBank</a></td>
 <td>true</td>
-<td>Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -8726,7 +9033,6 @@ This operation does not require authentication
 <a id="schema_BankBorrowingPaymentBank"></a>
 <a id="tocSbankborrowingpaymentbank"></a>
 <a id="tocsbankborrowingpaymentbank"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
@@ -18606,7 +18912,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>data</td>
 <td><a href="#schemabankborrowinginstalmentsdata">BankBorrowingInstalmentsData</a></td>
 <td>true</td>
-<td>Conjunto de informações de operação de crédito contratadas</td>
+<td></td>
 </tr>
 <tr>
 <td>links</td>

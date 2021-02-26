@@ -915,14 +915,11 @@ paths:
                 properties:
                   data:
                     type: object
-                    description: Conjunto de informações de operação de crédito contratadas
                     required:
                       - bankBorrowing
                     properties:
                       bankBorrowing:
                         type: object
-                        description: |
-                          Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
                         required:
                           - instalments
                         properties:

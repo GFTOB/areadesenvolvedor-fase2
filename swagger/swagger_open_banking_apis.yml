@@ -63,12 +63,11 @@ paths:
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getBusinessCustomersIdentifications
       parameters:
-        - headers:
-            - Authorization
-            - x-fapi-auth-date
-            - x-fapi-customer-ip-address
-            - x-fapi-interaction-id
-            - x-customer-user-agent
+        - $ref: '#/components/parameters/authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -143,12 +142,11 @@ paths:
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getBusinessCustomersQualifications
       parameters:
-        - headers:
-            - Authorization
-            - x-fapi-auth-date
-            - x-fapi-customer-ip-address
-            - x-fapi-interaction-id
-            - x-customer-user-agent
+        - $ref: '#/components/parameters/authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -223,12 +221,11 @@ paths:
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getBusinessCustomersRelationships
       parameters:
-        - headers:
-            - Authorization
-            - x-fapi-auth-date
-            - x-fapi-customer-ip-address
-            - x-fapi-interaction-id
-            - x-customer-user-agent
+        - $ref: '#/components/parameters/authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -302,12 +299,11 @@ paths:
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getPersonalCustomersIdentifications
       parameters:
-        - headers:
-            - Authorization
-            - x-fapi-auth-date
-            - x-fapi-customer-ip-address
-            - x-fapi-interaction-id
-            - x-customer-user-agent
+        - $ref: '#/components/parameters/authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -382,12 +378,11 @@ paths:
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getPersonalCustomersQualifications
       parameters:
-        - headers:
-            - Authorization
-            - x-fapi-auth-date
-            - x-fapi-customer-ip-address
-            - x-fapi-interaction-id
-            - x-customer-user-agent
+        - $ref: '#/components/parameters/authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -462,12 +457,11 @@ paths:
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getPersonalCustomersRelationships
       parameters:
-        - headers:
-            - Authorization
-            - x-fapi-auth-date
-            - x-fapi-customer-ip-address
-            - x-fapi-interaction-id
-            - x-customer-user-agent
+        - $ref: '#/components/parameters/authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -1991,8 +1985,6 @@ components:
           $ref: '#/components/schemas/BankBorrowingBallonPayment'
     BankBorrowingInstalmentsBank:
       type: object
-      description: |
-        Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
       required:
         - instalments
       properties:
@@ -2000,7 +1992,6 @@ components:
           $ref: '#/components/schemas/BankBorrowingInstalments'
     BankBorrowingInstalmentsData:
       type: object
-      description: Conjunto de informações de operação de crédito contratadas
       required:
         - bankBorrowing
       properties:
@@ -5378,6 +5369,45 @@ components:
         maxLength: 20
         pattern: '\d{20}|^NA$'
       required: true
+    authorization:
+      name: authorization
+      in: header
+      description: à definir
+      required: false
+      schema:
+        type: string
+    xFapiAuthDate:
+      name: x-fapi-auth-date
+      in: header
+      description: |
+        Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC
+      required: false
+      schema:
+        type: string
+        pattern: '^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\d{4} \d{2}:\d{2}:\d{2}  (GMT|UTC)$'
+    xFapiCustomerIpAddress:
+      name: x-fapi-customer-ip-address
+      in: header
+      description: |
+        O endereço IP do usuário se estiver atualmente logado com o receptor.
+      required: false
+      schema:
+        type: string
+    xFapiInteractionId:
+      name: x-fapi-interaction-id
+      in: header
+      description: |
+        Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.
+      required: false
+      schema:
+        type: string
+    xCustomerUserAgent:
+      name: x-customer-user-agent
+      in: header
+      description: Indica o user-agent que o usuário utiliza.
+      required: false
+      schema:
+        type: string
     ContractId:
       name: contractId
       in: path
