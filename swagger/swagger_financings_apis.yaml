@@ -91,13 +91,13 @@ paths:
                       financings:
                         type: object
                         description: |
-                          Conjunto de informações de operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de financiamentos contratadas
                         required:
                           - contract
                         properties:
                           contract:
                             type: object
-                            description: Conjunto de informações referentes à identificação da operação de crédito
+                            description: Conjunto de informações referentes à identificação da operação de crédito de financiamentos
                             required:
                               - ipocCode
                               - requestDateTime
@@ -588,13 +588,13 @@ paths:
                       financings:
                         type: object
                         description: |
-                          Conjunto de informações de operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de financiamentos contratadas
                         required:
                           - warranties
                         properties:
                           warranties:
                             type: object
-                            description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+                            description: Conjunto de informações referentes às garantias que avalizam a operação de crédito de financiamentos contratada
                             required:
                               - requestDateTime
                               - currency
@@ -765,13 +765,13 @@ paths:
                     properties:
                       financings:
                         type: object
-                        description: Conjunto de informações de operações de crédito contratadas
+                        description: Conjunto de informações de operações de crédito de financiamentos contratadas
                         required:
                           - instalments
                         properties:
                           instalments:
                             type: object
-                            description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
+                            description: Conjunto de informações referentes às parcelas / prestações da operação de crédito de financiamentos contratada
                             required:
                               - requestDateTime
                               - contractRemainingMonths
@@ -898,13 +898,13 @@ paths:
                       financings:
                         type: object
                         description: |
-                          Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de financiamentos contratadas
                         required:
                           - payments
                         properties:
                           payments:
                             type: object
-                            description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                            description: Conjunto de informações dos pagamentos referentes às operações de crédito de financiamentos contratadas
                             required:
                               - requestDateTime
                               - paidInstalments

@@ -4942,7 +4942,7 @@ components:
           example: '200.00'
     FinancingsContract:
       type: object
-      description: Conjunto de informações referentes à identificação da operação de crédito
+      description: Conjunto de informações referentes à identificação da operação de crédito de financiamentos
       required:
         - ipocCode
         - requestDateTime
@@ -5077,7 +5077,7 @@ components:
     FinancingsContractBank:
       type: object
       description: |
-        Conjunto de informações de operações de crédito contratadas
+        Conjunto de informações de operações de crédito de financiamentos contratadas
       required:
         - contract
       properties:
@@ -5216,7 +5216,7 @@ components:
           example: 0.07
     FinancingsInstalments:
       type: object
-      description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
+      description: Conjunto de informações referentes às parcelas / prestações da operação de crédito de financiamentos contratada
       required:
         - requestDateTime
         - contractRemainingMonths
@@ -5249,7 +5249,7 @@ components:
           $ref: '#/components/schemas/FinancingsBalloonPayment'
     FinancingsInstalmentsBank:
       type: object
-      description: Conjunto de informações de operações de crédito contratadas
+      description: Conjunto de informações de operações de crédito de financiamentos contratadas
       required:
         - instalments
       properties:
@@ -5272,7 +5272,7 @@ components:
     FinancingsPaymentBank:
       type: object
       description: |
-        Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+        Conjunto de informações de operações de crédito de financiamentos contratadas
       required:
         - payments
       properties:
@@ -5280,7 +5280,7 @@ components:
           $ref: '#/components/schemas/FinancingsPayments'
     FinancingsPayments:
       type: object
-      description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+      description: Conjunto de informações dos pagamentos referentes às operações de crédito de financiamentos contratadas
       required:
         - requestDateTime
         - paidInstalments
@@ -5434,7 +5434,7 @@ components:
           maxLength: 19
     FinancingsWarranties:
       type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito de financiamentos contratada
       required:
         - requestDateTime
         - currency
@@ -5465,7 +5465,7 @@ components:
     FinancingsWarrantiesBank:
       type: object
       description: |
-        Conjunto de informações de operações de crédito contratadas
+        Conjunto de informações de operações de crédito de financiamentos contratadas
       required:
         - warranties
       properties:
