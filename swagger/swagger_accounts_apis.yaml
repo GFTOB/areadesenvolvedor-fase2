@@ -606,14 +606,14 @@ paths:
                                       pattern: '^\d{11}$|^\d{14}$|^NA$'
                                       description: |
                                         Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
-                                      example: NA
+                                      example: '43908445778'
                                     payee:
                                       type: string
                                       maxLength: 14
                                       pattern: '^\d{11}$|^\d{14}$|^NA$'
                                       description: |
                                         Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
-                                      example: NA
+                                      example: '67890854360'
                                 minItems: 1
                                 description: |
                                   Lista dos lançamentos referentes às transações realizadas e de pagamento autorizado para as contas de: depósito à vista, poupança e de pagamento pré-paga
