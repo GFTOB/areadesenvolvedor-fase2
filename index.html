@@ -769,7 +769,13 @@
                     <a href="#tocS_EnumCompletedAuthorisedPaymentIndicator" class="toc-h2 toc-link" data-title="EnumCompletedAuthorisedPaymentIndicator">EnumCompletedAuthorisedPaymentIndicator</a>
                   </li>
                   <li>
+                    <a href="#tocS_EnumContractProductSubTypeFinancings" class="toc-h2 toc-link" data-title="EnumContractProductSubTypeFinancings">EnumContractProductSubTypeFinancings</a>
+                  </li>
+                  <li>
                     <a href="#tocS_EnumContractProductSubTypeLoans" class="toc-h2 toc-link" data-title="EnumContractProductSubTypeLoans">EnumContractProductSubTypeLoans</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumContractProductTypeFinancings" class="toc-h2 toc-link" data-title="EnumContractProductTypeFinancings">EnumContractProductTypeFinancings</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumContractProductTypeLoans" class="toc-h2 toc-link" data-title="EnumContractProductTypeLoans">EnumContractProductTypeLoans</a>
@@ -8810,8 +8816,8 @@ This operation does not require authentication
         </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINANCIAMENTOS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -19174,6 +19180,84 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 </tr>
 </tbody></table>
 
+<h2 id="tocS_EnumContractProductSubTypeFinancings">EnumContractProductSubTypeFinancings</h2>
+
+<p><a id="schemaenumcontractproductsubtypefinancings"></a>
+<a id="schema_EnumContractProductSubTypeFinancings"></a>
+<a id="tocSenumcontractproductsubtypefinancings"></a>
+<a id="tocsenumcontractproductsubtypefinancings"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</p>
+
+<h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>AQUISICAO_BENS_VEICULOS_AUTOMOTORES</td>
+</tr>
+<tr>
+<td>**</td>
+<td>AQUISICAO_BENS_OUTROS_BENS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>MICROCREDITO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CUSTEIO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>INVESTIMENTO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>INDUSTRIALIZACAO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>COMERCIALIZACAO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>FINANCIAMENTO_HABITACIONAL_SFH</td>
+</tr>
+<tr>
+<td>**</td>
+<td>FINANCIAMENTO_HABITACIONAL_EXCETO_SFH</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_EnumContractProductSubTypeLoans">EnumContractProductSubTypeLoans</h2>
 
 <p><a id="schemaenumcontractproductsubtypeloans"></a>
@@ -19249,6 +19333,60 @@ Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equ
 <tr>
 <td>**</td>
 <td>CAPITAL_GIRO_TETO_ROTATIVO</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumContractProductTypeFinancings">EnumContractProductTypeFinancings</h2>
+
+<p><a id="schemaenumcontractproducttypefinancings"></a>
+<a id="schema_EnumContractProductTypeFinancings"></a>
+<a id="tocSenumcontractproducttypefinancings"></a>
+<a id="tocsenumcontractproducttypefinancings"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"FINANCIAMENTOS"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+Financiamentos, Financiamentos rurais  e Financiamentos imobiliários  </p>
+
+<h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Financiamentos, Financiamentos rurais  e Financiamentos imobiliários</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>FINANCIAMENTOS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>FINANCIAMENTOS_RURAIS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>FINANCIAMENTOS_IMOBILIARIOS</td>
 </tr>
 </tbody></table>
 
@@ -21208,8 +21346,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINANCIAMENTOS"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -21288,15 +21426,15 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 <tr>
 <td>productType</td>
-<td><a href="#schemaenumbankborrowingcontractproducttype">EnumBankBorrowingContractProductType</a></td>
+<td><a href="#schemaenumcontractproducttypefinancings">EnumContractProductTypeFinancings</a></td>
 <td>true</td>
-<td>Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários</td>
+<td>Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Financiamentos, Financiamentos rurais  e Financiamentos imobiliários</td>
 </tr>
 <tr>
 <td>productSubType</td>
-<td><a href="#schemaenumbankborrowingcontractproductsubtype">EnumBankBorrowingContractProductSubType</a></td>
+<td><a href="#schemaenumcontractproductsubtypefinancings">EnumContractProductSubTypeFinancings</a></td>
 <td>true</td>
-<td>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</td>
+<td>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</td>
 </tr>
 <tr>
 <td>contractDate</td>
@@ -21396,8 +21534,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
     </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINANCIAMENTOS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -21478,8 +21616,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
       </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINANCIAMENTOS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -22270,8 +22408,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
         </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINANCIAMENTOS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">

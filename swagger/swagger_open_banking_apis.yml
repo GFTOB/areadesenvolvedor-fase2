@@ -4473,6 +4473,22 @@ components:
       description: |
         Indicador da transação
       example: TRANSACAO_EFETIVADA
+    EnumContractProductSubTypeFinancings:
+      type: string
+      description: |
+        Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+        Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH
+      enum:
+        - AQUISICAO_BENS_VEICULOS_AUTOMOTORES
+        - AQUISICAO_BENS_OUTROS_BENS
+        - MICROCREDITO
+        - CUSTEIO
+        - INVESTIMENTO
+        - INDUSTRIALIZACAO
+        - COMERCIALIZACAO
+        - FINANCIAMENTO_HABITACIONAL_SFH
+        - FINANCIAMENTO_HABITACIONAL_EXCETO_SFH
+      example: AQUISICAO_BENS_VEICULOS_AUTOMOTORES
     EnumContractProductSubTypeLoans:
       type: string
       description: |
@@ -4489,6 +4505,16 @@ components:
         - CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS
         - CAPITAL_GIRO_TETO_ROTATIVO
       example: CREDITO_PESSOAL_SEM_CONSIGNACAO
+    EnumContractProductTypeFinancings:
+      type: string
+      description: |
+        Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+        Financiamentos, Financiamentos rurais  e Financiamentos imobiliários  
+      enum:
+        - FINANCIAMENTOS
+        - FINANCIAMENTOS_RURAIS
+        - FINANCIAMENTOS_IMOBILIARIOS
+      example: FINANCIAMENTOS
     EnumContractProductTypeLoans:
       type: string
       description: |
@@ -4992,9 +5018,9 @@ components:
             Denominação/Identificação do nome da Modalidade da Operação de Crédito divulgado ao cliente
           example: AD
         productType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractProductType'
+          $ref: '#/components/schemas/EnumContractProductTypeFinancings'
         productSubType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractProductSubType'
+          $ref: '#/components/schemas/EnumContractProductSubTypeFinancings'
         contractDate:
           type: string
           description: Data de contratação da operação de crédito. Especificação RFC-3339
