@@ -91,13 +91,13 @@ paths:
                       loans:
                         type: object
                         description: |
-                          Conjunto de informações de operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de empréstimos contratadas
                         required:
                           - contract
                         properties:
                           contract:
                             type: object
-                            description: Conjunto de informações referentes à identificação da operação de crédito
+                            description: Conjunto de informações referentes à identificação da operação de crédito de empréstimo
                             required:
                               - ipocCode
                               - requestDateTime
@@ -149,23 +149,17 @@ paths:
                               productType:
                                 type: string
                                 description: |
-                                  Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
-                                  Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários
+                                  Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+                                  Empréstimos
                                 enum:
-                                  - ADIANTAMENTO_A_DEPOSITANTES
-                                  - DIREITOS_CREDITORIOS_DESCONTADOS
                                   - EMPRESTIMO
-                                  - FINANCIAMENTOS
-                                  - FINANCIAMENTOS_RURAIS
-                                  - FINANCIAMENTOS_IMOBILIARIOS
-                                example: ADIANTAMENTO_A_DEPOSITANTES
+                                example: EMPRESTIMO
                               productSubType:
                                 type: string
                                 description: |
-                                  Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
-                                  Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH
+                                  Sub tipo da modalidades de crédito Empréstimos contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+                                  Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo
                                 enum:
-                                  - ADIANTAMENTO_A_DEPOSITANTES
                                   - CREDITO_PESSOAL_SEM_CONSIGNACAO
                                   - CREDITO_PESSOAL_COM_CONSIGNACAO
                                   - HOME_EQUITY
@@ -175,21 +169,7 @@ paths:
                                   - CAPITAL_GIRO_PRAZO_VENCIMENTO_ATE_365_DIAS
                                   - CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS
                                   - CAPITAL_GIRO_TETO_ROTATIVO
-                                  - DESCONTO_DUPLICATAS
-                                  - DESCONTO_CHEQUES
-                                  - ANTECIPACAO_FATURA_CARTAO_CREDITO
-                                  - OUTROS_DIREITOS_CREDITORIOS_DESCONTADOS
-                                  - OUTROS_TITULOS_DESCONTADOS
-                                  - AQUISICAO_BENS_VEICULOS_AUTOMOTORES
-                                  - AQUISICAO_BENS_OUTROS_BENS
-                                  - MICROCREDITO
-                                  - CUSTEIO
-                                  - INVESTIMENTO
-                                  - INDUSTRIALIZACAO
-                                  - COMERCIALIZACAO
-                                  - FINANCIAMENTO_HABITACIONAL_SFH
-                                  - FINANCIAMENTO_HABITACIONAL_EXCETO_SFH
-                                example: ADIANTAMENTO_A_DEPOSITANTES
+                                example: CREDITO_PESSOAL_SEM_CONSIGNACAO
                               contractDate:
                                 type: string
                                 description: Data de contratação da operação de crédito. Especificação RFC-3339
@@ -460,7 +440,7 @@ paths:
                                       maxLength: 19
                                       example: 50
                                 minItems: 1
-                              financeCharges:
+                              contractedFinanceCharges:
                                 type: array
                                 description: Lista que traz os encargos pactuados no contrato
                                 items:
@@ -492,6 +472,12 @@ paths:
                                       maxLength: 19
                                       example: 0.07
                                 minItems: 1
+                              cnpjConsignee:
+                                type: string
+                                maxLength: 14
+                                pattern: '\d{14}'
+                                description: |
+                                  CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado
                   links:
                     type: object
                     description: Referências para outros recusos da API requisitada.

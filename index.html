@@ -769,6 +769,12 @@
                     <a href="#tocS_EnumCompletedAuthorisedPaymentIndicator" class="toc-h2 toc-link" data-title="EnumCompletedAuthorisedPaymentIndicator">EnumCompletedAuthorisedPaymentIndicator</a>
                   </li>
                   <li>
+                    <a href="#tocS_EnumContractProductSubTypeLoans" class="toc-h2 toc-link" data-title="EnumContractProductSubTypeLoans">EnumContractProductSubTypeLoans</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumContractProductTypeLoans" class="toc-h2 toc-link" data-title="EnumContractProductTypeLoans">EnumContractProductTypeLoans</a>
+                  </li>
+                  <li>
                     <a href="#tocS_EnumCountrySubDivision" class="toc-h2 toc-link" data-title="EnumCountrySubDivision">EnumCountrySubDivision</a>
                   </li>
                   <li>
@@ -7586,8 +7592,8 @@ This operation does not require authentication
         </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPRESTIMO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_PESSOAL_SEM_CONSIGNACAO"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -7623,13 +7629,14 @@ This operation does not require authentication
             </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"contractedFinanceCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"chargeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
           </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -19167,6 +19174,130 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 </tr>
 </tbody></table>
 
+<h2 id="tocS_EnumContractProductSubTypeLoans">EnumContractProductSubTypeLoans</h2>
+
+<p><a id="schemaenumcontractproductsubtypeloans"></a>
+<a id="schema_EnumContractProductSubTypeLoans"></a>
+<a id="tocSenumcontractproductsubtypeloans"></a>
+<a id="tocsenumcontractproductsubtypeloans"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"CREDITO_PESSOAL_SEM_CONSIGNACAO"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Sub tipo da modalidades de crédito Empréstimos contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo</p>
+
+<h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Sub tipo da modalidades de crédito Empréstimos contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>CREDITO_PESSOAL_SEM_CONSIGNACAO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CREDITO_PESSOAL_COM_CONSIGNACAO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>HOME_EQUITY</td>
+</tr>
+<tr>
+<td>**</td>
+<td>MICROCREDITO_PRODUTIVO_ORIENTADO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CHEQUE_ESPECIAL</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CONTA_GARANTIDA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CAPITAL_GIRO_PRAZO_VENCIMENTO_ATE_365_DIAS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CAPITAL_GIRO_TETO_ROTATIVO</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumContractProductTypeLoans">EnumContractProductTypeLoans</h2>
+
+<p><a id="schemaenumcontractproducttypeloans"></a>
+<a id="schema_EnumContractProductTypeLoans"></a>
+<a id="tocSenumcontractproducttypeloans"></a>
+<a id="tocsenumcontractproducttypeloans"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"EMPRESTIMO"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
+Empréstimos</p>
+
+<h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Empréstimos</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>EMPRESTIMO</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_EnumCountrySubDivision">EnumCountrySubDivision</h2>
 
 <p><a id="schemaenumcountrysubdivision"></a>
@@ -24929,8 +25060,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPRESTIMO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_PESSOAL_SEM_CONSIGNACAO"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -24966,18 +25097,19 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
       </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"contractedFinanceCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"chargeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Conjunto de informações referentes à identificação da operação de crédito</p>
+<p>Conjunto de informações referentes à identificação da operação de crédito de empréstimo</p>
 
 <h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -25009,15 +25141,15 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 <tr>
 <td>productType</td>
-<td><a href="#schemaenumbankborrowingcontractproducttype">EnumBankBorrowingContractProductType</a></td>
+<td><a href="#schemaenumcontractproducttypeloans">EnumContractProductTypeLoans</a></td>
 <td>true</td>
-<td>Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários</td>
+<td>Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Empréstimos</td>
 </tr>
 <tr>
 <td>productSubType</td>
-<td><a href="#schemaenumbankborrowingcontractproductsubtype">EnumBankBorrowingContractProductSubType</a></td>
+<td><a href="#schemaenumcontractproductsubtypeloans">EnumContractProductSubTypeLoans</a></td>
 <td>true</td>
-<td>Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH</td>
+<td>Sub tipo da modalidades de crédito Empréstimos contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)<br>Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo</td>
 </tr>
 <tr>
 <td>contractDate</td>
@@ -25098,10 +25230,16 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>[Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito]</td>
 </tr>
 <tr>
-<td>financeCharges</td>
+<td>contractedFinanceCharges</td>
 <td>[<a href="#schemaloansfinancecharge">LoansFinanceCharge</a>]</td>
 <td>false</td>
 <td>Lista que traz os encargos pactuados no contrato</td>
+</tr>
+<tr>
+<td>cnpjConsignee</td>
+<td>string</td>
+<td>false</td>
+<td>CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado</td>
 </tr>
 </tbody></table>
 
@@ -25117,8 +25255,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
     </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPRESTIMO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_PESSOAL_SEM_CONSIGNACAO"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -25154,19 +25292,20 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
         </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"contractedFinanceCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"chargeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Conjunto de informações de operações de crédito contratadas</p>
+<p>Conjunto de informações de operações de crédito de empréstimos contratadas</p>
 
 <h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
 
@@ -25182,7 +25321,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>contract</td>
 <td><a href="#schemaloanscontract">LoansContract</a></td>
 <td>true</td>
-<td>Conjunto de informações referentes à identificação da operação de crédito</td>
+<td>Conjunto de informações referentes à identificação da operação de crédito de empréstimo</td>
 </tr>
 </tbody></table>
 
@@ -25199,8 +25338,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
       </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPRESTIMO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_PESSOAL_SEM_CONSIGNACAO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -25236,13 +25375,14 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
           </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"contractedFinanceCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"chargeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -25260,7 +25400,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>loans</td>
 <td><a href="#schemaloanscontractbank">LoansContractBank</a></td>
 <td>true</td>
-<td>Conjunto de informações de operações de crédito contratadas</td>
+<td>Conjunto de informações de operações de crédito de empréstimos contratadas</td>
 </tr>
 </tbody></table>
 
@@ -25991,8 +26131,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
         </span><span class="nl">"ipocCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AD"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADIANTAMENTO_A_DEPOSITANTES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPRESTIMO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_PESSOAL_SEM_CONSIGNACAO"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-05"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"disbursementDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"contractAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">26000</span><span class="p">,</span><span class="w">
@@ -26028,13 +26168,14 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
             </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"financeCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"contractedFinanceCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"chargeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_POR_ATRASO"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"chargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"chargeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
           </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"cnpjConsignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
