@@ -801,9 +801,9 @@ paths:
       description: Método para obter registros de relacionamentos com a instituição financeira e de representantes da pessoa jurídica mantidos na instituição transmissora.
       operationId: getCustomersBusinessRelationships
       parameters:
-        - name: authorization
+        - name: Authorization
           in: header
-          description: à definir
+          description: a definir
           required: false
           schema:
             type: string

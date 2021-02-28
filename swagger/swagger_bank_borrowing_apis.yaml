@@ -765,7 +765,7 @@ paths:
                                     type: number
                                     description: Traz o valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
                                     maxLength: 19
-                                    example: '200.00'
+                                    example: 200
                               chargesOverParcel:
                                 type: array
                                 description: 'Lista das tarifas que foram pagas fora da parcela, só para pagamento avulso.'
@@ -797,7 +797,7 @@ paths:
                                       type: number
                                       description: Traz o valor do pagamento da tarifa avulsa fora da parcela. Expresso em valor monetário com 2 casas decimais
                                       maxLength: 19
-                                      example: '200.00'
+                                      example: 200
                               taxesOverParcel:
                                 type: array
                                 description: Lista dos encargos que foram pagos fora da parcela
@@ -830,7 +830,7 @@ paths:
                                     taxAmount:
                                       type: number
                                       description: Traz o valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com 2 casas decimais
-                                      example: '200.00'
+                                      example: 200
                   links:
                     type: object
                     description: Referências para outros recusos da API requisitada.
