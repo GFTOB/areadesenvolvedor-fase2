@@ -4910,11 +4910,13 @@ components:
           type: string
           description: Sigla identificadora da tarifa avulsa fora da parcela
           maxLength: 140
+          pattern: \w*\W*
           example: aval_bem
         feePaidDate:
           type: string
           description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
           maxLength: 10
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
         feeAmount:
           type: number
@@ -5301,7 +5303,7 @@ components:
           $ref: '#/components/schemas/FinancingsNonRegulatedCharge'
         contractOutstandingBalance:
           type: string
-          maxLength: 12
+          maxLength: 19
           description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 2 casas decimais'
           example: '11400.00'
         releases:
@@ -5429,6 +5431,7 @@ components:
           type: number
           description: Traz o valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com 2 casas decimais
           example: 200
+          maxLength: 19
     FinancingsWarranties:
       type: object
       description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
@@ -5689,11 +5692,13 @@ components:
           type: string
           description: Sigla identificadora da tarifa avulsa fora da parcela
           maxLength: 140
+          pattern: \w*\W*
           example: aval_bem
         feePaidDate:
           type: string
           description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
           maxLength: 10
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
         feeAmount:
           type: number
@@ -6080,7 +6085,7 @@ components:
           $ref: '#/components/schemas/InvoiceFinancingsNonRegulatedCharge'
         contractOutstandingBalance:
           type: string
-          maxLength: 12
+          maxLength: 19
           description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 2 casas decimais'
           example: '11400.00'
         releases:
@@ -6208,6 +6213,7 @@ components:
           type: number
           description: Traz o valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com 2 casas decimais
           example: 200
+          maxLength: 19
     InvoiceFinancingsWarranties:
       type: object
       description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
@@ -6342,11 +6348,13 @@ components:
           type: string
           description: Sigla identificadora da tarifa avulsa fora da parcela
           maxLength: 140
+          pattern: \w*\W*
           example: aval_bem
         feePaidDate:
           type: string
           description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
           maxLength: 10
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
         feeAmount:
           type: number
@@ -6652,7 +6660,7 @@ components:
           example: 0.07
     LoansInstalments:
       type: object
-      description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
+      description: Conjunto de informações referentes à identificação da operação de crédito de empréstimo
       required:
         - requestDateTime
         - contractRemainingMonths
@@ -6685,7 +6693,7 @@ components:
           $ref: '#/components/schemas/LoansBalloonPayment'
     LoansInstalmentsBank:
       type: object
-      description: Conjunto de informações de operações de crédito contratadas
+      description: Conjunto de informações de operações de crédito de empréstimos contratadas
       required:
         - instalments
       properties:
@@ -6708,7 +6716,7 @@ components:
     LoansPaymentBank:
       type: object
       description: |
-        Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+        Conjunto de informações de operações de crédito de empréstimos contratadas
       required:
         - payments
       properties:
@@ -6716,7 +6724,7 @@ components:
           $ref: '#/components/schemas/LoansPayments'
     LoansPayments:
       type: object
-      description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+      description: Conjunto de informações referentes à identificação da operação de crédito de empréstimo
       required:
         - requestDateTime
         - paidInstalments
@@ -6739,7 +6747,7 @@ components:
           $ref: '#/components/schemas/LoansNonRegulatedCharge'
         contractOutstandingBalance:
           type: string
-          maxLength: 12
+          maxLength: 19
           description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 2 casas decimais'
           example: '11400.00'
         releases:
@@ -6875,9 +6883,10 @@ components:
           type: number
           description: Traz o valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com 2 casas decimais
           example: 200
+          maxLength: 19
     LoansWarranties:
       type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      description: Conjunto de informações referentes à identificação da operação de crédito de empréstimo
       required:
         - requestDateTime
         - currency
@@ -6908,7 +6917,7 @@ components:
     LoansWarrantiesBank:
       type: object
       description: |
-        Conjunto de informações de operações de crédito contratadas
+        Conjunto de informações de operações de crédito de empréstimos contratadas
       required:
         - warranties
       properties:
@@ -8195,11 +8204,13 @@ components:
           type: string
           description: Sigla identificadora da tarifa avulsa fora da parcela
           maxLength: 140
+          pattern: \w*\W*
           example: aval_bem
         feePaidDate:
           type: string
           description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
           maxLength: 10
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
         feeAmount:
           type: number
@@ -8586,7 +8597,7 @@ components:
           $ref: '#/components/schemas/UnarrangedAccountOverdraftNonRegulatedCharge'
         contractOutstandingBalance:
           type: string
-          maxLength: 12
+          maxLength: 19
           description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 2 casas decimais'
           example: '11400.00'
         releases:
@@ -8714,6 +8725,7 @@ components:
           type: number
           description: Traz o valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com 2 casas decimais
           example: 200
+          maxLength: 19
     UnarrangedAccountOverdraftWarranties:
       type: object
       description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada

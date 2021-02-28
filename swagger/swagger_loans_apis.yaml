@@ -574,13 +574,13 @@ paths:
                       loans:
                         type: object
                         description: |
-                          Conjunto de informações de operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de empréstimos contratadas
                         required:
                           - warranties
                         properties:
                           warranties:
                             type: object
-                            description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+                            description: Conjunto de informações referentes à identificação da operação de crédito de empréstimo
                             required:
                               - requestDateTime
                               - currency
@@ -751,13 +751,13 @@ paths:
                     properties:
                       loans:
                         type: object
-                        description: Conjunto de informações de operações de crédito contratadas
+                        description: Conjunto de informações de operações de crédito de empréstimos contratadas
                         required:
                           - instalments
                         properties:
                           instalments:
                             type: object
-                            description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
+                            description: Conjunto de informações referentes à identificação da operação de crédito de empréstimo
                             required:
                               - requestDateTime
                               - contractRemainingMonths
@@ -884,13 +884,13 @@ paths:
                       loans:
                         type: object
                         description: |
-                          Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de empréstimos contratadas
                         required:
                           - payments
                         properties:
                           payments:
                             type: object
-                            description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                            description: Conjunto de informações referentes à identificação da operação de crédito de empréstimo
                             required:
                               - requestDateTime
                               - paidInstalments
@@ -923,7 +923,7 @@ paths:
                                     example: BRL
                               contractOutstandingBalance:
                                 type: string
-                                maxLength: 12
+                                maxLength: 19
                                 description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 2 casas decimais'
                                 example: '11400.00'
                               releases:
@@ -979,11 +979,13 @@ paths:
                                       type: string
                                       description: Sigla identificadora da tarifa avulsa fora da parcela
                                       maxLength: 140
+                                      pattern: \w*\W*
                                       example: aval_bem
                                     feePaidDate:
                                       type: string
                                       description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
                                       maxLength: 10
+                                      pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                                       example: '2020-01-10'
                                     feeAmount:
                                       type: number
@@ -1023,6 +1025,7 @@ paths:
                                       type: number
                                       description: Traz o valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com 2 casas decimais
                                       example: 200
+                                      maxLength: 19
                   links:
                     $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
