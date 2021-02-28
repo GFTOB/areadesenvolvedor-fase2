@@ -91,13 +91,13 @@ paths:
                       unarrangedAccountOverdraft:
                         type: object
                         description: |
-                          Conjunto de informações de operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
                         required:
                           - contract
                         properties:
                           contract:
                             type: object
-                            description: Conjunto de informações referentes à identificação da operação de crédito
+                            description: Conjunto de informações referentes à identificação da operação de crédito de adiantamento a depositantes
                             required:
                               - ipocCode
                               - requestDateTime
@@ -117,6 +117,7 @@ paths:
                               - amortizationSchedule
                               - interestRates
                               - contractedFees
+                              - contractedFinancesCharges
                             properties:
                               ipocCode:
                                 type: string
@@ -460,12 +461,11 @@ paths:
                                       maxLength: 19
                                       example: 50
                                 minItems: 1
-                              financeCharges:
+                              contractedFinancesCharges:
                                 type: array
                                 description: Lista que traz os encargos pactuados no contrato
                                 items:
                                   type: object
-                                  description: Conjunto de informações referentes à identificação da operação de crédito
                                   required:
                                     - chargeType
                                   properties:
@@ -771,7 +771,7 @@ paths:
                         properties:
                           instalments:
                             type: object
-                            description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
+                            description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
                             required:
                               - requestDateTime
                               - contractRemainingMonths
@@ -898,13 +898,13 @@ paths:
                       unarrangedAccountOverdraft:
                         type: object
                         description: |
-                          Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
                         required:
                           - payments
                         properties:
                           payments:
                             type: object
-                            description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                            description: Conjunto de informações dos pagamentos referentes às operações de crédito de adiantamento a depositantes contratadas
                             required:
                               - requestDateTime
                               - paidInstalments
@@ -1034,6 +1034,7 @@ paths:
                                       type: string
                                       description: 'Traz a data de efetivação do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339'
                                       pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                      maxLength: 10
                                       example: '2020-01-10'
                                     taxAmount:
                                       type: number

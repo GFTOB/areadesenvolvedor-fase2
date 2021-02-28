@@ -91,13 +91,13 @@ paths:
                       invoiceFinancings:
                         type: object
                         description: |
-                          Conjunto de informações de operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de direitos creditórios descontados contratadas
                         required:
                           - contract
                         properties:
                           contract:
                             type: object
-                            description: Conjunto de informações referentes à identificação da operação de crédito
+                            description: Conjunto de informações referentes à identificação da operação de crédito de direitos creditórios descontados
                             required:
                               - ipocCode
                               - requestDateTime
@@ -117,6 +117,7 @@ paths:
                               - amortizationSchedule
                               - interestRates
                               - contractedFees
+                              - contractedFinancesCharges
                             properties:
                               ipocCode:
                                 type: string
@@ -436,7 +437,7 @@ paths:
                                       maxLength: 19
                                       example: 50
                                 minItems: 1
-                              financeCharges:
+                              contractedFinancesCharges:
                                 type: array
                                 description: Lista que traz os encargos pactuados no contrato
                                 items:
@@ -564,13 +565,13 @@ paths:
                       invoiceFinancings:
                         type: object
                         description: |
-                          Conjunto de informações de operações de crédito contratadas
+                          Conjunto de informações de operações de direitos creditórios descontados contratadas
                         required:
                           - warranties
                         properties:
                           warranties:
                             type: object
-                            description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+                            description: Conjunto de informações referentes às garantias que avalizam a operação de direitos creditórios descontados contratada
                             required:
                               - requestDateTime
                               - currency
@@ -685,7 +686,6 @@ paths:
                                       description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
                                       example: 200
                                 minItems: 1
-                                description: Lista das garantias que avalizam a operação de crédito contratada
                   links:
                     $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
@@ -741,7 +741,7 @@ paths:
                     properties:
                       invoiceFinancings:
                         type: object
-                        description: Conjunto de informações de operações de crédito contratadas
+                        description: Conjunto de informações de operações de direitos  creditórios descontados contratadas
                         required:
                           - instalments
                         properties:
@@ -874,13 +874,13 @@ paths:
                       invoiceFinancings:
                         type: object
                         description: |
-                          Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                          Conjunto de informações de operações de crédito de direitos creditórios descontados contratadas
                         required:
                           - payments
                         properties:
                           payments:
                             type: object
-                            description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+                            description: Conjunto de informações dos pagamentos referentes às operações de direitos creditórios descontados  contratadas
                             required:
                               - requestDateTime
                               - paidInstalments
@@ -1010,6 +1010,7 @@ paths:
                                       type: string
                                       description: 'Traz a data de efetivação do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339'
                                       pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                      maxLength: 10
                                       example: '2020-01-10'
                                     taxAmount:
                                       type: number

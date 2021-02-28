@@ -5114,7 +5114,7 @@ components:
           items:
             $ref: '#/components/schemas/FinancingsContractedFee'
           minItems: 1
-        financeCharges:
+        contractedFinancesCharges:
           type: array
           description: Lista que traz os encargos pactuados no contrato
           items:
@@ -5472,6 +5472,7 @@ components:
           type: string
           description: 'Traz a data de efetivação do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339'
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          maxLength: 10
           example: '2020-01-10'
         taxAmount:
           type: number
@@ -5770,7 +5771,7 @@ components:
           example: '200.00'
     InvoiceFinancingsContract:
       type: object
-      description: Conjunto de informações referentes à identificação da operação de crédito
+      description: Conjunto de informações referentes à identificação da operação de crédito de direitos creditórios descontados
       required:
         - ipocCode
         - requestDateTime
@@ -5790,6 +5791,7 @@ components:
         - amortizationSchedule
         - interestRates
         - contractedFees
+        - contractedFinancesCharges
       properties:
         ipocCode:
           type: string
@@ -5896,7 +5898,7 @@ components:
           items:
             $ref: '#/components/schemas/InvoiceFinancingsContractedFee'
           minItems: 1
-        financeCharges:
+        contractedFinancesCharges:
           type: array
           description: Lista que traz os encargos pactuados no contrato
           items:
@@ -5905,7 +5907,7 @@ components:
     InvoiceFinancingsContractBank:
       type: object
       description: |
-        Conjunto de informações de operações de crédito contratadas
+        Conjunto de informações de operações de crédito de direitos creditórios descontados contratadas
       required:
         - contract
       properties:
@@ -6077,7 +6079,7 @@ components:
           $ref: '#/components/schemas/InvoiceFinancingsBalloonPayment'
     InvoiceFinancingsInstalmentsBank:
       type: object
-      description: Conjunto de informações de operações de crédito contratadas
+      description: Conjunto de informações de operações de direitos  creditórios descontados contratadas
       required:
         - instalments
       properties:
@@ -6100,7 +6102,7 @@ components:
     InvoiceFinancingsPaymentBank:
       type: object
       description: |
-        Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+        Conjunto de informações de operações de crédito de direitos creditórios descontados contratadas
       required:
         - payments
       properties:
@@ -6108,7 +6110,7 @@ components:
           $ref: '#/components/schemas/InvoiceFinancingsPayments'
     InvoiceFinancingsPayments:
       type: object
-      description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+      description: Conjunto de informações dos pagamentos referentes às operações de direitos creditórios descontados  contratadas
       required:
         - requestDateTime
         - paidInstalments
@@ -6254,6 +6256,7 @@ components:
           type: string
           description: 'Traz a data de efetivação do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339'
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          maxLength: 10
           example: '2020-01-10'
         taxAmount:
           type: number
@@ -6262,7 +6265,7 @@ components:
           maxLength: 19
     InvoiceFinancingsWarranties:
       type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      description: Conjunto de informações referentes às garantias que avalizam a operação de direitos creditórios descontados contratada
       required:
         - requestDateTime
         - currency
@@ -6289,11 +6292,10 @@ components:
           items:
             $ref: '#/components/schemas/InvoiceFinancingsContractedWarranty'
           minItems: 1
-          description: Lista das garantias que avalizam a operação de crédito contratada
     InvoiceFinancingsWarrantiesBank:
       type: object
       description: |
-        Conjunto de informações de operações de crédito contratadas
+        Conjunto de informações de operações de direitos creditórios descontados contratadas
       required:
         - warranties
       properties:
@@ -6446,6 +6448,7 @@ components:
         - amortizationSchedule
         - interestRates
         - contractedFees
+        - contractedFinancesCharges
       properties:
         ipocCode:
           type: string
@@ -6924,6 +6927,7 @@ components:
           type: string
           description: 'Traz a data de efetivação do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339'
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          maxLength: 10
           example: '2020-01-10'
         taxAmount:
           type: number
@@ -8282,7 +8286,7 @@ components:
           example: '200.00'
     UnarrangedAccountOverdraftContract:
       type: object
-      description: Conjunto de informações referentes à identificação da operação de crédito
+      description: Conjunto de informações referentes à identificação da operação de crédito de adiantamento a depositantes
       required:
         - ipocCode
         - requestDateTime
@@ -8302,6 +8306,7 @@ components:
         - amortizationSchedule
         - interestRates
         - contractedFees
+        - contractedFinancesCharges
       properties:
         ipocCode:
           type: string
@@ -8408,7 +8413,7 @@ components:
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftContractedFee'
           minItems: 1
-        financeCharges:
+        contractedFinancesCharges:
           type: array
           description: Lista que traz os encargos pactuados no contrato
           items:
@@ -8417,7 +8422,7 @@ components:
     UnarrangedAccountOverdraftContractBank:
       type: object
       description: |
-        Conjunto de informações de operações de crédito contratadas
+        Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
       required:
         - contract
       properties:
@@ -8538,7 +8543,6 @@ components:
           pattern: \w*\W*
     UnarrangedAccountOverdraftFinanceCharge:
       type: object
-      description: Conjunto de informações referentes à identificação da operação de crédito
       required:
         - chargeType
       properties:
@@ -8556,7 +8560,7 @@ components:
           example: 0.07
     UnarrangedAccountOverdraftInstalments:
       type: object
-      description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
+      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
       required:
         - requestDateTime
         - contractRemainingMonths
@@ -8612,7 +8616,7 @@ components:
     UnarrangedAccountOverdraftPaymentBank:
       type: object
       description: |
-        Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+        Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
       required:
         - payments
       properties:
@@ -8620,7 +8624,7 @@ components:
           $ref: '#/components/schemas/UnarrangedAccountOverdraftPayments'
     UnarrangedAccountOverdraftPayments:
       type: object
-      description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+      description: Conjunto de informações dos pagamentos referentes às operações de crédito de adiantamento a depositantes contratadas
       required:
         - requestDateTime
         - paidInstalments
@@ -8766,6 +8770,7 @@ components:
           type: string
           description: 'Traz a data de efetivação do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339'
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          maxLength: 10
           example: '2020-01-10'
         taxAmount:
           type: number
