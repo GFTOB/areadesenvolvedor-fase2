@@ -721,6 +721,9 @@
                     <a href="#tocS_EnumBankBorrowingContractReferentialRateIndexerType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractReferentialRateIndexerType">EnumBankBorrowingContractReferentialRateIndexerType</a>
                   </li>
                   <li>
+                    <a href="#tocS_EnumBankBorrowingContractReferentialRateIndexerSubType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractReferentialRateIndexerSubType">EnumBankBorrowingContractReferentialRateIndexerSubType</a>
+                  </li>
+                  <li>
                     <a href="#tocS_EnumBankBorrowingContractTaxPeriodicity" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractTaxPeriodicity">EnumBankBorrowingContractTaxPeriodicity</a>
                   </li>
                   <li>
@@ -731,9 +734,6 @@
                   </li>
                   <li>
                     <a href="#tocS_EnumBankBorrowingInstalmentPeriodicity" class="toc-h2 toc-link" data-title="EnumBankBorrowingInstalmentPeriodicity">EnumBankBorrowingInstalmentPeriodicity</a>
-                  </li>
-                  <li>
-                    <a href="#tocS_EnumBankBorrowingContractReferentialRateIndexerSubType" class="toc-h2 toc-link" data-title="EnumBankBorrowingContractReferentialRateIndexerSubType">EnumBankBorrowingContractReferentialRateIndexerSubType</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumBankBorrowingWarrantySubType" class="toc-h2 toc-link" data-title="EnumBankBorrowingWarrantySubType">EnumBankBorrowingWarrantySubType</a>
@@ -17533,6 +17533,123 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 </tr>
 </tbody></table>
 
+<h2 id="tocS_EnumBankBorrowingContractReferentialRateIndexerSubType">EnumBankBorrowingContractReferentialRateIndexerSubType</h2>
+
+<p><a id="schemaenumbankborrowingcontractreferentialrateindexersubtype"></a>
+<a id="schema_EnumBankBorrowingContractReferentialRateIndexerSubType"></a>
+<a id="tocSenumbankborrowingcontractreferentialrateindexersubtype"></a>
+<a id="tocsenumbankborrowingcontractreferentialrateindexersubtype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"TJLP"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</p>
+
+<h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>SEM_INDEXADOR_TAXA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>PRE_FIXADO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TR_TBF</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TJLP</td>
+</tr>
+<tr>
+<td>**</td>
+<td>LIBOR</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TLP</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTRAS_TAXAS_POS_FIXADAS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CDI</td>
+</tr>
+<tr>
+<td>**</td>
+<td>SELIC</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTRAS_TAXAS_FLUTUANTES</td>
+</tr>
+<tr>
+<td>**</td>
+<td>IGPM</td>
+</tr>
+<tr>
+<td>**</td>
+<td>IPCA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>IPCC</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTROS_INDICES_PRECO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TCR_PRE</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TCR_POS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TRFC_PRE</td>
+</tr>
+<tr>
+<td>**</td>
+<td>TRFC_POS</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTROS_INDEXADORES</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_EnumBankBorrowingContractTaxPeriodicity">EnumBankBorrowingContractTaxPeriodicity</h2>
 
 <p><a id="schemaenumbankborrowingcontracttaxperiodicity"></a>
@@ -17762,123 +17879,6 @@ a.a. - ao ano</p>
 <tr>
 <td>**</td>
 <td>ANUAL</td>
-</tr>
-</tbody></table>
-
-<h2 id="tocS_EnumBankBorrowingContractReferentialRateIndexerSubType">EnumBankBorrowingContractReferentialRateIndexerSubType</h2>
-
-<p><a id="schemaenumbankborrowingcontractreferentialrateindexersubtype"></a>
-<a id="schema_EnumBankBorrowingContractReferentialRateIndexerSubType"></a>
-<a id="tocSenumbankborrowingcontractreferentialrateindexersubtype"></a>
-<a id="tocsenumbankborrowingcontractreferentialrateindexersubtype"></a></p>
-
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"TJLP"</span><span class="w">
-
-</span></code></pre></div>
-
-<p>Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</p>
-
-<h3 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades'>Propriedades</h3>
-
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Tipo</th>
-<th>Obrigatório</th>
-<th>Descrição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>**</td>
-<td>string</td>
-<td>false</td>
-<td>Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</td>
-</tr>
-</tbody></table>
-
-<h4 id='schemas-direitos-creditorios-descontados-parcelas-do-contrato-propriedades-enumerated-values'>Enumerated Values</h4>
-
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Código</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>**</td>
-<td>SEM_INDEXADOR_TAXA</td>
-</tr>
-<tr>
-<td>**</td>
-<td>PRE_FIXADO</td>
-</tr>
-<tr>
-<td>**</td>
-<td>TR_TBF</td>
-</tr>
-<tr>
-<td>**</td>
-<td>TJLP</td>
-</tr>
-<tr>
-<td>**</td>
-<td>LIBOR</td>
-</tr>
-<tr>
-<td>**</td>
-<td>TLP</td>
-</tr>
-<tr>
-<td>**</td>
-<td>OUTRAS_TAXAS_POS_FIXADAS</td>
-</tr>
-<tr>
-<td>**</td>
-<td>CDI</td>
-</tr>
-<tr>
-<td>**</td>
-<td>SELIC</td>
-</tr>
-<tr>
-<td>**</td>
-<td>OUTRAS_TAXAS_FLUTUANTES</td>
-</tr>
-<tr>
-<td>**</td>
-<td>IGPM</td>
-</tr>
-<tr>
-<td>**</td>
-<td>IPCA</td>
-</tr>
-<tr>
-<td>**</td>
-<td>IPCC</td>
-</tr>
-<tr>
-<td>**</td>
-<td>OUTROS_INDICES_PRECO</td>
-</tr>
-<tr>
-<td>**</td>
-<td>TCR_PRE</td>
-</tr>
-<tr>
-<td>**</td>
-<td>TCR_POS</td>
-</tr>
-<tr>
-<td>**</td>
-<td>TRFC_PRE</td>
-</tr>
-<tr>
-<td>**</td>
-<td>TRFC_POS</td>
-</tr>
-<tr>
-<td>**</td>
-<td>OUTROS_INDEXADORES</td>
 </tr>
 </tbody></table>
 
