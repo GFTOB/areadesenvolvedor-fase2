@@ -77,7 +77,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
         '400':
           description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
         '401':
@@ -116,7 +116,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseWarranties'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -155,7 +155,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseInstalments'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -206,7 +206,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponsePayments'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -225,7 +225,7 @@ paths:
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/500'
 components:
   schemas:
-    UnarrangedAccountOverdraftResponseContract:
+    ResponseUnarrangedAccountOverdraftContract:
       type: object
       required:
         - data
@@ -657,7 +657,7 @@ components:
           required:
             - totalRecords
             - totalPages
-    UnarrangedAccountOverdraftResponseInstalments:
+    ResponseUnarrangedAccountOverdraftInstalments:
       type: object
       required:
         - data
@@ -737,10 +737,10 @@ components:
                                 maxLength: 19
                                 example: '200.00'
         links:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract/properties/links'
         meta:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract/properties/meta'
-    UnarrangedAccountOverdraftResponsePayments:
+          $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract/properties/meta'
+    ResponseUnarrangedAccountOverdraftPayments:
       type: object
       required:
         - data
@@ -899,10 +899,10 @@ components:
                             example: 200
                             maxLength: 19
         links:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract/properties/links'
         meta:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract/properties/meta'
-    UnarrangedAccountOverdraftResponseWarranties:
+          $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract/properties/meta'
+    ResponseUnarrangedAccountOverdraftWarranties:
       type: object
       required:
         - data
@@ -1040,6 +1040,6 @@ components:
                       minItems: 1
                       description: Lista das garantias que avalizam a operação de crédito contratada
         links:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract/properties/links'
         meta:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract/properties/meta'
+          $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract/properties/meta'

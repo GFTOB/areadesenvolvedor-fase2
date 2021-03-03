@@ -77,7 +77,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponseContract'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
         '400':
           description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
         '401':
@@ -116,7 +116,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponseWarranties'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -155,7 +155,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponseInstalments'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -206,7 +206,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponsePayments'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -225,7 +225,7 @@ paths:
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/500'
 components:
   schemas:
-    InvoiceFinancingsResponseContract:
+    ResponseInvoiceFinancingsContract:
       type: object
       required:
         - data
@@ -662,7 +662,7 @@ components:
           required:
             - totalRecords
             - totalPages
-    InvoiceFinancingsResponseInstalments:
+    ResponseInvoiceFinancingsInstalments:
       type: object
       required:
         - data
@@ -742,10 +742,10 @@ components:
                                 maxLength: 19
                                 example: '200.00'
         links:
-          $ref: '#/components/schemas/InvoiceFinancingsResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseInvoiceFinancingsContract/properties/links'
         meta:
-          $ref: '#/components/schemas/InvoiceFinancingsResponseContract/properties/meta'
-    InvoiceFinancingsResponsePayments:
+          $ref: '#/components/schemas/ResponseInvoiceFinancingsContract/properties/meta'
+    ResponseInvoiceFinancingsPayments:
       type: object
       required:
         - data
@@ -904,10 +904,10 @@ components:
                             example: 200
                             maxLength: 19
         links:
-          $ref: '#/components/schemas/InvoiceFinancingsResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseInvoiceFinancingsContract/properties/links'
         meta:
-          $ref: '#/components/schemas/InvoiceFinancingsResponseContract/properties/meta'
-    InvoiceFinancingsResponseWarranties:
+          $ref: '#/components/schemas/ResponseInvoiceFinancingsContract/properties/meta'
+    ResponseInvoiceFinancingsWarranties:
       type: object
       required:
         - data
@@ -1044,6 +1044,6 @@ components:
                             example: 200
                       minItems: 1
         links:
-          $ref: '#/components/schemas/InvoiceFinancingsResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseInvoiceFinancingsContract/properties/links'
         meta:
-          $ref: '#/components/schemas/InvoiceFinancingsResponseContract/properties/meta'
+          $ref: '#/components/schemas/ResponseInvoiceFinancingsContract/properties/meta'

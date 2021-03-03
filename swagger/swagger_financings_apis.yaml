@@ -77,7 +77,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponseContract'
+                $ref: '#/components/schemas/ResponseFinancingsContract'
         '400':
           description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
         '401':
@@ -116,7 +116,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponseWarranties'
+                $ref: '#/components/schemas/ResponseFinancingsWarranties'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -155,7 +155,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponseInstalments'
+                $ref: '#/components/schemas/ResponseFinancingsInstalments'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -206,7 +206,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponsePayments'
+                $ref: '#/components/schemas/ResponseFinancingsPayments'
         '400':
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -225,7 +225,7 @@ paths:
           $ref: '#/paths/~1contracts~1%7BcontractId%7D/get/responses/500'
 components:
   schemas:
-    FinancingsResponseContract:
+    ResponseFinancingsContract:
       type: object
       required:
         - data
@@ -667,7 +667,7 @@ components:
           required:
             - totalRecords
             - totalPages
-    FinancingsResponseInstalments:
+    ResponseFinancingsInstalments:
       type: object
       required:
         - data
@@ -747,10 +747,10 @@ components:
                                 maxLength: 19
                                 example: '200.00'
         links:
-          $ref: '#/components/schemas/FinancingsResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseFinancingsContract/properties/links'
         meta:
-          $ref: '#/components/schemas/FinancingsResponseContract/properties/meta'
-    FinancingsResponsePayments:
+          $ref: '#/components/schemas/ResponseFinancingsContract/properties/meta'
+    ResponseFinancingsPayments:
       type: object
       required:
         - data
@@ -909,10 +909,10 @@ components:
                             example: 200
                             maxLength: 19
         links:
-          $ref: '#/components/schemas/FinancingsResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseFinancingsContract/properties/links'
         meta:
-          $ref: '#/components/schemas/FinancingsResponseContract/properties/meta'
-    FinancingsResponseWarranties:
+          $ref: '#/components/schemas/ResponseFinancingsContract/properties/meta'
+    ResponseFinancingsWarranties:
       type: object
       required:
         - data
@@ -1050,6 +1050,6 @@ components:
                       minItems: 1
                       description: Lista das garantias que avalizam a operação de crédito contratada
         links:
-          $ref: '#/components/schemas/FinancingsResponseContract/properties/links'
+          $ref: '#/components/schemas/ResponseFinancingsContract/properties/links'
         meta:
-          $ref: '#/components/schemas/FinancingsResponseContract/properties/meta'
+          $ref: '#/components/schemas/ResponseFinancingsContract/properties/meta'

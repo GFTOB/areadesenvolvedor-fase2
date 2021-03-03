@@ -1184,7 +1184,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LoansResponseContract'
+                $ref: '#/components/schemas/ResponseLoansContract'
         '400':
           description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
         '401':
@@ -1260,7 +1260,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LoansResponseWarranties'
+                $ref: '#/components/schemas/ResponseLoansWarranties'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1336,7 +1336,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LoansResponsePayments'
+                $ref: '#/components/schemas/ResponseLoansPayments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1412,7 +1412,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LoansResponseInstalments'
+                $ref: '#/components/schemas/ResponseLoansInstalments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1486,7 +1486,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponseContract'
+                $ref: '#/components/schemas/ResponseFinancingsContract'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1562,7 +1562,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponseWarranties'
+                $ref: '#/components/schemas/ResponseFinancingsWarranties'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1638,7 +1638,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponsePayments'
+                $ref: '#/components/schemas/ResponseFinancingsPayments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1714,7 +1714,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FinancingsResponseInstalments'
+                $ref: '#/components/schemas/ResponseFinancingsInstalments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1788,7 +1788,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseContract'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1864,7 +1864,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseWarranties'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -1940,7 +1940,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponsePayments'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -2016,7 +2016,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnarrangedAccountOverdraftResponseInstalments'
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -2090,7 +2090,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponseContract'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -2166,7 +2166,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponseWarranties'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -2242,7 +2242,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponsePayments'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -2318,7 +2318,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvoiceFinancingsResponseInstalments'
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
         '400':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/400'
         '401':
@@ -5419,58 +5419,6 @@ components:
           description: Traz o valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
           maxLength: 19
           example: 200
-    FinancingsResponseContract:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/FinancingsContractData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    FinancingsResponseInstalments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/FinancingsInstalmentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    FinancingsResponsePayments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/FinancingsPaymentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    FinancingsResponseWarranties:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/FinancingsWarrantiesData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
     FinancingsTaxesOverParcel:
       type: object
       required:
@@ -6203,58 +6151,6 @@ components:
           description: Traz o valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
           maxLength: 19
           example: 200
-    InvoiceFinancingsResponseContract:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceFinancingsContractData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    InvoiceFinancingsResponseInstalments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceFinancingsInstalmentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    InvoiceFinancingsResponsePayments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceFinancingsPaymentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    InvoiceFinancingsResponseWarranties:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceFinancingsWarrantiesData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
     InvoiceFinancingsTaxesOverParcel:
       type: object
       required:
@@ -6866,58 +6762,6 @@ components:
           description: Traz o valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
           maxLength: 19
           example: 200
-    LoansResponseContract:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/LoansContractData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    LoansResponseInstalments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/LoansInstalmentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    LoansResponsePayments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/LoansPaymentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    LoansResponseWarranties:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/LoansWarrantiesData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
     LoansTaxesOverParcel:
       type: object
       required:
@@ -8074,6 +7918,214 @@ components:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
+    ResponseFinancingsContract:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/FinancingsContractData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseFinancingsInstalments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/FinancingsInstalmentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseFinancingsPayments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/FinancingsPaymentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseFinancingsWarranties:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/FinancingsWarrantiesData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseLoansContract:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/LoansContractData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseLoansInstalments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/LoansInstalmentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseLoansPayments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/LoansPaymentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseLoansWarranties:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/LoansWarrantiesData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseInvoiceFinancingsContract:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/InvoiceFinancingsContractData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseInvoiceFinancingsInstalments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/InvoiceFinancingsInstalmentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseInvoiceFinancingsPayments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/InvoiceFinancingsPaymentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseInvoiceFinancingsWarranties:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/InvoiceFinancingsWarrantiesData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseUnarrangedAccountOverdraftContract:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseUnarrangedAccountOverdraftInstalments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftInstalmentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseUnarrangedAccountOverdraftPayments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftPaymentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseUnarrangedAccountOverdraftWarranties:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftWarrantiesData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
     StatementAccountBalance:
       type: object
       required:
@@ -8717,58 +8769,6 @@ components:
           description: Traz o valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
           maxLength: 19
           example: 200
-    UnarrangedAccountOverdraftResponseContract:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    UnarrangedAccountOverdraftResponseInstalments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftInstalmentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    UnarrangedAccountOverdraftResponsePayments:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftPaymentsData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    UnarrangedAccountOverdraftResponseWarranties:
-      type: object
-      required:
-        - data
-        - links
-        - meta
-      properties:
-        data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftWarrantiesData'
-        links:
-          $ref: '#/components/schemas/Links'
-        meta:
-          $ref: '#/components/schemas/Meta'
     UnarrangedAccountOverdraftTaxesOverParcel:
       type: object
       required:
