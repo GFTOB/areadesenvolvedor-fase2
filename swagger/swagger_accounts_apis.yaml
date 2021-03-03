@@ -135,7 +135,7 @@ paths:
         - Accounts Balances
       summary: Obtém os saldos da conta identificada por accountId.
       description: 'Método para obter os saldos da conta de depósito à vista, poupança ou pagamento pré-paga identificada por accountId mantida pelo cliente na instituição transmissora.'
-      operationId: getAccountsBalances
+      operationId: getAccountsAccountIdBalances
       parameters:
         - $ref: '#/paths/~1accounts~1%7BaccountId%7D/get/parameters/0'
         - $ref: '#/paths/~1accounts~1%7BaccountId%7D/get/parameters/1'
