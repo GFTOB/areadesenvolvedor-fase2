@@ -2032,3 +2032,129 @@ components:
           required:
             - totalRecords
             - totalPages
+  parameters:
+    Authorization:
+      name: Authorization
+      in: header
+      description: a definir
+      required: false
+      schema:
+        type: string
+    creditCardAccountId:
+      name: creditCardAccountId
+      in: path
+      description: Identificador da conta de pagamento pós-paga.
+      required: true
+      schema:
+        type: string
+        pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+    creditCardPayeeMCC:
+      name: payeeMCC
+      in: query
+      schema:
+        type: number
+        maxLength: 4
+        description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
+        example: 8299
+    creditCardTransactionType:
+      name: transactionType
+      in: query
+      schema:
+        type: string
+        description: Traz os tipos de Transação
+        enum:
+          - PAGAMENTO
+          - TARIFA
+          - OPERACOES_CREDITO_CONTRATADAS_CARTAO
+          - ESTORNO
+          - CASHBACK
+          - OUTROS
+        example: CASHBACK
+    fromDueDate:
+      name: fromDueDate
+      description: Data inicial de filtragem.
+      required: false
+      in: query
+      schema:
+        type: string
+        format: DateString
+        maxLength: 10
+        pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+    fromTransactionDate:
+      name: fromTransactionDate
+      description: Data inicial de filtragem.
+      required: false
+      in: query
+      schema:
+        type: string
+        format: DateString
+        maxLength: 10
+        pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+    page:
+      name: page
+      in: query
+      description: Número da página que está sendo requisitada (o valor da primeira página é 1).
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+    pageSize:
+      name: page-size
+      in: query
+      description: Quantidade total de registros por páginas.
+      schema:
+        type: integer
+        default: 25
+        minimum: 1
+    toDueDate:
+      name: toDueDate
+      description: Data final de filtragem.
+      required: false
+      in: query
+      schema:
+        type: string
+        format: DateString
+        maxLength: 10
+        pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+    toTransactionDate:
+      name: toTransactionDate
+      description: Data final de filtragem.
+      required: false
+      in: query
+      schema:
+        type: string
+        format: DateString
+        maxLength: 10
+        pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+    xCustomerUserAgent:
+      name: x-customer-user-agent
+      in: header
+      description: Indica o user-agent que o usuário utiliza.
+      required: false
+      schema:
+        type: string
+    xFapiAuthDate:
+      name: x-fapi-auth-date
+      in: header
+      description: |
+        Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC
+      required: false
+      schema:
+        type: string
+        pattern: '^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\d{4} \d{2}:\d{2}:\d{2}  (GMT|UTC)$'
+    xFapiCustomerIpAddress:
+      name: x-fapi-customer-ip-address
+      in: header
+      description: |
+        O endereço IP do usuário se estiver atualmente logado com o receptor.
+      required: false
+      schema:
+        type: string
+    xFapiInteractionId:
+      name: x-fapi-interaction-id
+      in: header
+      description: |
+        Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.
+      required: false
+      schema:
+        type: string
