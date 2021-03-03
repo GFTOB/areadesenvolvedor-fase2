@@ -21,7 +21,7 @@ tags:
   - name: API - Operações de Crédito - Adiantamento a Depositantes
   - name: API - Operações de Crédito - Direitos Creditórios Descontados
 paths:
-  /customers/v1/personal-customers/identifications:
+  /customers/v1/personal/identifications:
     get:
       tags:
         - API - Dados Cadastrais
@@ -99,7 +99,7 @@ paths:
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/429'
         '500':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/500'
-  /customers/v1/personal-customers/qualifications:
+  /customers/v1/personal/qualifications:
     get:
       tags:
         - API - Dados Cadastrais
@@ -177,7 +177,7 @@ paths:
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/429'
         '500':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/500'
-  /customers/v1/personal-customers/relationships:
+  /customers/v1/personal/relationships:
     get:
       tags:
         - API - Dados Cadastrais
@@ -255,7 +255,7 @@ paths:
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/429'
         '500':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/500'
-  /customers/v1/business-customers/identifications:
+  /customers/v1/business/identifications:
     get:
       tags:
         - API - Dados Cadastrais
@@ -332,7 +332,7 @@ paths:
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/429'
         '500':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/500'
-  /customers/v1/business-customers/qualifications:
+  /customers/v1/business/qualifications:
     get:
       tags:
         - API - Dados Cadastrais
@@ -410,7 +410,7 @@ paths:
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/429'
         '500':
           $ref: '#/paths/~1loans~1v1~1contract~1%7BcontractId%7D/get/responses/500'
-  /customers/v1/business-customers/relationships:
+  /customers/v1/business/relationships:
     get:
       tags:
         - API - Dados Cadastrais

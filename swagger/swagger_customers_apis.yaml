@@ -21,7 +21,7 @@ tags:
   - name: Customers
     description: Operações para listagem das informações Cadastrais do Cliente
 paths:
-  /personal-customers/identifications:
+  /personal/identifications:
     get:
       tags:
         - Customers
@@ -757,7 +757,7 @@ paths:
           description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
           description: Ocorreu um erro no gateway da API ou no microsserviço.
-  /personal-customers/qualifications:
+  /personal/qualifications:
     get:
       tags:
         - Customers
@@ -1035,7 +1035,7 @@ paths:
           description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
           description: Ocorreu um erro no gateway da API ou no microsserviço.
-  /personal-customers/relationships:
+  /personal/relationships:
     get:
       tags:
         - Customers
@@ -1297,7 +1297,7 @@ paths:
           description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
           description: Ocorreu um erro no gateway da API ou no microsserviço.
-  /business-customers/identifications:
+  /business/identifications:
     get:
       tags:
         - Customers
@@ -1949,7 +1949,7 @@ paths:
           description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
           description: Ocorreu um erro no gateway da API ou no microsserviço.
-  /business-customers/qualifications:
+  /business/qualifications:
     get:
       tags:
         - Customers
@@ -2233,7 +2233,7 @@ paths:
           description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
           description: Ocorreu um erro no gateway da API ou no microsserviço.
-  /business-customers/relationships:
+  /business/relationships:
     get:
       tags:
         - Customers
