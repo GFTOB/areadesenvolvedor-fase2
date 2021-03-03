@@ -31,8 +31,7 @@ paths:
       parameters:
         - name: contractId
           in: path
-          description: |
-            Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
           required: true
           schema:
             type: string
@@ -45,23 +44,20 @@ paths:
             type: string
         - name: x-fapi-auth-date
           in: header
-          description: |
-            Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC
+          description: 'Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC'
           required: false
           schema:
             type: string
             pattern: '^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\d{4} \d{2}:\d{2}:\d{2}  (GMT|UTC)$'
         - name: x-fapi-customer-ip-address
           in: header
-          description: |
-            O endereço IP do usuário se estiver atualmente logado com o receptor.
+          description: O endereço IP do usuário se estiver atualmente logado com o receptor.
           required: false
           schema:
             type: string
         - name: x-fapi-interaction-id
           in: header
-          description: |
-            Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.
+          description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
           required: false
           schema:
             type: string
@@ -549,8 +545,7 @@ paths:
       parameters:
         - name: contractId
           in: path
-          description: |
-            Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
           required: true
           schema:
             type: string
@@ -577,23 +572,20 @@ paths:
             type: string
         - name: x-fapi-auth-date
           in: header
-          description: |
-            Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC
+          description: 'Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC'
           required: false
           schema:
             type: string
             pattern: '^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\d{4} \d{2}:\d{2}:\d{2}  (GMT|UTC)$'
         - name: x-fapi-customer-ip-address
           in: header
-          description: |
-            O endereço IP do usuário se estiver atualmente logado com o receptor.
+          description: O endereço IP do usuário se estiver atualmente logado com o receptor.
           required: false
           schema:
             type: string
         - name: x-fapi-interaction-id
           in: header
-          description: |
-            Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.
+          description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
           required: false
           schema:
             type: string
@@ -815,8 +807,7 @@ paths:
       parameters:
         - name: contractId
           in: path
-          description: |
-            Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
           required: true
           schema:
             type: string
@@ -843,23 +834,20 @@ paths:
             type: string
         - name: x-fapi-auth-date
           in: header
-          description: |
-            Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC
+          description: 'Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC'
           required: false
           schema:
             type: string
             pattern: '^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\d{4} \d{2}:\d{2}:\d{2}  (GMT|UTC)$'
         - name: x-fapi-customer-ip-address
           in: header
-          description: |
-            O endereço IP do usuário se estiver atualmente logado com o receptor.
+          description: O endereço IP do usuário se estiver atualmente logado com o receptor.
           required: false
           schema:
             type: string
         - name: x-fapi-interaction-id
           in: header
-          description: |
-            Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.
+          description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
           required: false
           schema:
             type: string
@@ -1028,8 +1016,7 @@ paths:
       parameters:
         - name: contractId
           in: path
-          description: |
-            Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
           required: true
           schema:
             type: string
@@ -1056,23 +1043,20 @@ paths:
             type: string
         - name: x-fapi-auth-date
           in: header
-          description: |
-            Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC
+          description: 'Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC'
           required: false
           schema:
             type: string
             pattern: '^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\d{4} \d{2}:\d{2}:\d{2}  (GMT|UTC)$'
         - name: x-fapi-customer-ip-address
           in: header
-          description: |
-            O endereço IP do usuário se estiver atualmente logado com o receptor.
+          description: O endereço IP do usuário se estiver atualmente logado com o receptor.
           required: false
           schema:
             type: string
         - name: x-fapi-interaction-id
           in: header
-          description: |
-            Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.
+          description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
           required: false
           schema:
             type: string
@@ -2276,8 +2260,7 @@ components:
     contractId:
       name: contractId
       in: path
-      description: |
-        Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
+      description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o tomador da operação de crédito.
       required: true
       schema:
         type: string
@@ -2308,8 +2291,7 @@ components:
     xFapiAuthDate:
       name: x-fapi-auth-date
       in: header
-      description: |
-        Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC
+      description: 'Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a [RFC7231](https://tools.ietf.org/html/rfc7231).Exemplo: Sun, 10 Sep 2017 19:43:31 UTC'
       required: false
       schema:
         type: string
@@ -2317,16 +2299,14 @@ components:
     xFapiCustomerIpAddress:
       name: x-fapi-customer-ip-address
       in: header
-      description: |
-        O endereço IP do usuário se estiver atualmente logado com o receptor.
+      description: O endereço IP do usuário se estiver atualmente logado com o receptor.
       required: false
       schema:
         type: string
     xFapiInteractionId:
       name: x-fapi-interaction-id
       in: header
-      description: |
-        Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.
+      description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
       required: false
       schema:
         type: string
