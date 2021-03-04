@@ -685,7 +685,12 @@ components:
                       example: '2020-07-21T08:30:00Z'
                       description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
                     currency:
-                      $ref: '#/paths/~1accounts~1%7BaccountId%7D~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/account/properties/balances/properties/currency'
+                      type: string
+                      pattern: '^(\w{3}){1}$'
+                      maxLength: 3
+                      format: CurrencyString
+                      description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+                      example: BRL
                     statementAccount:
                       type: array
                       items:

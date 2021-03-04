@@ -671,7 +671,11 @@ components:
                         - instalments
                       properties:
                         currency:
-                          $ref: '#/paths/~1contracts~1%7BcontractId%7D~1payments/get/responses/200/content/application~1json/schema/properties/data/properties/invoiceFinancings/properties/payments/properties/nonRegulatedCharge/properties/currency'
+                          type: string
+                          pattern: '^(\w{3}){1}$'
+                          maxLength: 3
+                          format: CurrencyString
+                          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
                         instalments:
                           type: array
                           description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
@@ -748,7 +752,6 @@ components:
                           maxLength: 3
                           format: CurrencyString
                           description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-                          example: BRL
                     contractOutstandingBalance:
                       type: string
                       maxLength: 19

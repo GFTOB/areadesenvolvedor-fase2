@@ -300,13 +300,11 @@ components:
                       businessCustomers:
                         type: object
                         description: Conjunto de informações cadastrais do Cliente pessoa jurídica.
-                        items:
-                          type: object
-                          required:
-                            - financialRelation
-                          properties:
-                            financialRelation:
-                              $ref: '#/paths/~1personal~1relationships/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/financialRelation'
+                        required:
+                          - financialRelation
+                        properties:
+                          financialRelation:
+                            $ref: '#/paths/~1personal~1relationships/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/financialRelation'
                   minItems: 1
                   description: Companies traz uma lista de todas as instituições da Marca
         links:

@@ -2506,7 +2506,12 @@ components:
           example: '2020-07-21T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+          example: BRL
         statementAccount:
           type: array
           items:
@@ -2557,13 +2562,11 @@ components:
     BusinessFinancialRelationCustomers:
       type: object
       description: Conjunto de informações cadastrais do Cliente pessoa jurídica.
-      items:
-        type: object
-        required:
-          - financialRelation
-        properties:
-          financialRelation:
-            $ref: '#/components/schemas/FinancialRelation'
+      required:
+        - financialRelation
+      properties:
+        financialRelation:
+          $ref: '#/components/schemas/FinancialRelation'
     BusinessFinancialRelationData:
       type: object
       required:
@@ -3267,13 +3270,6 @@ components:
       properties:
         transactions:
           $ref: '#/components/schemas/CreditCardAccountsTransactions'
-    Currency:
-      type: string
-      pattern: '^(\w{3}){1}$'
-      maxLength: 3
-      format: CurrencyString
-      description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-      example: BRL
     CustomerContacts:
       type: object
       description: Conjunto de informações referentes às formas para contatar o cliente.
@@ -4399,7 +4395,12 @@ components:
         - instalments
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+          example: BRL
         instalments:
           type: array
           description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
@@ -4781,7 +4782,11 @@ components:
         - currency
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
     FinancingsPaymentBank:
       type: object
       description: |
@@ -5117,7 +5122,11 @@ components:
         - instalments
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
         instalments:
           type: array
           description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
@@ -5513,7 +5522,11 @@ components:
         - currency
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
     InvoiceFinancingsPaymentBank:
       type: object
       description: |
@@ -5726,7 +5739,11 @@ components:
         - instalments
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
         instalments:
           type: array
           description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
@@ -6124,7 +6141,11 @@ components:
         - currency
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
     LoansPaymentBank:
       type: object
       description: |
@@ -7655,7 +7676,12 @@ components:
           example: '2020-07-21T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+          example: BRL
         statementAccount:
           type: array
           items:
@@ -7689,7 +7715,11 @@ components:
         - instalments
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
         instalments:
           type: array
           description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
@@ -8071,7 +8101,11 @@ components:
         - currency
       properties:
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
     UnarrangedAccountOverdraftPaymentBank:
       type: object
       description: |
