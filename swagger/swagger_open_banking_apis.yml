@@ -223,7 +223,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
-      operationId: getPersonalCustomersRelationships
+      operationId: getCustomersPersonalRelationships
       parameters:
         - $ref: '#/components/parameters/Authorization'
         - $ref: '#/components/parameters/xFapiAuthDate'
@@ -4038,7 +4038,7 @@ components:
         - SAQUE_CARTAO_EXTERIOR
         - AVALIACAO_EMERGENCIAL_CREDITO
         - EMISSAO_SEGUNDA_VIA
-        - TARIFA_PAGAMETNO_CONTAS
+        - TARIFA_PAGAMENTO_CONTAS
         - SMS
       example: ANUIDADE
     EnumCreditCardAccountNetwork:
