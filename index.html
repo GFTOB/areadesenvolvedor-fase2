@@ -6997,9 +6997,9 @@ This operation does not require authentication
 
 <h3 id='visao-geral-11'>Visão Geral</h3>
 
-<p>Obtém os dados de identificação de contas mantidos na instituição transmissora</p>
+<p>Obtém a lista de contas consentidas pelo cliente.</p>
 
-<p>Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre a Identificação de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.</p>
+<p>Método para obter a lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.</p>
 
 <p>Tags: <a href="#glossarioISPB">Código Número (ISPB) (IspbCode)</a>, <a href="#glossarioContaIndividual">Conta individual (Sole Account)</a>, <a href="#glossarioContaConjuntaNaoSolidaria">Conta Conjunta Não-solidária (Joint Account And)</a>, <a href="#glossarioContaConjuntaSolidaria">Conta Conjunta Solidária (Joint Account Or)</a>,
       <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioAgencia">Agencia (Agency)</a>, <a href="#glossarioContaDepositoVista">Conta depósito à vista (Current Account)</a>, <a href="#glossarioContaPoupanca">Conta Poupança (Savings Account)</a>,
@@ -7790,20 +7790,10 @@ This operation does not require authentication
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALDO_DISPONIVEL"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">800.87</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -8142,15 +8132,9 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
@@ -8453,14 +8437,9 @@ This operation does not require authentication
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -13275,20 +13254,10 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALDO_DISPONIVEL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">800.87</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -13324,20 +13293,10 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALDO_DISPONIVEL"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">800.87</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -13449,14 +13408,9 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -13499,14 +13453,9 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -13615,15 +13564,9 @@ This operation does not require authentication
 <a id="tocSaccounttransactions"></a>
 <a id="tocsaccounttransactions"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
@@ -13655,6 +13598,18 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
+<td>requestDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string(CurrencyString)</td>
+<td>false</td>
+<td>Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217</td>
+</tr>
+<tr>
 <td>transactions</td>
 <td><a href="#schematransactions">Transactions</a></td>
 <td>true</td>
@@ -13671,15 +13626,9 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
@@ -13721,20 +13670,10 @@ This operation does not require authentication
 <a id="tocSbalances"></a>
 <a id="tocsbalances"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALDO_DISPONIVEL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">800.87</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -13752,42 +13691,6 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>compeCode</td>
-<td>string</td>
-<td>true</td>
-<td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
-</tr>
-<tr>
-<td>branchCode</td>
-<td>string</td>
-<td>true</td>
-<td>Código da Agência detentora da conta</td>
-</tr>
-<tr>
-<td>number</td>
-<td>string</td>
-<td>true</td>
-<td>Número da conta</td>
-</tr>
-<tr>
-<td>checkDigit</td>
-<td>string</td>
-<td>true</td>
-<td>Dígito da conta</td>
-</tr>
-<tr>
-<td>brandName</td>
-<td>string</td>
-<td>true</td>
-<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
-</tr>
-<tr>
-<td>companyCnpj</td>
-<td>string</td>
-<td>true</td>
-<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara</td>
-</tr>
-<tr>
 <td>requestDateTime</td>
 <td>string</td>
 <td>true</td>
@@ -13800,10 +13703,16 @@ This operation does not require authentication
 <td>Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217</td>
 </tr>
 <tr>
-<td>statementAccount</td>
-<td>[<a href="#schemastatementaccountbalance">StatementAccountBalance</a>]</td>
-<td>false</td>
-<td>Lista os saldos referentes às contas de: depósito à vista, poupança ou de pagamento pré-paga</td>
+<td>avaiableAmount</td>
+<td>number¦null</td>
+<td>true</td>
+<td>Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo. Expresso em valor monetário com 4 casas decimais</td>
+</tr>
+<tr>
+<td>blockedAmount</td>
+<td>number¦null</td>
+<td>true</td>
+<td>Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática Expresso em valor monetário com 4 casas decimais</td>
 </tr>
 </tbody></table>
 
@@ -26055,14 +25964,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <a id="tocsoverdraftlimits"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -26087,42 +25991,6 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 </tr>
 </thead><tbody>
 <tr>
-<td>compeCode</td>
-<td>string</td>
-<td>true</td>
-<td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
-</tr>
-<tr>
-<td>branchCode</td>
-<td>string</td>
-<td>true</td>
-<td>Código da Agência detentora da conta</td>
-</tr>
-<tr>
-<td>number</td>
-<td>string</td>
-<td>true</td>
-<td>Número da conta</td>
-</tr>
-<tr>
-<td>checkDigit</td>
-<td>string</td>
-<td>true</td>
-<td>Dígito da conta</td>
-</tr>
-<tr>
-<td>brandName</td>
-<td>string</td>
-<td>true</td>
-<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
-</tr>
-<tr>
-<td>companyCnpj</td>
-<td>string</td>
-<td>true</td>
-<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara</td>
-</tr>
-<tr>
 <td>requestDateTime</td>
 <td>string</td>
 <td>true</td>
@@ -26135,10 +26003,46 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <td>Moeda referente aos valores de Limite de Cheque Especial e de Adiantamento a depositante , segundo modelo ISO-4217. p.ex. &#39;BRL&#39;. Todos os saldos informados estão representados com a moeda vigente do Brasil.</td>
 </tr>
 <tr>
+<td>overdraftLimit</td>
+<td>string</td>
+<td>true</td>
+<td>Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica</td>
+</tr>
+<tr>
 <td>balances</td>
 <td>[<a href="#schemaoverdraftlimitsbalance">OverdraftLimitsBalance</a>]</td>
 <td>true</td>
-<td>Lista dos valores referentes ao Limite de Cheque especial e ao adiantamento a depositante</td>
+<td>Lista dos valores referentes ao utilizado do Limite de Cheque especial e do adiantamento a depositante</td>
+</tr>
+</tbody></table>
+
+<h4 id='enumerated-values-69'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>overdraftLimit</td>
+<td>FAIXA_1</td>
+</tr>
+<tr>
+<td>overdraftLimit</td>
+<td>FAIXA_2</td>
+</tr>
+<tr>
+<td>overdraftLimit</td>
+<td>FAIXA_3</td>
+</tr>
+<tr>
+<td>overdraftLimit</td>
+<td>FAIXA_4</td>
+</tr>
+<tr>
+<td>overdraftLimit</td>
+<td>FAIXA_5</td>
 </tr>
 </tbody></table>
 
@@ -26166,7 +26070,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 </thead><tbody>
 <tr>
 <td>overdraftLimit</td>
-<td>string</td>
+<td><a href="#schemaoverdraftlimits/properties/overdraftlimit">OverdraftLimits/properties/overdraftLimit</a></td>
 <td>false</td>
 <td>Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica</td>
 </tr>
@@ -26180,35 +26084,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <td>amount</td>
 <td>number¦null</td>
 <td>true</td>
-<td>Valor do saldo. Expressa em valor monetário com 2 casas decimais.</td>
-</tr>
-</tbody></table>
-<h4 id='enumerated-values-69'>Enumerated Values</h4>
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Código</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>overdraftLimit</td>
-<td>FAIXA_1</td>
-</tr>
-<tr>
-<td>overdraftLimit</td>
-<td>FAIXA_2</td>
-</tr>
-<tr>
-<td>overdraftLimit</td>
-<td>FAIXA_3</td>
-</tr>
-<tr>
-<td>overdraftLimit</td>
-<td>FAIXA_4</td>
-</tr>
-<tr>
-<td>overdraftLimit</td>
-<td>FAIXA_5</td>
+<td>Valor do saldo. Expressa em valor monetário com 4 casas decimais.</td>
 </tr>
 </tbody></table>
 
@@ -27731,20 +27607,10 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SALDO_DISPONIVEL"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">800.87</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -27862,14 +27728,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -27931,15 +27792,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
@@ -30311,14 +30166,6 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <a id="tocstransactions"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94088392"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
@@ -30348,54 +30195,6 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <th>Descrição</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>compeCode</td>
-<td>string</td>
-<td>true</td>
-<td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
-</tr>
-<tr>
-<td>branchCode</td>
-<td>string</td>
-<td>true</td>
-<td>Código da Agência detentora da conta</td>
-</tr>
-<tr>
-<td>number</td>
-<td>string</td>
-<td>true</td>
-<td>Número da conta</td>
-</tr>
-<tr>
-<td>checkDigit</td>
-<td>string</td>
-<td>true</td>
-<td>Dígito da conta</td>
-</tr>
-<tr>
-<td>brandName</td>
-<td>string</td>
-<td>true</td>
-<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
-</tr>
-<tr>
-<td>companyCnpj</td>
-<td>string</td>
-<td>true</td>
-<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara</td>
-</tr>
-<tr>
-<td>requestDateTime</td>
-<td>string</td>
-<td>true</td>
-<td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>string(CurrencyString)</td>
-<td>true</td>
-<td>Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217</td>
-</tr>
 <tr>
 <td>statementAccount</td>
 <td>[<a href="#schemastatementaccounttransaction">StatementAccountTransaction</a>]</td>

@@ -24,6 +24,48 @@ tags:
   - name: Accounts Transactions
   - name: Accounts Overdraft Limits
 paths:
+  /accounts:
+    get:
+      tags:
+        - Accounts Identification
+      summary: Obtém a lista de contas consentidas pelo cliente.
+      description: 'Método para obter a lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.'
+      operationId: getAccounts
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/accountsCompeCode'
+        - $ref: '#/components/parameters/accountsBranchCode'
+        - $ref: '#/components/parameters/accountsNumber'
+        - $ref: '#/components/parameters/accountsCheckDigit'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Dados de identificação das contas obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseAccount'
+        '400':
+          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+        '401':
+          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
+        '403':
+          description: O token tem escopo incorreto ou uma política de segurança foi violada.
+        '404':
+          description: O recurso solicitado não existe ou não foi implementado.
+        '405':
+          description: O consumidor tentou acessar o recurso com um método não suportado.
+        '406':
+          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
+        '429':
+          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
+        '500':
+          description: Ocorreu um erro no gateway da API ou no microsserviço.
   '/accounts/{accountId}':
     get:
       tags:
@@ -50,61 +92,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/paths/~1accounts/get/responses/400'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/paths/~1accounts/get/responses/401'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/paths/~1accounts/get/responses/403'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/paths/~1accounts/get/responses/404'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/paths/~1accounts/get/responses/405'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/paths/~1accounts/get/responses/406'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/paths/~1accounts/get/responses/429'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  /accounts/v1/accounts:
-    get:
-      tags:
-        - Accounts Identification
-      summary: Obtém os dados de identificação das contas identificadas por accountId.
-      description: 'Método para obter os dados de identificação da conta de depósito à vista, poupança ou pagamento pré-paga identificada por accountId mantida pelo cliente na instituição transmissora.'
-      operationId: getAccounts
-      parameters:
-        - $ref: '#/components/parameters/Authorization'
-        - $ref: '#/components/parameters/xFapiAuthDate'
-        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
-        - $ref: '#/components/parameters/xFapiInteractionId'
-        - $ref: '#/components/parameters/xCustomerUserAgent'
-        - $ref: '#/components/parameters/accountsCompeCode'
-        - $ref: '#/components/parameters/accountsBranchCode'
-        - $ref: '#/components/parameters/accountsNumber'
-        - $ref: '#/components/parameters/accountsCheckDigit'
-      responses:
-        '200':
-          description: Dados de identificação das contas obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccount'
-        '400':
-          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
-        '401':
-          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
-        '403':
-          description: O token tem escopo incorreto ou uma política de segurança foi violada.
-        '404':
-          description: O recurso solicitado não existe ou não foi implementado.
-        '405':
-          description: O consumidor tentou acessar o recurso com um método não suportado.
-        '406':
-          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
-        '429':
-          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
-        '500':
-          description: Ocorreu um erro no gateway da API ou no microsserviço.
+          $ref: '#/paths/~1accounts/get/responses/500'
   '/accounts/{accountId}/balances':
     get:
       tags:
@@ -131,21 +133,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountBalances'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/paths/~1accounts/get/responses/400'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/paths/~1accounts/get/responses/401'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/paths/~1accounts/get/responses/403'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/paths/~1accounts/get/responses/404'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/paths/~1accounts/get/responses/405'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/paths/~1accounts/get/responses/406'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/paths/~1accounts/get/responses/429'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/paths/~1accounts/get/responses/500'
   '/accounts/{accountId}/transactions':
     get:
       tags:
@@ -177,21 +179,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountTransactions'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/paths/~1accounts/get/responses/400'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/paths/~1accounts/get/responses/401'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/paths/~1accounts/get/responses/403'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/paths/~1accounts/get/responses/404'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/paths/~1accounts/get/responses/405'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/paths/~1accounts/get/responses/406'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/paths/~1accounts/get/responses/429'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/paths/~1accounts/get/responses/500'
   '/accounts/{accountId}/overdraft-limits':
     get:
       tags:
@@ -218,21 +220,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/paths/~1accounts/get/responses/400'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/paths/~1accounts/get/responses/401'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/paths/~1accounts/get/responses/403'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/paths/~1accounts/get/responses/404'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/paths/~1accounts/get/responses/405'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/paths/~1accounts/get/responses/406'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/paths/~1accounts/get/responses/429'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/paths/~1accounts/get/responses/500'
 components:
   schemas:
     ResponseAccount:
@@ -375,57 +377,11 @@ components:
                   description: |
                     Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga
                   required:
-                    - compeCode
-                    - branchCode
-                    - number
-                    - checkDigit
-                    - brandName
-                    - companyCnpj
                     - requestDateTime
                     - currency
+                    - avaiableAmount
+                    - blockedAmount
                   properties:
-                    compeCode:
-                      type: string
-                      maxLength: 3
-                      pattern: '\d{3}|^NA$'
-                      description: |
-                        Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
-                      example: '001'
-                    branchCode:
-                      type: string
-                      maxLength: 4
-                      pattern: '\d{4}|^NA$'
-                      description: |
-                        Código da Agência detentora da conta
-                      example: '6272'
-                    number:
-                      type: string
-                      maxLength: 20
-                      pattern: '^\d{8,20}$|^NA$'
-                      description: |
-                        Número da conta
-                      example: '94088392'
-                    checkDigit:
-                      type: string
-                      maxLength: 1
-                      pattern: \w*\W*
-                      description: |
-                        Dígito da conta
-                      example: '4'
-                    brandName:
-                      type: string
-                      maxLength: 80
-                      pattern: \w*\W*
-                      description: |
-                        Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
-                      example: Organização A
-                    companyCnpj:
-                      type: string
-                      maxLength: 14
-                      pattern: '\d{14}|^NA$'
-                      description: |
-                        Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
-                      example: '21128159000166'
                     requestDateTime:
                       type: string
                       maxLength: 20
@@ -438,36 +394,16 @@ components:
                       maxLength: 3
                       format: CurrencyString
                       description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-                      example: BRL
-                    statementAccount:
-                      type: array
-                      items:
-                        type: object
-                        required:
-                          - type
-                          - amount
-                        properties:
-                          type:
-                            type: string
-                            enum:
-                              - SALDO_DISPONIVEL
-                              - SALDO_BLOQUEADO
-                              - SALDO_DISPONIVEL_APLICACAO_AUTOMATICA
-                            description: |
-                              tipos de saldo em conta: (vide enum) informados:
-                              Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo.
-                              Saldo bloqueado não disponível para utilização imediata, por motivo de bloqueio por compensação, ou bloqueio judicial
-                              Saldo disponível com aplicação automática - saldo disponível para utilização imediata, referente ao tipo de conta que remunera automaticamente o saldo em conta 
-                            example: SALDO_DISPONIVEL
-                          amount:
-                            type: number
-                            nullable: true
-                            maxLength: 12
-                            description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
-                            example: 800.87
-                      minItems: 1
-                      description: |
-                        Lista os saldos referentes às contas de: depósito à vista, poupança ou de pagamento pré-paga
+                    avaiableAmount:
+                      type: number
+                      nullable: true
+                      description: 'Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo. Expresso em valor monetário com 4 casas decimais'
+                      maxLength: 19
+                    blockedAmount:
+                      type: number
+                      nullable: true
+                      description: Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática Expresso em valor monetário com 4 casas decimais
+                      maxLength: 19
         links:
           $ref: '#/components/schemas/ResponseAccount/properties/links'
         meta:
@@ -597,58 +533,11 @@ components:
                   type: object
                   description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
                   required:
-                    - compeCode
-                    - branchCode
-                    - number
-                    - checkDigit
-                    - brandName
-                    - companyCnpj
                     - requestDateTime
                     - currency
+                    - overdraftLimit
                     - balances
                   properties:
-                    compeCode:
-                      type: string
-                      maxLength: 3
-                      pattern: '\d{3}|^NA$'
-                      description: |
-                        Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
-                      example: '001'
-                    branchCode:
-                      type: string
-                      maxLength: 4
-                      pattern: '\d{4}|^NA$'
-                      description: |
-                        Código da Agência detentora da conta
-                      example: '6272'
-                    number:
-                      type: string
-                      maxLength: 20
-                      pattern: '^\d{8,20}$|^NA$'
-                      description: |
-                        Número da conta
-                      example: '94088392'
-                    checkDigit:
-                      type: string
-                      maxLength: 1
-                      pattern: \w*\W*
-                      description: |
-                        Dígito da conta
-                      example: '4'
-                    brandName:
-                      type: string
-                      maxLength: 80
-                      pattern: \w*\W*
-                      description: |
-                        Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
-                      example: Organização A
-                    companyCnpj:
-                      type: string
-                      maxLength: 14
-                      pattern: '\d{14}|^NA$'
-                      description: |
-                        Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
-                      example: '21128159000166'
                     requestDateTime:
                       type: string
                       maxLength: 20
@@ -663,8 +552,19 @@ components:
                       description: |
                         Moeda referente aos valores de Limite de Cheque Especial e de Adiantamento a depositante , segundo modelo ISO-4217. p.ex. 'BRL'. Todos os saldos informados estão representados com a moeda vigente do Brasil.
                       example: BRL
+                    overdraftLimit:
+                      type: string
+                      description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
+                      enum:
+                        - FAIXA_1
+                        - FAIXA_2
+                        - FAIXA_3
+                        - FAIXA_4
+                        - FAIXA_5
+                      example: FAIXA_1
                     balances:
                       type: array
+                      description: Lista dos valores referentes ao utilizado do Limite de Cheque especial e do adiantamento a depositante
                       items:
                         type: object
                         required:
@@ -672,15 +572,7 @@ components:
                           - amount
                         properties:
                           overdraftLimit:
-                            type: string
-                            description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
-                            enum:
-                              - FAIXA_1
-                              - FAIXA_2
-                              - FAIXA_3
-                              - FAIXA_4
-                              - FAIXA_5
-                            example: FAIXA_1
+                            $ref: '#/paths/~1accounts~1%7BaccountId%7D~1overdraft-limits/get/responses/200/content/application~1json/schema/properties/data/properties/account/properties/overdraftLimits/properties/overdraftLimit'
                           type:
                             type: string
                             enum:
@@ -693,12 +585,11 @@ components:
                             example: VALOR_UTILIZADO_LIMITE
                           amount:
                             type: number
+                            description: Valor do saldo. Expressa em valor monetário com 4 casas decimais.
                             nullable: true
-                            maxLength: 12
-                            description: Valor do saldo. Expressa em valor monetário com 2 casas decimais.
+                            maxLength: 19
                             example: 500
                       minItems: 1
-                      description: Lista dos valores referentes ao Limite de Cheque especial e ao adiantamento a depositante
         links:
           $ref: '#/components/schemas/ResponseAccount/properties/links'
         meta:
@@ -721,77 +612,30 @@ components:
                 Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
               required:
                 - transactions
+                - requestDateTime
               properties:
+                requestDateTime:
+                  type: string
+                  maxLength: 20
+                  pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                  example: '2020-07-21T08:30:00Z'
+                  description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                currency:
+                  type: string
+                  pattern: '^(\w{3}){1}$'
+                  maxLength: 3
+                  format: CurrencyString
+                  description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+                  example: BRL
                 transactions:
                   type: object
                   description: |
                     Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga
                   required:
-                    - compeCode
-                    - branchCode
-                    - number
-                    - checkDigit
-                    - brandName
-                    - companyCnpj
                     - requestDateTime
                     - currency
                     - statementAccount
                   properties:
-                    compeCode:
-                      type: string
-                      maxLength: 3
-                      pattern: '\d{3}|^NA$'
-                      description: |
-                        Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
-                      example: '001'
-                    branchCode:
-                      type: string
-                      maxLength: 4
-                      pattern: '\d{4}|^NA$'
-                      description: |
-                        Código da Agência detentora da conta
-                      example: '6272'
-                    number:
-                      type: string
-                      maxLength: 20
-                      pattern: '^\d{8,20}$|^NA$'
-                      description: |
-                        Número da conta
-                      example: '94088392'
-                    checkDigit:
-                      type: string
-                      maxLength: 1
-                      pattern: \w*\W*
-                      description: |
-                        Dígito da conta
-                      example: '4'
-                    brandName:
-                      type: string
-                      maxLength: 80
-                      pattern: \w*\W*
-                      description: |
-                        Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
-                      example: Organização A
-                    companyCnpj:
-                      type: string
-                      maxLength: 14
-                      pattern: '\d{14}|^NA$'
-                      description: |
-                        Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
-                      example: '21128159000166'
-                    requestDateTime:
-                      type: string
-                      maxLength: 20
-                      pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                      example: '2020-07-21T08:30:00Z'
-                      description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-                    currency:
-                      type: string
-                      pattern: '^(\w{3}){1}$'
-                      maxLength: 3
-                      format: CurrencyString
-                      description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-                      example: BRL
                     statementAccount:
                       type: array
                       items:
