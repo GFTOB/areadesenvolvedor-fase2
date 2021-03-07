@@ -837,9 +837,9 @@ paths:
 
         ### Dicionário de dados
 
-        <a href='dictionary/accounts_identification.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/accounts.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_accounts.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
@@ -2524,7 +2524,7 @@ components:
     AccountOverdraftLimits:
       type: object
       description: |
-        Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
+        Conjunto de informações da Conta de: depósito à vista
       required:
         - overdraftLimits
       properties:
@@ -2554,9 +2554,12 @@ components:
       description: |
         Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
+        - account
         - transactions
         - requestDateTime
       properties:
+        account:
+          $ref: '#/components/schemas/Balances/properties/account'
         requestDateTime:
           type: string
           maxLength: 20
@@ -5084,6 +5087,7 @@ components:
       description: |
         Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
+        - accounts
         - compeCode
         - branchCode
         - number
@@ -5095,6 +5099,8 @@ components:
         - subtype
         - personalBusinessIndicator
       properties:
+        accounts:
+          $ref: '#/components/schemas/Balances/properties/account'
         compeCode:
           type: string
           maxLength: 3
@@ -6571,11 +6577,14 @@ components:
       type: object
       description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
       required:
+        - account
         - requestDateTime
         - currency
         - overdraftLimit
         - balances
       properties:
+        account:
+          $ref: '#/components/schemas/Balances/properties/account'
         requestDateTime:
           type: string
           maxLength: 20
@@ -7650,10 +7659,10 @@ components:
           maxLength: 12
           description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
           example: 800.87
-    StatementAccountTransaction:
+    Transactions:
       type: object
       description: |
-        Agrupador das informações relativas às Transações de crédito e débito realizadas e autorizadas
+        Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.
       required:
         - completedAuthorisedPaymentType
         - creditDebitType
@@ -7678,7 +7687,7 @@ components:
           $ref: '#/components/schemas/EnumTransactionTypes'
         additionalInfo:
           type: string
-          maxLength: 30
+          maxLength: 60
           pattern: \w*\W*
           description: |
             Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO
@@ -7710,22 +7719,6 @@ components:
           description: |
             Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
           example: '67890854360'
-    Transactions:
-      type: object
-      description: |
-        Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga
-      required:
-        - requestDateTime
-        - currency
-        - statementAccount
-      properties:
-        statementAccount:
-          type: array
-          items:
-            $ref: '#/components/schemas/StatementAccountTransaction'
-          minItems: 1
-          description: |
-            Lista dos lançamentos referentes às transações realizadas e de pagamento autorizado para as contas de: depósito à vista, poupança e de pagamento pré-paga
     UnarrangedAccountOverdraftBalloonInstalments:
       type: object
       required:

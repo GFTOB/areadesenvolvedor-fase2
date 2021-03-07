@@ -441,6 +441,7 @@ components:
               description: |
                 Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga
               required:
+                - accounts
                 - compeCode
                 - branchCode
                 - number
@@ -452,6 +453,8 @@ components:
                 - subtype
                 - personalBusinessIndicator
               properties:
+                accounts:
+                  $ref: '#/paths/~1accounts~1%7BaccountId%7D~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/account'
                 compeCode:
                   type: string
                   maxLength: 3
@@ -537,7 +540,7 @@ components:
             account:
               type: object
               description: |
-                Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
+                Conjunto de informações da Conta de: depósito à vista
               required:
                 - overdraftLimits
               properties:
@@ -545,11 +548,14 @@ components:
                   type: object
                   description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
                   required:
+                    - account
                     - requestDateTime
                     - currency
                     - overdraftLimit
                     - balances
                   properties:
+                    account:
+                      $ref: '#/paths/~1accounts~1%7BaccountId%7D~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/account'
                     requestDateTime:
                       type: string
                       maxLength: 20
@@ -621,9 +627,12 @@ components:
               description: |
                 Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
               required:
+                - account
                 - transactions
                 - requestDateTime
               properties:
+                account:
+                  $ref: '#/paths/~1accounts~1%7BaccountId%7D~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/account'
                 requestDateTime:
                   type: string
                   maxLength: 20
@@ -640,103 +649,89 @@ components:
                 transactions:
                   type: object
                   description: |
-                    Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga
+                    Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.
                   required:
-                    - requestDateTime
-                    - currency
-                    - statementAccount
+                    - completedAuthorisedPaymentType
+                    - creditDebitType
+                    - transactionIdentification
+                    - type
+                    - amount
+                    - transactionDate
+                    - payer
+                    - payee
                   properties:
-                    statementAccount:
-                      type: array
-                      items:
-                        type: object
-                        description: |
-                          Agrupador das informações relativas às Transações de crédito e débito realizadas e autorizadas
-                        required:
-                          - completedAuthorisedPaymentType
-                          - creditDebitType
-                          - transactionIdentification
-                          - type
-                          - amount
-                          - transactionDate
-                          - payer
-                          - payee
-                        properties:
-                          completedAuthorisedPaymentType:
-                            type: string
-                            enum:
-                              - TRANSACAO_EFETIVADA
-                              - PAGAMENTO_AUTORIZADO
-                            description: |
-                              Indicador da transação
-                            example: TRANSACAO_EFETIVADA
-                          creditDebitType:
-                            $ref: '#/components/parameters/creditDebitIndicator/schema'
-                          transactionIdentification:
-                            type: string
-                            maxLength: 60
-                            pattern: \w*\W*
-                            description: Campo livre que corresponde ao identificador da transação na instituição financeira
-                            example: TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8
-                          type:
-                            type: string
-                            enum:
-                              - TED
-                              - DOC
-                              - PIX
-                              - TRANSFERENCIA_MESMA_INSTITUICAO
-                              - BOLETO
-                              - CONVENIO
-                              - ARRECADACAO
-                              - PACOTE_TARIFA_SERVICOS
-                              - TARIFA_SERVICOS_AVULSOS
-                              - FOLHA_PAGAMENTO
-                              - DEPOSITO
-                              - SAQUE
-                              - CARTAO
-                              - JUROS_CHEQUE_ESPECIAL
-                              - RENDIMENTO
-                              - OUTRO
-                            description: |
-                              Tipo de Transação
-                            example: OUTRO
-                          additionalInfo:
-                            type: string
-                            maxLength: 30
-                            pattern: \w*\W*
-                            description: |
-                              Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO
-                            example: Transferência
-                          amount:
-                            type: number
-                            description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
-                            example: 500.54
-                          transactionDate:
-                            type: string
-                            maxLength: 10
-                            pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                            description: |
-                              Se indicador de transação:
-                               TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
-                               PAGAMENTO_AUTORIZADO - corresponde a data prevista de efetivação da transação
-                            example: '2021-01-07'
-                          payer:
-                            type: string
-                            maxLength: 14
-                            pattern: '^\d{11}$|^\d{14}$|^NA$'
-                            description: |
-                              Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
-                            example: '43908445778'
-                          payee:
-                            type: string
-                            maxLength: 14
-                            pattern: '^\d{11}$|^\d{14}$|^NA$'
-                            description: |
-                              Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
-                            example: '67890854360'
-                      minItems: 1
+                    completedAuthorisedPaymentType:
+                      type: string
+                      enum:
+                        - TRANSACAO_EFETIVADA
+                        - PAGAMENTO_AUTORIZADO
                       description: |
-                        Lista dos lançamentos referentes às transações realizadas e de pagamento autorizado para as contas de: depósito à vista, poupança e de pagamento pré-paga
+                        Indicador da transação
+                      example: TRANSACAO_EFETIVADA
+                    creditDebitType:
+                      $ref: '#/components/parameters/creditDebitIndicator/schema'
+                    transactionIdentification:
+                      type: string
+                      maxLength: 60
+                      pattern: \w*\W*
+                      description: Campo livre que corresponde ao identificador da transação na instituição financeira
+                      example: TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8
+                    type:
+                      type: string
+                      enum:
+                        - TED
+                        - DOC
+                        - PIX
+                        - TRANSFERENCIA_MESMA_INSTITUICAO
+                        - BOLETO
+                        - CONVENIO
+                        - ARRECADACAO
+                        - PACOTE_TARIFA_SERVICOS
+                        - TARIFA_SERVICOS_AVULSOS
+                        - FOLHA_PAGAMENTO
+                        - DEPOSITO
+                        - SAQUE
+                        - CARTAO
+                        - JUROS_CHEQUE_ESPECIAL
+                        - RENDIMENTO
+                        - OUTRO
+                      description: |
+                        Tipo de Transação
+                      example: OUTRO
+                    additionalInfo:
+                      type: string
+                      maxLength: 60
+                      pattern: \w*\W*
+                      description: |
+                        Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO
+                      example: Transferência
+                    amount:
+                      type: number
+                      description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
+                      example: 500.54
+                    transactionDate:
+                      type: string
+                      maxLength: 10
+                      pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                      description: |
+                        Se indicador de transação:
+                         TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
+                         PAGAMENTO_AUTORIZADO - corresponde a data prevista de efetivação da transação
+                      example: '2021-01-07'
+                    payer:
+                      type: string
+                      maxLength: 14
+                      pattern: '^\d{11}$|^\d{14}$|^NA$'
+                      description: |
+                        Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
+                      example: '43908445778'
+                    payee:
+                      type: string
+                      maxLength: 14
+                      pattern: '^\d{11}$|^\d{14}$|^NA$'
+                      description: |
+                        Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
+                      example: '67890854360'
         links:
           $ref: '#/components/schemas/ResponseAccount/properties/links'
         meta:

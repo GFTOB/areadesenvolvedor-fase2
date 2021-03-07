@@ -1266,9 +1266,6 @@
                     <a href="#tocS_StatementAccountBalance" class="toc-h2 toc-link" data-title="StatementAccountBalance">StatementAccountBalance</a>
                   </li>
                   <li>
-                    <a href="#tocS_StatementAccountTransaction" class="toc-h2 toc-link" data-title="StatementAccountTransaction">StatementAccountTransaction</a>
-                  </li>
-                  <li>
                     <a href="#tocS_Transactions" class="toc-h2 toc-link" data-title="Transactions">Transactions</a>
                   </li>
                   <li>
@@ -7035,9 +7032,9 @@ This operation does not require authentication
 
 <h3 id='dicionario-de-dados-11'>Dicionário de dados</h3>
 
-<p><a href='dictionary/accounts_identification.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href='dictionary/accounts.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p><a href="dictionary/example/examples_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_accounts.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='especificacao-em-oas-3-0-11'>Especificação em OAS 3.0</h3>
 
@@ -7499,6 +7496,9 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24550245"</span><span class="p">,</span><span class="w">
@@ -8138,22 +8138,21 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -8443,6 +8442,9 @@ This operation does not require authentication
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -13481,6 +13483,9 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -13495,7 +13500,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
+<p>Conjunto de informações da Conta de: depósito à vista</p>
 
 <h3 id='propriedades-5'>Propriedades</h3>
 
@@ -13525,6 +13530,9 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -13551,7 +13559,7 @@ This operation does not require authentication
 <td>account</td>
 <td><a href="#schemaaccountoverdraftlimits">AccountOverdraftLimits</a></td>
 <td>true</td>
-<td>Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga</td>
+<td>Conjunto de informações da Conta de: depósito à vista</td>
 </tr>
 </tbody></table>
 
@@ -13599,6 +13607,9 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24550245"</span><span class="p">,</span><span class="w">
@@ -13635,22 +13646,21 @@ This operation does not require authentication
 <a id="tocSaccounttransactions"></a>
 <a id="tocsaccounttransactions"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -13669,6 +13679,12 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
+<td>account</td>
+<td><a href="#schemabalances/properties/account">Balances/properties/account</a></td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
 <td>requestDateTime</td>
 <td>string</td>
 <td>true</td>
@@ -13684,7 +13700,7 @@ This operation does not require authentication
 <td>transactions</td>
 <td><a href="#schematransactions">Transactions</a></td>
 <td>true</td>
-<td>Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga</td>
+<td>Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.</td>
 </tr>
 </tbody></table>
 
@@ -13697,22 +13713,21 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -22601,6 +22616,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <a id="tocsidentification"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24550245"</span><span class="p">,</span><span class="w">
@@ -22626,6 +22644,12 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>accounts</td>
+<td><a href="#schemabalances/properties/account">Balances/properties/account</a></td>
+<td>true</td>
+<td></td>
+</tr>
 <tr>
 <td>compeCode</td>
 <td>string</td>
@@ -26107,6 +26131,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <a id="tocsoverdraftlimits"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -26132,6 +26159,12 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>account</td>
+<td><a href="#schemabalances/properties/account">Balances/properties/account</a></td>
+<td>true</td>
+<td></td>
+</tr>
 <tr>
 <td>requestDateTime</td>
 <td>string</td>
@@ -27764,6 +27797,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"compeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"branchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6272"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24550245"</span><span class="p">,</span><span class="w">
@@ -27827,6 +27863,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"overdraftLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"overdraftLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FAIXA_1"</span><span class="p">,</span><span class="w">
@@ -27890,22 +27929,21 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -30168,12 +30206,12 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 </tr>
 </tbody></table>
 
-<h2 id="tocS_StatementAccountTransaction">StatementAccountTransaction</h2>
+<h2 id="tocS_Transactions">Transactions</h2>
 
-<p><a id="schemastatementaccounttransaction"></a>
-<a id="schema_StatementAccountTransaction"></a>
-<a id="tocSstatementaccounttransaction"></a>
-<a id="tocsstatementaccounttransaction"></a></p>
+<p><a id="schematransactions"></a>
+<a id="schema_Transactions"></a>
+<a id="tocStransactions"></a>
+<a id="tocstransactions"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
@@ -30188,7 +30226,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 </span></code></pre></div>
 
-<p>Agrupador das informações relativas às Transações de crédito e débito realizadas e autorizadas</p>
+<p>Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.</p>
 
 <h3 id='propriedades-250'>Propriedades</h3>
 
@@ -30256,51 +30294,6 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 </tr>
 </tbody></table>
 
-<h2 id="tocS_Transactions">Transactions</h2>
-
-<p><a id="schematransactions"></a>
-<a id="schema_Transactions"></a>
-<a id="tocStransactions"></a>
-<a id="tocstransactions"></a></p>
-
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statementAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"transactionIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferência"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"payee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67890854360"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div>
-
-<p>Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
-
-<h3 id='propriedades-251'>Propriedades</h3>
-
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Tipo</th>
-<th>Obrigatório</th>
-<th>Descrição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>statementAccount</td>
-<td>[<a href="#schemastatementaccounttransaction">StatementAccountTransaction</a>]</td>
-<td>true</td>
-<td>Lista dos lançamentos referentes às transações realizadas e de pagamento autorizado para as contas de: depósito à vista, poupança e de pagamento pré-paga</td>
-</tr>
-</tbody></table>
-
 <h2 id="tocS_UnarrangedAccountOverdraftBalloonInstalments">UnarrangedAccountOverdraftBalloonInstalments</h2>
 
 <p><a id="schemaunarrangedaccountoverdraftballooninstalments"></a>
@@ -30313,7 +30306,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-252'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-251'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30356,7 +30349,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações relativas às parcelas não regulares do contrato da modalidade de crédito consultada</p>
 
-<h3 id='propriedades-253'>Propriedades</h3>
+<h3 id='propriedades-252'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30394,7 +30387,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-254'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-253'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30440,7 +30433,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-255'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-254'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30523,7 +30516,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes à identificação da operação de crédito de adiantamento a depositantes</p>
 
-<h3 id='propriedades-256'>Propriedades</h3>
+<h3 id='propriedades-255'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30712,7 +30705,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas</p>
 
-<h3 id='propriedades-257'>Propriedades</h3>
+<h3 id='propriedades-256'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30791,7 +30784,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-258'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-257'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30827,7 +30820,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito</p>
 
-<h3 id='propriedades-259'>Propriedades</h3>
+<h3 id='propriedades-258'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30892,7 +30885,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada</p>
 
-<h3 id='propriedades-260'>Propriedades</h3>
+<h3 id='propriedades-259'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30946,7 +30939,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito</p>
 
-<h3 id='propriedades-261'>Propriedades</h3>
+<h3 id='propriedades-260'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31031,7 +31024,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"chargeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-262'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-261'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31086,7 +31079,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada</p>
 
-<h3 id='propriedades-263'>Propriedades</h3>
+<h3 id='propriedades-262'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31157,7 +31150,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito contratadas</p>
 
-<h3 id='propriedades-264'>Propriedades</h3>
+<h3 id='propriedades-263'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31202,7 +31195,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-265'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-264'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31229,7 +31222,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-266'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-265'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31289,7 +31282,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas</p>
 
-<h3 id='propriedades-267'>Propriedades</h3>
+<h3 id='propriedades-266'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31349,7 +31342,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações dos pagamentos referentes às operações de crédito de adiantamento a depositantes contratadas</p>
 
-<h3 id='propriedades-268'>Propriedades</h3>
+<h3 id='propriedades-267'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31445,7 +31438,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-269'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-268'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31479,7 +31472,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Lista dos pagamentos realizados no período</p>
 
-<h3 id='propriedades-270'>Propriedades</h3>
+<h3 id='propriedades-269'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31529,7 +31522,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"taxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-271'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-270'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31586,7 +31579,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada</p>
 
-<h3 id='propriedades-272'>Propriedades</h3>
+<h3 id='propriedades-271'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31641,7 +31634,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito contratadas</p>
 
-<h3 id='propriedades-273'>Propriedades</h3>
+<h3 id='propriedades-272'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31682,7 +31675,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w"></p>
 
-<p></span></code></pre></div><h3 id='propriedades-274'>Propriedades</h3>
+<p></span></code></pre></div><h3 id='propriedades-273'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
