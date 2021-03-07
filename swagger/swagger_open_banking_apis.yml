@@ -819,21 +819,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Lista.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Lista_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Lista_Accounts.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -904,21 +904,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.v1.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Identification.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -986,21 +986,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.v1.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Balances.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Balances.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1066,21 +1066,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.v1.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Transactions.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Transactions.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1151,21 +1151,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.v1.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -2432,7 +2432,7 @@ components:
         - accountID
       properties:
         type:
-          $ref: '#/components/schemas/EnumAccountType'
+          $ref: '#/components/schemas/EnumTypeAccount'
         compeCode:
           type: string
           description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
@@ -4405,6 +4405,14 @@ components:
       description: |
         Tipo de Transação
       example: OUTRO
+    EnumTypeAccount:
+      type: string
+      enum:
+        - CONTA_DEPOSITO_A_VISTA
+        - CONTA_POUPANCA
+        - CONTA_PAGAMENTO_PRE_PAGA
+      description: '| Tipos de contas ofertadas para pessoa natural ou jurídica, p.ex. ''CONTA_DEPOSITO_A_VISTA''. Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o dinheiro fica à sua disposição para ser sacado a qualquer momento. Essa conta não gera rendimentos para o depositante Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a ''destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados'''
+      example: CONTA_DEPOSITO_A_VISTA
     EnumUnarrangedAccountOverdraftProductType:
       type: string
       description: |
