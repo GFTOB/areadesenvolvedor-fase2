@@ -2421,6 +2421,48 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
 components:
   schemas:
+    Account:
+      type: object
+      required:
+        - type
+        - compeCode
+        - branchCode
+        - number
+        - checkDigit
+        - accountID
+      properties:
+        type:
+          $ref: '#/components/schemas/EnumAccountType'
+        compeCode:
+          type: string
+          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
+          pattern: '\d{3}|^NA$'
+          maxLength: 3
+          example: '001'
+        branchCode:
+          type: string
+          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+          pattern: '\d{4}|^NA$'
+          maxLength: 4
+          example: '6272'
+        number:
+          type: string
+          description: Número da conta
+          pattern: '^\d{8,20}$|^NA$'
+          maxLength: 20
+          example: '94088392'
+        checkDigit:
+          type: string
+          description: Dígito da conta
+          pattern: \w*\W*
+          maxLength: 1
+          example: '4'
+        accountID:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
     AccountBalances:
       type: object
       description: |
@@ -2436,7 +2478,7 @@ components:
         - account
       properties:
         account:
-          $ref: '#/components/schemas/AccountBalances'
+          $ref: '#/components/schemas/Balances'
     AccountsLimits:
       type: object
       description: Conjunto de informações referentes aos limites da conta de  pagamento pós-paga.
@@ -2542,11 +2584,24 @@ components:
       description: |
         Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
+        - account
         - requestDateTime
         - currency
         - avaiableAmount
         - blockedAmount
+        - automaticallyInvestedAmount
       properties:
+        account:
+          type: object
+          required:
+            - accountId
+          properties:
+            accountID:
+              type: string
+              description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+              pattern: \w*\W*
+              maxLength: 100
+              example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -2559,16 +2614,25 @@ components:
           maxLength: 3
           format: CurrencyString
           description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+          example: BRL
         avaiableAmount:
           type: number
           nullable: true
           description: 'Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo. Expresso em valor monetário com 4 casas decimais'
           maxLength: 19
+          example: 100000
         blockedAmount:
           type: number
           nullable: true
           description: Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática Expresso em valor monetário com 4 casas decimais
           maxLength: 19
+          example: 100000
+        automaticallyInvestedAmount:
+          type: number
+          nullable: true
+          description: Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática Expresso em valor monetário com 4 casas decimais
+          maxLength: 19
+          example: 100000
     BusinessFinancialRelationBrand:
       type: object
       description: Objeto que define a Organização controladora do grupo de instituições financeiras
@@ -3501,11 +3565,7 @@ components:
         - CONTA_DEPOSITO_A_VISTA
         - CONTA_POUPANCA
         - CONTA_PAGAMENTO_PRE_PAGA
-      description: |
-        Tipos de contas ofertadas para pessoa natural ou jurídica, p.ex. 'CONTA_DEPOSITO_A_VISTA'.
-        Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o dinheiro fica à sua disposição para ser sacado a qualquer momento. Essa conta não gera rendimentos para o depositante
-        Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado
-        Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a 'destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados'
+      description: '| Tipos de contas ofertadas para pessoa natural ou jurídica, p.ex. ''CONTA_DEPOSITO_A_VISTA''. Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o dinheiro fica à sua disposição para ser sacado a qualquer momento. Essa conta não gera rendimentos para o depositante Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a ''destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados'''
       example: CONTA_DEPOSITO_A_VISTA
     EnumAreaCode:
       type: string
@@ -6544,8 +6604,6 @@ components:
         - type
         - amount
       properties:
-        overdraftLimit:
-          $ref: '#/components/schemas/OverdraftLimits/properties/overdraftLimit'
         type:
           $ref: '#/components/schemas/EnumOverdraftLimitType'
         amount:
@@ -6947,47 +7005,7 @@ components:
               type: array
               description: 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento'
               items:
-                type: object
-                required:
-                  - type
-                  - compeCode
-                  - branchCode
-                  - number
-                  - checkDigit
-                  - accountID
-                properties:
-                  type:
-                    $ref: '#/components/schemas/EnumAccountType'
-                  compeCode:
-                    type: string
-                    description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
-                    pattern: '\d{3}|^NA$'
-                    maxLength: 3
-                    example: '001'
-                  branchCode:
-                    type: string
-                    description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
-                    pattern: '\d{4}|^NA$'
-                    maxLength: 4
-                    example: '6272'
-                  number:
-                    type: string
-                    description: Número da conta
-                    pattern: '^\d{8,20}$|^NA$'
-                    maxLength: 20
-                    example: '94088392'
-                  checkDigit:
-                    type: string
-                    description: Dígito da conta
-                    pattern: \w*\W*
-                    maxLength: 1
-                    example: '4'
-                  accountID:
-                    type: string
-                    description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
-                    pattern: \w*\W*
-                    maxLength: 100
-                    example: '92792126019929279212650822221989319252576'
+                $ref: '#/components/schemas/Account'
               minItems: 1
         links:
           $ref: '#/components/schemas/Links'
@@ -7001,7 +7019,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/AccountBalancesData'
+          $ref: '#/components/schemas/Balances'
         links:
           $ref: '#/components/schemas/Links'
         meta:
