@@ -99,6 +99,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
   /customers/v1/personal/qualifications:
     get:
       tags:
@@ -177,6 +181,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
   /customers/v1/personal/finantial-relations:
     get:
       tags:
@@ -255,6 +263,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
   /customers/v1/business/identifications:
     get:
       tags:
@@ -332,6 +344,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
   /customers/v1/business/qualifications:
     get:
       tags:
@@ -410,6 +426,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
   /customers/v1/business/finantial-relations:
     get:
       tags:
@@ -488,6 +508,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
   '/credit-cards-accounts/v1/accounts/{creditCardAccountId}':
     get:
       tags:
@@ -8475,3 +8499,7 @@ components:
       required: false
       schema:
         type: string
+  securitySchemes:
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
