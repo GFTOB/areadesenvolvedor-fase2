@@ -391,14 +391,6 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#apis-do-open-banking-brasil-default" class="toc-h1 toc-link" data-title="Default">Default</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#security_accounts_v1_accounts-accountid" class="toc-h2 toc-link" data-title="security_accounts_v1_accounts{accountId}">security_<em>accounts_v1_accounts</em>{accountId}</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#apis-do-open-banking-brasil-api-dados-cadastrais" class="toc-h1 toc-link" data-title="API - Dados Cadastrais">API - Dados Cadastrais</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3831,60 +3823,6 @@ Os testes para TPPs devem acontecer em 3 etapas:</p>
 
 <h1 id='authentication'>Authentication</h1>
 
-<h1 id="apis-do-open-banking-brasil-default">Default</h1>
-
-<h2 id='security_accounts_v1_accounts-accountid'>security_<em>accounts_v1_accounts</em>{accountId}</h2>
-
-<blockquote>
-<p>Exemplo de código</p>
-</blockquote>
-
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">readystatechange</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">SECURITY</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"SECURITY"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/"</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">customMethod</span><span class="o">(</span><span class="s">"SECURITY"</span><span class="o">,</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
-</code></pre></div>
-
-<p><code>SECURITY /accounts/v1/accounts/{accountId}</code></p>
-
-<h3 id="security__accounts_v1_accounts_{accountid}-responses">Resposta</h3>
-
-<table><thead>
-<tr>
-<th>Status</th>
-<th>Significado</th>
-<th>Descrição</th>
-<th>Schema</th>
-</tr>
-</thead><tbody>
-</tbody></table>
-
-<aside class="success">
-This operation does not require authentication
-</aside>
-
 <h1 id="apis-do-open-banking-brasil-api-dados-cadastrais">API - Dados Cadastrais</h1>
 
 <h2 id='identificacao-pessoa-natural'>Identificação Pessoa Natural</h2>
@@ -6023,8 +5961,9 @@ OpenId ( Scopes: openId customers )
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+Para realizar esta operação, você deve ser autenticado por meio de um dos seguintes métodos:
+OpenId ( Scopes: openId credit-card )
 </aside>
 
 <h2 id='limites-de-cartao-de-credito'>Limites de cartão de crédito</h2>
@@ -6327,8 +6266,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+Para realizar esta operação, você deve ser autenticado por meio de um dos seguintes métodos:
+OpenId ( Scopes: openId credit-card )
 </aside>
 
 <h2 id='transacoes-de-cartao-de-credito'>Transações de cartão de crédito</h2>
@@ -6680,8 +6620,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+Para realizar esta operação, você deve ser autenticado por meio de um dos seguintes métodos:
+OpenId ( Scopes: openId credit-card )
 </aside>
 
 <h2 id='fatura-de-cartao-de-credito'>Fatura de Cartão de Crédito</h2>
@@ -6996,8 +6937,9 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+Para realizar esta operação, você deve ser autenticado por meio de um dos seguintes métodos:
+OpenId ( Scopes: openId credit-card )
 </aside>
 
 <h1 id="apis-do-open-banking-brasil-api-contas">API - Contas</h1>
@@ -7664,8 +7606,9 @@ OpenId ( Scopes: openId accounts )
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+Para realizar esta operação, você deve ser autenticado por meio de um dos seguintes métodos:
+OpenId ( Scopes: openId accounts )
 </aside>
 
 <h2 id='saldos-da-conta'>Saldos da conta</h2>
