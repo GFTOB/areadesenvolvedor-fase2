@@ -906,6 +906,10 @@ paths:
           description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
           description: Ocorreu um erro no gateway da API ou no microsserviço.
+      security:
+        - OpenId:
+            - openId
+            - accounts
   '/accounts/v1/accounts/{accountId}':
     get:
       tags:
@@ -990,6 +994,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+    security:
+      - OpenId:
+          - openId
+          - accounts
   '/accounts/v1/accounts/{accountId}/balances':
     get:
       tags:
@@ -1070,6 +1078,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - accounts
   '/accounts/v1/accounts/{accountId}/transactions':
     get:
       tags:
@@ -1155,6 +1167,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - accounts
   '/accounts/v1/accounts/{accountId}/overdraft-limits':
     get:
       tags:
@@ -1235,6 +1251,10 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
         '500':
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+      security:
+        - OpenId:
+            - openId
+            - accounts
   '/loans/v1/contract/{contractId}':
     get:
       tags:
