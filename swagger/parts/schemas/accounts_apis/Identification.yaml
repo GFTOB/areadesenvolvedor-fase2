@@ -15,7 +15,7 @@ required:
   - personalBusinessIndicator
 properties:
   accounts:
-    $ref: ./Accounts.yaml
+    $ref: ../Accounts.yaml
   compeCode:
     type: string
     maxLength: 3

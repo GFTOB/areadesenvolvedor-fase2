@@ -37,10 +37,6 @@ paths:
         - $ref: '#/components/parameters/xFapiCustomerIpAddress'
         - $ref: '#/components/parameters/xFapiInteractionId'
         - $ref: '#/components/parameters/xCustomerUserAgent'
-        - $ref: '#/components/parameters/accountsCompeCode'
-        - $ref: '#/components/parameters/accountsBranchCode'
-        - $ref: '#/components/parameters/accountsNumber'
-        - $ref: '#/components/parameters/accountsCheckDigit'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -84,10 +80,6 @@ paths:
         - $ref: '#/components/parameters/xFapiInteractionId'
         - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/accountId'
-        - $ref: '#/components/parameters/accountsCompeCode'
-        - $ref: '#/components/parameters/accountsBranchCode'
-        - $ref: '#/components/parameters/accountsNumber'
-        - $ref: '#/components/parameters/accountsCheckDigit'
       responses:
         '200':
           description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
@@ -560,7 +552,16 @@ components:
                 - balances
               properties:
                 accounts:
-                  $ref: '#/paths/~1accounts~1%7BaccountId%7D~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/accounts'
+                  type: object
+                  required:
+                    - accountId
+                  properties:
+                    accountID:
+                      type: string
+                      description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para o proprietário da conta
+                      pattern: \w*\W*
+                      maxLength: 100
+                      example: '92792126019929279212650822221989319252576'
                 requestDateTime:
                   type: string
                   maxLength: 20
@@ -632,12 +633,9 @@ components:
               description: |
                 Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
               required:
-                - account
                 - transactions
                 - requestDateTime
               properties:
-                account:
-                  $ref: '#/paths/~1accounts~1%7BaccountId%7D~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/accounts'
                 requestDateTime:
                   type: string
                   maxLength: 20
@@ -656,6 +654,7 @@ components:
                   description: |
                     Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.
                   required:
+                    - accounts
                     - completedAuthorisedPaymentType
                     - creditDebitType
                     - transactionIdentification
@@ -670,6 +669,8 @@ components:
                     - payerCompeCode
                     - payerPersonType
                   properties:
+                    accounts:
+                      $ref: '#/paths/~1accounts~1%7BaccountId%7D~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/accounts'
                     completedAuthorisedPaymentType:
                       type: string
                       description: Indicador da transação

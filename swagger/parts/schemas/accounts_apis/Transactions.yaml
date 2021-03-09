@@ -2,6 +2,7 @@ type: object
 description: |
   Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.
 required:
+  - accounts
   - completedAuthorisedPaymentType
   - creditDebitType
   - transactionIdentification
@@ -16,6 +17,8 @@ required:
   - payerCompeCode
   - payerPersonType
 properties:
+  accounts:
+    $ref: ../Accounts.yaml
   completedAuthorisedPaymentType:
     $ref: ../enum/EnumCompletedAuthorisedPaymentIndicator.yaml
   creditDebitType:
