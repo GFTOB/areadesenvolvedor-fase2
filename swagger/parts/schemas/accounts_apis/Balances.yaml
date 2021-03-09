@@ -9,7 +9,7 @@ required:
   - automaticallyInvestedAmount
 properties:
   accounts:
-    $ref: ../Accounts.yaml
+    $ref: ./Accounts.yaml
   requestDateTime:
     type: string
     maxLength: 20
