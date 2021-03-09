@@ -801,11 +801,11 @@ components:
                           description: Informação que identifica a fatura onde consta a transação informada.
                         creditDebitType:
                           type: string
+                          description: |
+                            Indicador do tipo de lançamento: a crédito ou a débito.
                           enum:
                             - CREDITO
                             - DEBITO
-                          description: |
-                            Indicador do tipo de lançamento: a crédito ou a débito. 
                           example: CREDITO
                         transactionType:
                           $ref: '#/components/parameters/creditCardTransactionType/schema'
