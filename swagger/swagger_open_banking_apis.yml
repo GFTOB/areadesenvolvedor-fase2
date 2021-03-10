@@ -2614,12 +2614,16 @@ components:
       description: |
         Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - account
+        - accountId
         - transactions
         - requestDateTime
       properties:
-        account:
-          $ref: '#/components/schemas/Balances/properties/accounts'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -2647,23 +2651,18 @@ components:
       description: |
         Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - accounts
+        - accountId
         - requestDateTime
         - avaiableAmount
         - blockedAmount
         - automaticallyInvestedAmount
       properties:
-        accounts:
-          type: object
-          required:
-            - accountId
-          properties:
-            accountID:
-              type: string
-              description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
-              pattern: \w*\W*
-              maxLength: 100
-              example: '92792126019929279212650822221989319252576'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -5139,7 +5138,7 @@ components:
       description: |
         Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - accounts
+        - accountId
         - compeCode
         - branchCode
         - number
@@ -5151,8 +5150,12 @@ components:
         - subtype
         - personalBusinessIndicator
       properties:
-        accounts:
-          $ref: '#/components/schemas/Balances/properties/accounts'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         compeCode:
           type: string
           maxLength: 3
@@ -6629,14 +6632,18 @@ components:
       type: object
       description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
       required:
-        - accounts
+        - accountId
         - requestDateTime
         - currency
         - overdraftLimit
         - balances
       properties:
-        accounts:
-          $ref: '#/components/schemas/Balances/properties/accounts'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -7101,7 +7108,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/AccountIdentificationData'
+          $ref: '#/components/schemas/Identification'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7127,7 +7134,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/AccountTransactionsData'
+          $ref: '#/components/schemas/Transactions'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7716,25 +7723,26 @@ components:
       description: |
         Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.
       required:
+        - accountId
         - completedAuthorisedPaymentType
-        - creditDebitType
-        - transactionIdentification
+        - creditDebitIndicator
         - type
+        - additionalInfo
         - amount
         - transactionDate
         - payer
         - payee
       properties:
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         completedAuthorisedPaymentType:
           $ref: '#/components/schemas/EnumCompletedAuthorisedPaymentIndicator'
-        creditDebitType:
+        creditDebitIndicator:
           $ref: '#/components/schemas/EnumCreditDebitIndicator'
-        transactionIdentification:
-          type: string
-          maxLength: 60
-          pattern: \w*\W*
-          description: Campo livre que corresponde ao identificador da transação na instituição financeira
-          example: TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8
         type:
           $ref: '#/components/schemas/EnumTransactionTypes'
         additionalInfo:
@@ -7761,15 +7769,13 @@ components:
           type: string
           maxLength: 14
           pattern: '^\d{11}$|^\d{14}$|^NA$'
-          description: |
-            Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
+          description: 'Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)'
           example: '43908445778'
         payee:
           type: string
           maxLength: 14
           pattern: '^\d{11}$|^\d{14}$|^NA$'
-          description: |
-            Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
+          description: 'Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)'
           example: '67890854360'
     UnarrangedAccountOverdraftBalloonInstalments:
       type: object
