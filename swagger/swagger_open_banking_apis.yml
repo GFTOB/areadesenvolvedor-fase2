@@ -4028,11 +4028,10 @@ components:
       example: SALDO_DISPONIVEL
     EnumCompletedAuthorisedPaymentIndicator:
       type: string
+      description: Indicador da transação
       enum:
         - TRANSACAO_EFETIVADA
-        - PAGAMENTO_AUTORIZADO
-      description: |
-        Indicador da transação
+        - LANCAMENTO_FUTURO
       example: TRANSACAO_EFETIVADA
     EnumContractProductSubTypeFinancings:
       type: string
@@ -4303,11 +4302,11 @@ components:
       example: CASHBACK
     EnumCreditDebitIndicator:
       type: string
+      description: |
+        Indicador do tipo de lançamento: a crédito ou a débito.
       enum:
         - CREDITO
         - DEBITO
-      description: |
-        Indicador do tipo de lançamento: a crédito ou a débito. 
       example: CREDITO
     EnumCreditCardAccountsPaymentMode:
       type: string
@@ -4340,6 +4339,20 @@ components:
       enum:
         - SOCIO
         - ADMINISTRADOR
+    EnumPayerPersonType:
+      type: string
+      description: Identificação do Tipo de Pessoa do Pagador da transação
+      enum:
+        - PESSOA_NATURAL
+        - PESSOA_JURIDICA
+      example: PESSOA_NATURAL
+    EnumPayeePersonType:
+      type: string
+      description: Identificação do Tipo de Pessoa do Pagador da transação
+      enum:
+        - PESSOA_NATURAL
+        - PESSOA_JURIDICA
+      example: PESSOA_NATURAL
     EnumPersonalOtherDocumentType:
       type: string
       enum:
@@ -4389,6 +4402,8 @@ components:
       example: SEGURO
     EnumTransactionTypes:
       type: string
+      description: |
+        Tipo de Transação
       enum:
         - TED
         - DOC
@@ -4405,9 +4420,9 @@ components:
         - CARTAO
         - JUROS_CHEQUE_ESPECIAL
         - RENDIMENTO
+        - RECEBIVEIS_CARTAO_DEBITO
+        - RECEBIVEIS_CARTAO_CREDITO
         - OUTRO
-      description: |
-        Tipo de Transação
       example: OUTRO
     EnumTypeAccount:
       type: string
@@ -7740,26 +7755,42 @@ components:
       description: |
         Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.
       required:
-        - accountId
         - completedAuthorisedPaymentType
-        - creditDebitIndicator
+        - creditDebitType
+        - transactionIdentification
         - type
-        - additionalInfo
         - amount
         - transactionDate
-        - payer
-        - payee
+        - payerCnpjCpf
+        - payeeCnpjCpf
+        - payerCheckDigit
+        - payerNumber
+        - payerBranchCode
+        - payerCompeCode
+        - payerPersonType
+        - accountID
+        - payeePersonType
+        - payeeCompeCode
+        - payeeBranchCode
+        - payeeNumber
+        - payeeCheckDigit
       properties:
-        accountId:
+        accountID:
           type: string
-          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          description: 'Um identificador único e imutável usado para identificar o recurso da conta (depósito à vista, poupapança e de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta'
           pattern: \w*\W*
           maxLength: 100
           example: '92792126019929279212650822221989319252576'
         completedAuthorisedPaymentType:
           $ref: '#/components/schemas/EnumCompletedAuthorisedPaymentIndicator'
-        creditDebitIndicator:
+        creditDebitType:
           $ref: '#/components/schemas/EnumCreditDebitIndicator'
+        transactionIdentification:
+          type: string
+          maxLength: 60
+          pattern: \w*\W*
+          description: Campo livre que corresponde ao identificador da transação na instituição financeira
+          example: TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8
         type:
           $ref: '#/components/schemas/EnumTransactionTypes'
         additionalInfo:
@@ -7780,20 +7811,74 @@ components:
           description: |
             Se indicador de transação:
              TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
-             PAGAMENTO_AUTORIZADO - corresponde a data prevista de efetivação da transação
+             LANCAMENTO_FUTURO - corresponde a data prevista de efetivação da transação
           example: '2021-01-07'
-        payer:
+        payerPersonType:
+          $ref: '#/components/schemas/EnumPayerPersonType'
+        payerCompeCode:
+          type: string
+          maxLength: 3
+          pattern: '\d{3}|^NA$'
+          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
+          example: '001'
+        payerBranchCode:
+          type: string
+          maxLength: 4
+          pattern: '\d{4}|^NA$'
+          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+          example: '6272'
+        payerNumber:
+          type: string
+          maxLength: 20
+          pattern: '^\d{8,20}$|^NA$'
+          description: Número da conta
+          example: '94088392'
+        payerCheckDigit:
+          type: string
+          maxLength: 1
+          pattern: \w*\W*
+          description: Dígito da conta
+          example: '4'
+        payerCnpjCpf:
           type: string
           maxLength: 14
           pattern: '^\d{11}$|^\d{14}$|^NA$'
-          description: 'Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)'
+          description: |
+            Identificação do Pagador da transação. Número do cadastro nas Receita Federal (Preencher com CPF ou CNPJ sem formatação)
           example: '43908445778'
-        payee:
+        payeeCnpjCpf:
           type: string
           maxLength: 14
           pattern: '^\d{11}$|^\d{14}$|^NA$'
-          description: 'Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)'
+          description: |
+            Identificação do Recebedor da transação. Número do cadastro nas Receita Federal  (Preencher com CPF ou CNPJ sem formatação)
           example: '67890854360'
+        payeePersonType:
+          $ref: '#/components/schemas/EnumPayeePersonType'
+        payeeCompeCode:
+          type: string
+          maxLength: 3
+          pattern: '\d{3}|^NA$'
+          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
+          example: '001'
+        payeeBranchCode:
+          type: string
+          maxLength: 4
+          pattern: '\d{4}|^NA$'
+          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+          example: '6272'
+        payeeNumber:
+          type: string
+          maxLength: 20
+          pattern: '^\d{8,20}$|^NA$'
+          description: Número da conta
+          example: '94088392'
+        payeeCheckDigit:
+          type: string
+          maxLength: 1
+          pattern: \w*\W*
+          description: Dígito da conta
+          example: '4'
     UnarrangedAccountOverdraftBalloonInstalments:
       type: object
       required:
