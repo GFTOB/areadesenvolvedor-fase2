@@ -84,21 +84,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -166,21 +166,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -248,21 +248,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -329,21 +329,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -411,21 +411,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -493,21 +493,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -572,21 +572,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -4433,6 +4433,22 @@ components:
       enum:
         - ADIANTAMENTO_A_DEPOSITANTES
       example: ADIANTAMENTO_A_DEPOSITANTES
+    Errors:
+      type: object
+      required:
+        - code
+        - title
+        - detail
+      properties:
+        code:
+          description: Código de erro específico do endpoint
+          type: string
+        title:
+          description: Título legível por humanos do erro deste erro específico
+          type: string
+        detail:
+          description: Descrição legível por humanos deste erro específico
+          type: string
     Filiation:
       type: object
       required:
@@ -7375,6 +7391,17 @@ components:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
+    ResponseError:
+      type: object
+      required:
+        - errors
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Errors'
+        meta:
+          $ref: '#/components/schemas/Meta'
     ResponsePersonalCustomersFinancialRelation:
       type: object
       required:
@@ -8536,3 +8563,52 @@ components:
       type: openIdConnect
       description: 'O OpenID Connect é uma camada de identidade sobre o protocolo OAuth 2.0, que permite a identificação de um usuário final com base na autenticação realizada por um Authorization Server.'
       openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
+  responses:
+    BadRequest:
+      description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    Forbidden:
+      description: O token tem escopo incorreto ou uma política de segurança foi violada
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    InternalServerError:
+      description: Ocorreu um erro no gateway da API ou no microsserviço
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    MethodNotAllowed:
+      description: O consumidor tentou acessar o recurso com um método não suportado
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    NotAcceptable:
+      description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    NotFound:
+      description: O recurso solicitado não existe ou não foi implementado
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    TooManyRequests:
+      description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    Unauthorized:
+      description: Cabeçalho de autenticação ausente/inválido ou token inválido
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
