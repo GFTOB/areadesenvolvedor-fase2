@@ -1624,21 +1624,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsContract'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/financings/v1/contract/{contractId}/warranties':
     get:
       tags:
@@ -1700,21 +1700,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsWarranties'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/financings/v1/contract/{contractId}/payments':
     get:
       tags:
@@ -1776,21 +1776,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsPayments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/financings/v1/contract/{contractId}/instalments':
     get:
       tags:
@@ -1852,21 +1852,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsInstalments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/unarranged-accounts-overdraft/v1/contract/{contractId}':
     get:
       tags:
