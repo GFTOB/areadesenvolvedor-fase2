@@ -7282,7 +7282,7 @@ OpenId ( Scopes: openId accounts )
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/string</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
@@ -7304,13 +7304,13 @@ OpenId ( Scopes: openId accounts )
     <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
     <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/string"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
@@ -7419,6 +7419,13 @@ OpenId ( Scopes: openId accounts )
 <td>string</td>
 <td>false</td>
 <td>Indica o user-agent que o usuário utiliza.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Identificador da conta de depósito à vista, de poupança ou de pagamento pré-paga.</td>
 </tr>
 <tr>
 <td>fromBookingDate</td>
