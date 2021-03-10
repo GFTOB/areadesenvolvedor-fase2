@@ -3214,13 +3214,7 @@ components:
         - amount
       properties:
         type:
-          type: string
-          description: Traz os tipos dos valores relativos aos saldos  do Limite de crédito total da conta de pagamento pós-paga.
-          enum:
-            - VALOR_TOTAL
-            - VALOR_UTILIZADO
-            - VALOR_DISPONIVEL
-          example: VALOR_TOTAL
+          $ref: '#/components/schemas/EnumCreditCardsAccountsBalancesType'
         amount:
           type: string
           description: 'Valor do limite de crédito informado (total ou por modalidade), relativo ao tipo selecionado. Expresso em valor monetário com 2 casas decimais'
@@ -3258,12 +3252,7 @@ components:
           description: 'Campo livre, de preenchimento obrigatório quando selecionado tipo de transação ''OUTROS'''
           maxLength: 50
         paymentType:
-          type: string
-          description: Traz os tipos de pagamento
-          enum:
-            - A_VISTA
-            - A_PRAZO
-          example: A_VISTA
+          $ref: '#/components/schemas/EnumCreditCardAccountsPaymentType'
         feeType:
           $ref: '#/components/schemas/EnumCreditCardAccountFee'
         feeTypeAdditionalInfo:
@@ -3271,14 +3260,7 @@ components:
           maxLength: 50
           description: 'Campo livre, de preenchimento obrigatório quando selecionada tipo de tarifa ''OUTRA'''
         otherCreditsType:
-          type: string
-          description: Traz outros tipos de crédito contratados no cartão.
-          enum:
-            - CREDITO_ROTATIVO
-            - PARCELAMENTO_FATURA
-            - EMPRESTIMO
-            - OUTROS
-          example: CREDITO_ROTATIVO
+          $ref: '#/components/schemas/EnumCreditCardAccountsOtherCreditType'
         otherCreditsAdditionalInfo:
           type: string
           maxLength: 50
@@ -4331,6 +4313,22 @@ components:
         - EMPRESTIMO
         - OUTROS
       example: CREDITO_ROTATIVO
+    EnumCreditCardAccountsOtherCreditType:
+      type: string
+      description: Traz outros tipos de crédito contratados no cartão.
+      enum:
+        - CREDITO_ROTATIVO
+        - PARCELAMENTO_FATURA
+        - EMPRESTIMO
+        - OUTROS
+      example: CREDITO_ROTATIVO
+    EnumCreditCardAccountsPaymentType:
+      type: string
+      description: Traz os tipos de pagamento
+      enum:
+        - A_VISTA
+        - A_PRAZO
+      example: A_VISTA
     EnumCreditCardAccountsProductType:
       type: string
       description: 'Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.'
@@ -4368,6 +4366,14 @@ components:
         - CASHBACK
         - OUTROS
       example: CASHBACK
+    EnumCreditCardsAccountsBalancesType:
+      type: string
+      description: Traz os tipos dos valores relativos aos saldos  do Limite de crédito total da conta de pagamento pós-paga.
+      enum:
+        - VALOR_TOTAL
+        - VALOR_UTILIZADO
+        - VALOR_DISPONIVEL
+      example: VALOR_TOTAL
     EnumCreditDebitIndicator:
       type: string
       description: |
