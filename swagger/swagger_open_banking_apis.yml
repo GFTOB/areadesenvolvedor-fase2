@@ -2474,6 +2474,48 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
 components:
   schemas:
+    Account:
+      type: object
+      required:
+        - type
+        - compeCode
+        - branchCode
+        - number
+        - checkDigit
+        - accountID
+      properties:
+        type:
+          $ref: '#/components/schemas/EnumTypeAccount'
+        compeCode:
+          type: string
+          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
+          pattern: '\d{3}|^NA$'
+          maxLength: 3
+          example: '001'
+        branchCode:
+          type: string
+          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+          pattern: '\d{4}|^NA$'
+          maxLength: 4
+          example: '6272'
+        number:
+          type: string
+          description: Número da conta
+          pattern: '^\d{8,20}$|^NA$'
+          maxLength: 20
+          example: '94088392'
+        checkDigit:
+          type: string
+          description: Dígito da conta
+          pattern: \w*\W*
+          maxLength: 1
+          example: '4'
+        accountID:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
     AccountBalances:
       type: object
       description: |
@@ -2490,6 +2532,31 @@ components:
       properties:
         account:
           $ref: '#/components/schemas/Balances'
+    AccountBrand:
+      type: object
+      required:
+        - brandName
+        - companyCnpj
+        - accounts
+      properties:
+        brandName:
+          type: string
+          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
+          maxLength: 80
+          pattern: \w*\W*
+          example: Organização A
+        companyCnpj:
+          type: string
+          maxLength: 14
+          pattern: '\d{14}|^NA$'
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          example: '21128159000166'
+        accounts:
+          type: array
+          description: 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento'
+          items:
+            $ref: '#/components/schemas/Account'
+          minItems: 1
     AccountsLimits:
       type: object
       description: Conjunto de informações referentes aos limites da conta de  pagamento pós-paga.
@@ -4322,6 +4389,16 @@ components:
         - BOLETO_BANCARIO
         - AVERBACAO_FOLHA
         - PIX
+    EnumOverdraftLimit:
+      type: string
+      description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
+      enum:
+        - FAIXA_1
+        - FAIXA_2
+        - FAIXA_3
+        - FAIXA_4
+        - FAIXA_5
+      example: FAIXA_1
     EnumPartiesParticipationDocumentType:
       type: string
       enum:
@@ -6641,15 +6718,7 @@ components:
             Moeda referente aos valores de Limite de Cheque Especial e de Adiantamento a depositante , segundo modelo ISO-4217. p.ex. 'BRL'. Todos os saldos informados estão representados com a moeda vigente do Brasil.
           example: BRL
         overdraftLimit:
-          type: string
-          description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
-          enum:
-            - FAIXA_1
-            - FAIXA_2
-            - FAIXA_3
-            - FAIXA_4
-            - FAIXA_5
-          example: FAIXA_1
+          $ref: '#/components/schemas/EnumOverdraftLimit'
         balances:
           type: array
           description: Lista dos valores referentes ao utilizado do Limite de Cheque especial e do adiantamento a depositante
@@ -7041,70 +7110,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brandName
-            - companyCnpj
-            - accounts
-          properties:
-            brandName:
-              type: string
-              description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-              maxLength: 80
-              pattern: \w*\W*
-              example: Organização A
-            companyCnpj:
-              type: string
-              maxLength: 14
-              pattern: '\d{14}|^NA$'
-              description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-              example: '21128159000166'
-            accounts:
-              type: array
-              description: 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento'
-              items:
-                type: object
-                required:
-                  - type
-                  - compeCode
-                  - branchCode
-                  - number
-                  - checkDigit
-                  - accountID
-                properties:
-                  type:
-                    $ref: '#/components/schemas/EnumTypeAccount'
-                  compeCode:
-                    type: string
-                    description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
-                    pattern: '\d{3}|^NA$'
-                    maxLength: 3
-                    example: '001'
-                  branchCode:
-                    type: string
-                    description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
-                    pattern: '\d{4}|^NA$'
-                    maxLength: 4
-                    example: '6272'
-                  number:
-                    type: string
-                    description: Número da conta
-                    pattern: '^\d{8,20}$|^NA$'
-                    maxLength: 20
-                    example: '94088392'
-                  checkDigit:
-                    type: string
-                    description: Dígito da conta
-                    pattern: \w*\W*
-                    maxLength: 1
-                    example: '4'
-                  accountID:
-                    type: string
-                    description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
-                    pattern: \w*\W*
-                    maxLength: 100
-                    example: '92792126019929279212650822221989319252576'
-              minItems: 1
+          $ref: '#/components/schemas/AccountBrand'
         links:
           $ref: '#/components/schemas/Links'
         meta:
