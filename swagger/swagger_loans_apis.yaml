@@ -58,6 +58,10 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
   '/contracts/{contractId}/warranties':
     get:
       tags:
@@ -97,6 +101,10 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
   '/contracts/{contractId}/instalments':
     get:
       tags:
@@ -136,6 +144,10 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
   '/contracts/{contractId}/payments':
     get:
       tags:
@@ -175,6 +187,10 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
 components:
   schemas:
     EnumBankBorrowingContractAmortizationSchedule:
@@ -1163,6 +1179,10 @@ components:
       required: false
       schema:
         type: string
+  securitySchemes:
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
   responses:
     BadRequest:
       description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
