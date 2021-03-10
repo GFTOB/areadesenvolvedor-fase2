@@ -390,7 +390,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractData'
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -919,22 +919,6 @@ components:
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftFinanceCharge'
           minItems: 1
-    UnarrangedAccountOverdraftContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
-    UnarrangedAccountOverdraftContractData:
-      type: object
-      required:
-        - unarrangedAccountOverdraft
-      properties:
-        unarrangedAccountOverdraft:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractBank'
     UnarrangedAccountOverdraftContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito

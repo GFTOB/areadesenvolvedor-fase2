@@ -638,22 +638,6 @@ components:
           pattern: '\d{14}'
           description: |
             CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado
-    LoansContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de empréstimos contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/LoansContract'
-    LoansContractData:
-      type: object
-      required:
-        - loans
-      properties:
-        loans:
-          $ref: '#/components/schemas/LoansContractBank'
     LoansContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -1074,7 +1058,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/LoansContractData'
+          $ref: '#/components/schemas/LoansContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:

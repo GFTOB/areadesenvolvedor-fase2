@@ -600,22 +600,6 @@ components:
           items:
             $ref: '#/components/schemas/InvoiceFinancingsFinanceCharge'
           minItems: 1
-    InvoiceFinancingsContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de direitos creditórios descontados contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/InvoiceFinancingsContract'
-    InvoiceFinancingsContractData:
-      type: object
-      required:
-        - invoiceFinancings
-      properties:
-        invoiceFinancings:
-          $ref: '#/components/schemas/InvoiceFinancingsContractBank'
     InvoiceFinancingsContractedWarranty:
       type: object
       description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
@@ -1063,7 +1047,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/InvoiceFinancingsContractData'
+          $ref: '#/components/schemas/InvoiceFinancingsContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:

@@ -4912,22 +4912,6 @@ components:
           items:
             $ref: '#/components/schemas/FinancingsFinanceCharge'
           minItems: 1
-    FinancingsContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de financiamentos contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/FinancingsContract'
-    FinancingsContractData:
-      type: object
-      required:
-        - financings
-      properties:
-        financings:
-          $ref: '#/components/schemas/FinancingsContractBank'
     FinancingsContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -5651,22 +5635,6 @@ components:
           items:
             $ref: '#/components/schemas/InvoiceFinancingsFinanceCharge'
           minItems: 1
-    InvoiceFinancingsContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de direitos creditórios descontados contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/InvoiceFinancingsContract'
-    InvoiceFinancingsContractData:
-      type: object
-      required:
-        - invoiceFinancings
-      properties:
-        invoiceFinancings:
-          $ref: '#/components/schemas/InvoiceFinancingsContractBank'
     InvoiceFinancingsContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -6270,22 +6238,6 @@ components:
           pattern: '\d{14}'
           description: |
             CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado
-    LoansContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de empréstimos contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/LoansContract'
-    LoansContractData:
-      type: object
-      required:
-        - loans
-      properties:
-        loans:
-          $ref: '#/components/schemas/LoansContractBank'
     LoansContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -7696,7 +7648,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/FinancingsContractData'
+          $ref: '#/components/schemas/FinancingsContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7748,7 +7700,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/LoansContractData'
+          $ref: '#/components/schemas/LoansContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7800,7 +7752,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/InvoiceFinancingsContractData'
+          $ref: '#/components/schemas/InvoiceFinancingsContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7852,7 +7804,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractData'
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8259,22 +8211,6 @@ components:
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftFinanceCharge'
           minItems: 1
-    UnarrangedAccountOverdraftContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
-    UnarrangedAccountOverdraftContractData:
-      type: object
-      required:
-        - unarrangedAccountOverdraft
-      properties:
-        unarrangedAccountOverdraft:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractBank'
     UnarrangedAccountOverdraftContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito

@@ -634,22 +634,6 @@ components:
           items:
             $ref: '#/components/schemas/FinancingsFinanceCharge'
           minItems: 1
-    FinancingsContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de financiamentos contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/FinancingsContract'
-    FinancingsContractData:
-      type: object
-      required:
-        - financings
-      properties:
-        financings:
-          $ref: '#/components/schemas/FinancingsContractBank'
     FinancingsContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -1068,7 +1052,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/FinancingsContractData'
+          $ref: '#/components/schemas/FinancingsContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
