@@ -827,6 +827,7 @@ components:
       type: string
       description: |
         Indicador do tipo de lançamento: a crédito ou a débito.
+      maxLength: 7
       enum:
         - CREDITO
         - DEBITO
