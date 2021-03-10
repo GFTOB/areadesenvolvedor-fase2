@@ -2006,21 +2006,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
         '400':
-          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          description: O token tem escopo incorreto ou uma política de segurança foi violada.
+          $ref: '#/components/responses/Forbidden'
         '404':
-          description: O recurso solicitado não existe ou não foi implementado.
+          $ref: '#/components/responses/NotFound'
         '405':
-          description: O consumidor tentou acessar o recurso com um método não suportado.
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          description: Ocorreu um erro no gateway da API ou no microsserviço.
+          $ref: '#/components/responses/InternalServerError'
   '/unarranged-accounts-overdraft/v1/contracts/{contractId}/warranties':
     get:
       tags:
@@ -2082,21 +2082,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
         '400':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/unarranged-accounts-overdraft/v1/contracts/{contractId}/payments':
     get:
       tags:
@@ -2158,21 +2158,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
         '400':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/unarranged-accounts-overdraft/v1/contracts/{contractId}/instalments':
     get:
       tags:
@@ -2234,21 +2234,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
         '400':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1unarranged-accounts-overdraft~1v1~1contracts~1%7BcontractId%7D/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/invoice-financings/v1/contracts/{contractId}':
     get:
       tags:
