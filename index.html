@@ -314,7 +314,7 @@
             <a href="#seguranca-guia" class="toc-h1 toc-link" data-title="Segurança - Guia">Segurança - Guia</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#introducao-ao-guia-de-seguranca" class="toc-h2 toc-link" data-title="Introdução ao guia de segurança">Introdução ao guia de segurança</a>
+                    <a href="#introducao-seguranca" class="toc-h2 toc-link" data-title="Introdução - Segurança">Introdução - Segurança</a>
                   </li>
                   <li>
                     <a href="#perfil-de-seguranca" class="toc-h2 toc-link" data-title="Perfil de segurança">Perfil de segurança</a>
@@ -2775,13 +2775,154 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 
 <h2 id='glossario-de-seguranca'>Glossário de Segurança</h2>
 
-<ul>
-<li><strong>API</strong>: Application Programming Interface.</li>
-<li><strong>JSON</strong>: JavaScript Object Notation.</li>
-<li><strong>REST</strong>: Representational State Transfer.</li>
-<li><strong>JWKS</strong>: JSON Web Key Set.</li>
-<li><strong>JWS</strong>: JSON Web Signature.</li>
-</ul>
+<table><thead>
+<tr>
+<th>Sigla</th>
+<th>Descrição</th>
+<th>Informação</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>API</td>
+<td>Interface de programação de aplicativo</td>
+<td>Uma interface de programação de aplicativo é um conjunto de rotinas, protocolos e ferramentas para construir aplicativos de software. Uma API especifica como os componentes de software devem interagir.</td>
+</tr>
+<tr>
+<td>FAPI</td>
+<td>Financial API</td>
+<td>Especificação técnica de API  e define requisitos técnicos adicionais para o setor financeiro</td>
+</tr>
+<tr>
+<td>CIBA</td>
+<td>Client Initiated Backchannel Authentication</td>
+<td>A autenticação de backchannel iniciada pelo cliente (CIBA) é um dos padrões mais recentes da OpenID Foundation.  são categorizados como &quot;fluxo desacoplado&quot;,  Ele permite novas maneiras de obter o consentimento do usuário final</td>
+</tr>
+<tr>
+<td>Oauth</td>
+<td></td>
+<td>O OAuth é um protocolo de autorização para API&#39;s web voltado a permitir que aplicações client acessem um recurso protegido em nome de um usuário.</td>
+</tr>
+<tr>
+<td>OIDC</td>
+<td>OpenID Connect</td>
+<td>OpenID Connect é um protocolo de identidade simples com padrão aberto</td>
+</tr>
+<tr>
+<td>JWT</td>
+<td>JSON Web Token</td>
+<td>é uma técnica definida na RFC 7519 para autenticação remota entre duas partes. Ele é uma das formas mais utilizadas para autenticar usuários em APIs RESTful.</td>
+</tr>
+<tr>
+<td>JWS</td>
+<td>JSON Web Signature</td>
+<td>é uma forma de garantir a integridade das informações em um formato altamente serializado</td>
+</tr>
+<tr>
+<td>SHA256</td>
+<td>Secure Hash Algorithm</td>
+<td>é um conjunto de funções criptográficas de hash</td>
+</tr>
+<tr>
+<td>PKCE</td>
+<td>Proof Key for Code Exchange</td>
+<td>Chave de prova para troca de código por clientes públicos Oauth</td>
+</tr>
+<tr>
+<td>MAC</td>
+<td>Código de Autenticação de Mensagem</td>
+<td>Permite que as declarações sejam assinadas digitalmente ou protegidas por integridade utilizando JWS</td>
+</tr>
+<tr>
+<td>ICP-Brasil</td>
+<td>Infraestrutura de Chaves Públicas Brasileira</td>
+<td>na definição oficial, “uma cadeia hierárquica de confiança que viabiliza a emissão de certificados digitais para identificação virtual do cidadão</td>
+</tr>
+<tr>
+<td>AC</td>
+<td>Autoridade Certificadora</td>
+<td></td>
+</tr>
+<tr>
+<td>AR</td>
+<td>Autoridade de Registro</td>
+<td></td>
+</tr>
+<tr>
+<td>TLS</td>
+<td>Transport Layer Security</td>
+<td></td>
+</tr>
+<tr>
+<td>ECDSA</td>
+<td>Elliptic Curve Digital Signature Algorithm</td>
+<td>é um algoritmo de  método de assinatura digital de documentos utilizando criptografia baseada em curvas elípticas.</td>
+</tr>
+<tr>
+<td>ECDHE</td>
+<td>Elliptic-curve Diffie–Hellman</td>
+<td>é um protocolo de contrato chave que permite que duas partes, cada uma com um par de chaves público-privado de curva elíptica, estabeleçam um segredo compartilhado em um canal inseguro</td>
+</tr>
+<tr>
+<td>AES</td>
+<td>Advanced Encryption Standard</td>
+<td>algoritmos de criptografia de bloco simétrico com uma chave de criptografia de 256 bits</td>
+</tr>
+<tr>
+<td>Autenticação mútua</td>
+<td></td>
+<td>Chamamos de autenticação mútua quando ambos cliente e servidor apresentam certificados para serem validados pelo par.</td>
+</tr>
+<tr>
+<td>CSR</td>
+<td>Certificate Signing Request</td>
+<td>Contém informação que irá ser incluída no seu certificado como o nome da empresa/organização, common name (domínio), localidade e país. Também contém a chave pública (public key) que será incluída no seu certificado. Normalmente é também criada uma chave privada (private key) ao mesmo tempo que é criado o CSR</td>
+</tr>
+<tr>
+<td>TPP</td>
+<td>Instituições Provedoras - Provedores terceirizados</td>
+<td>As instituições provedoras são organizações que usam APIs desenvolvidas pelos ASPSP para acessar contas de clientes, a fim de fornecer serviços de informações de contas</td>
+</tr>
+<tr>
+<td>ASPSP</td>
+<td>Instituições Transmissoras - Provedor de serviços de pagamento de manutenção de contas</td>
+<td>Um ASPSP é qualquer instituição financeira que oferece uma conta de pagamento com acesso online. Os ASPSPs devem fornecer acesso para permitir que terceiros (TPP) registrados acessem as informações da conta através de APIs</td>
+</tr>
+<tr>
+<td>SSA</td>
+<td>Software Statement Assertion</td>
+<td>SSA é um JSON Web Token (JWT) que contém metadados sobre uma instância de aplicativo client desenvolvida por um TPP. O JWT é emitido e assinado pelo OpenBanking Directory.</td>
+</tr>
+<tr>
+<td>End User</td>
+<td></td>
+<td>Identificação de usuário final que possui as informações que se deseja acessar</td>
+</tr>
+<tr>
+<td>Back-End</td>
+<td></td>
+<td>Aplicação ou código que da inteligência de negocio as ações solicitadas via API , código que efetivamente realiza a função desejada</td>
+</tr>
+<tr>
+<td>Json</td>
+<td>JavaScript Object Notation</td>
+<td>Json é um modelo para armazenamento e transmissão de informações no formato texto.</td>
+</tr>
+<tr>
+<td>Claims</td>
+<td></td>
+<td>São escopos/declarações usadas em uma API durante a autenticação para autorizar o acesso aos detalhes de um usuário, como nome e imagem por exemplo. Cada escopo retorna um conjunto de atributos do usuário, que são chamados de declarações.</td>
+</tr>
+<tr>
+<td>Header</td>
+<td></td>
+<td>É o  cabeçalho de uma solicitação ou resposta que transmite contexto e metadados adicionais sobre a solicitação ou resposta. Por exemplo, em uma mensagem de solicitação podem ser usados para fornecer credenciais de autenticação.</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td></td>
+<td>O Payload é a Carga Útil do token JWT. É aqui que você coloca informações como a quem o token pertence, qual a expiração dele, quando ele foi criado, entre outras coisas</td>
+</tr>
+</tbody></table>
 
 <h2 id='referencias-normativas'>Referências normativas</h2>
 
@@ -2839,9 +2980,9 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <p><h2 id='reacao'>Reação</h2><h3 id='sobre'>Sobre</h3>
 <p>Esta área será oportunamente detalhada nas próximas fases do Open Banking.</p></p>
 <h1 id='seguranca-guia'>Segurança - Guia</h1>
-<h2 id='introducao-ao-guia-de-seguranca'>Introdução ao guia de segurança</h2>
+<h2 id='introducao-seguranca'>Introdução - Segurança</h2>
 
-<p>Esta seção tem como finalidade auxiliar na auto avaliação aos cumprimentos dos requisitos de segurança da informação relacionados a autorização e autenticação de APIs e End-Users, emissão de certificados digitais e requisitos para o onboarding no Diretório de participantes para as Instituições participantes do Open Banking.</p>
+<p>Esta seção tem como finalidade auxiliar na auto avaliação aos cumprimentos dos requisitos de segurança da informação relacionados a autorização e autenticação de APIs e End-Users, emissão de certificados digitais e requisitos para o <em>onboarding</em> no Diretório de participantes para as Instituições participantes do Open Banking.</p>
 
 <p>As instituições participantes do Open Banking possuem a obrigação de acompanhar a edição e a revogação de eventuais normas com impacto no tema de forma a estar permanentemente em dia com as determinações legais.
 Compõem, de forma não exaustiva, o rol de atos normativos cuja observância é essencial pelas instituições participantes do Open Banking:</p>
@@ -2876,85 +3017,72 @@ Compõem, de forma não exaustiva, o rol de atos normativos cuja observância é
 <table><thead>
 <tr>
 <th>Referência</th>
-<th>Link</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>BCP 195/RFC 7525</td>
-<td><a href='https://tools.ietf.org/html/rfc7525'target="_blank"> https://tools.ietf.org/html/rfc7525</a></td>
+<td><a href='https://tools.ietf.org/html/rfc7525'target="_blank">BCP 195/RFC 7525</a></td>
 </tr>
 <tr>
-<td>Owasp API Top 10</td>
-<td><a href='https://owasp.org/www-project-api-security/'target="_blank"> https://owasp.org/www-project-api-security/</a></td>
+<td><a href='https://owasp.org/www-project-api-security/'target="_blank">Owasp API Top 10</a></td>
 </tr>
 <tr>
-<td>Sans Top 25 Software Errors</td>
-<td><a href='https://www.sans.org/top25-software-errors'target="_blank"> https://www.sans.org/top25-software-errors</a></td>
+<td><a href='https://www.sans.org/top25-software-errors'target="_blank">Sans Top 25 Software Errors</a></td>
 </tr>
 <tr>
-<td>CWE Top 25 Software Weaknesses</td>
-<td><a href='https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html'target="_blank"> https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html</a></td>
+<td><a href='https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html'target="_blank">CWE Top 25 Software Weaknesses</td>
 </tr>
 </tbody></table>
 
+<p>Além desse guia, foi elaborado um checklist para auxiliar os participantes do Open Banking a alcançar um nível adequado de Segurança da Informação, esse checklist pode ser baixado em formato Word ou Excel a seguir.</p>
+
+<p><a href='documents/Autoavaliação_dos_requisitos_de _SI-1.0.docx'>Download Autoavaliação dos requisitos de SI - 1.0.docx</a><br>
+<a href='documents/Autoavaliação_dos_requisitos_de _SI-1.0.xlsx'>Download Autoavaliação dos requisitos de SI - 1.0.xlsx</a></p>
+
 <h2 id='perfil-de-seguranca'>Perfil de segurança</h2><h3 id='sobre-os-padroes-de-perfil-de-seguranca-de-api'>Sobre os padrões de perfil de segurança de API.</h3>
-<p>É necessário que os participantes do Open Banking adotem padrões de autenticação e autorização para as APIs e <em>End-Users</em>, utilizando frameworks e mecanismos aprovados pelo mercado, garantindo assim, a integridade, a confidencialidade e a disponibilidade dos dados.</p>
+<p>É necessário que os participantes do Open Banking adotem padrões de autenticação e autorização para as APIs e <em>End-Users</em>, utilizando <em>frameworks</em> e mecanismos aprovados pelo mercado, garantindo assim, a integridade, a confidencialidade e a disponibilidade dos dados.</p>
 
 <p>Conjunto de referências normativas adotadas pelo Open Banking:</p>
 
 <table><thead>
 <tr>
 <th>Referência</th>
-<th>Link</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>FAPI-RW - Financial-grade API - Part 2: Read and Write API Security Profile</td>
-<td><a href='https://openid.net/specs/openid-financial-api-part-2.html'target="_blank"> https://openid.net/specs/openid-financial-api-part-2.html</a></td>
+<td><a href='https://openid.net/specs/openid-financial-api-part-2.html'target="_blank">FAPI-RW - Financial-grade API - Part 2: Read and Write API Security Profile</a></td>
 </tr>
 <tr>
-<td>CIBA (opcional) - OpenID Connect Client Initiated Backchannel Authentication Flow - Core 1.0</td>
-<td><a href='https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html'target="_blank"> https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html</a></td>
+<td><a href='https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html'target="_blank">CIBA (opcional) - OpenID Connect Client Initiated Backchannel Authentication Flow - Core 1.0</a></td>
 </tr>
 <tr>
-<td>JSON - The JavaScript Object Notation (JSON) Data Interchange Format</td>
-<td><a href='https://tools.ietf.org/html/rfc8259'target="_blank"> https://tools.ietf.org/html/rfc8259</a></td>
+<td><a href='https://tools.ietf.org/html/rfc8259'target="_blank">JSON - The JavaScript Object Notation (JSON) Data Interchange Format</a></td>
 </tr>
 <tr>
-<td>JWT - JSON Web Token (JWT)</td>
-<td><a href='https://tools.ietf.org/html/rfc7519'target="_blank"> https://tools.ietf.org/html/rfc7519</a></td>
+<td><a href='https://tools.ietf.org/html/rfc7519'target="_blank">JWT - JSON Web Token (JWT)</a></td>
 </tr>
 <tr>
-<td>JWS - JSON Web Signature</td>
-<td><a href='https://tools.ietf.org/html/rfc7797'target="_blank"> https://tools.ietf.org/html/rfc7797</a></td>
+<td><a href='https://tools.ietf.org/html/rfc7797'target="_blank">JWS - JSON Web Signature</a></td>
 </tr>
 <tr>
-<td>MTLS - OAuth 2.0 Mutual TLS Client, Authentication and Certificate Bound, Access Tokens</td>
-<td><a href='https://tools.ietf.org/html/draft-ietf-oauth-mtls-17'target="_blank"> https://tools.ietf.org/html/draft-ietf-oauth-mtls-17</a></td>
+<td><a href='https://tools.ietf.org/html/draft-ietf-oauth-mtls-17'target="_blank">MTLS - OAuth 2.0 Mutual TLS Client, Authentication and Certificate Bound, Access Tokens</a></td>
 </tr>
 <tr>
-<td>OAUTH2 - The OAuth 2.0 Authorization Framework</td>
-<td><a href='https://tools.ietf.org/html/rfc6749'target="_blank"> https://tools.ietf.org/html/rfc6749</a></td>
+<td><a href='https://tools.ietf.org/html/rfc6749'target="_blank">OAUTH2 - The OAuth 2.0 Authorization Framework</a></td>
 </tr>
 <tr>
-<td>OIDC - OpenID Connect Core 1.0 incorporating errata set 1</td>
-<td><a href='http://openid.net/specs/openid-connect-core-1_0.html'target="_blank"> http://openid.net/specs/openid-connect-core-1_0.html</a></td>
+<td><a href='http://openid.net/specs/openid-connect-core-1_0.html'target="_blank">OIDC - OpenID Connect Core 1.0 incorporating errata set 1</a></td>
 </tr>
 <tr>
-<td>RFC7009 - OAuth 2.0 Token Revocation</td>
-<td><a href='https://tools.ietf.org/html/rfc7009'target="_blank"> https://tools.ietf.org/html/rfc7009</a></td>
+<td><a href='https://tools.ietf.org/html/rfc7009'target="_blank">RFC7009 - OAuth 2.0 Token Revocation</a></td>
 </tr>
 <tr>
-<td>RFC7662 - OAuth 2.0 Token Introspection</td>
-<td><a href='https://tools.ietf.org/html/rfc7662'target="_blank"> https://tools.ietf.org/html/rfc7662</a></td>
+<td><a href='https://tools.ietf.org/html/rfc7662'target="_blank">RFC7662 - OAuth 2.0 Token Introspection</a></td>
 </tr>
 <tr>
-<td>RFC6750 - The OAuth 2.0 Authorization Framework: Bearer Token Usage</td>
-<td><a href='https://tools.ietf.org/html/rfc6750'target="_blank"> https://tools.ietf.org/html/rfc6750</a></td>
+<td><a href='https://tools.ietf.org/html/rfc6750'target="_blank">RFC6750 - The OAuth 2.0 Authorization Framework: Bearer Token Usage</a></td>
 </tr>
 <tr>
-<td>RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol</td>
-<td><a href='https://tools.ietf.org/html/rfc7591'target="_blank"> https://tools.ietf.org/html/rfc7591</a></td>
+<td><a href='https://tools.ietf.org/html/rfc7591'target="_blank">RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol</a></td>
 </tr>
 </tbody></table>
 
@@ -2986,7 +3114,7 @@ Devido a ampla aplicação do uso do OAuth 2.0, as melhores práticas de seguran
 
 <p>Início do fluxo de uma API com a obtenção de um <em>Access Token</em>.</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Initial_API_Flow_Getting_Access_Token-23e01fc0.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Initial_API_Flow_Getting_Access_Token-dfe2ea66.png'/></p>
 
 <p>Diagrama – Obtendo um <em>Access Token</em>.</p>
 
@@ -3023,20 +3151,16 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
 <li><em>ID Token</em>: Um token utilizado para transmitir <em>claims</em> sobre um evento de autenticação e um usuário autenticado <em>(End-user)</em> para um <em>client</em>. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.</li>
 </ul>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{<br>
-  &quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,<br>
-  &quot;sub&quot;: &quot;xpto|123456&quot;,<br>
-  &quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,<br>
-  &quot;exp&quot;: 1311281970,<br>
-  &quot;iat&quot;: 1311280970,<br>
-  &quot;id&quot;: 1234567,<br>
-}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,</strong><br>
+<strong>&quot;sub&quot;: &quot;xpto|123456&quot;,</strong><br>
+<strong>&quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,</strong><br>
+<strong>&quot;exp&quot;: &quot;1311281970&quot;,</strong><br>
+<strong>&quot;iat&quot;: &quot;1311280970&quot;,</strong><br>
+<strong>&quot;id&quot;: &quot;1234567&quot;}</strong><br>
 </span></p>
 
-<p><em>UserInfo Endpoint</em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.<br>
+<p><em><strong>UserInfo Endpoint</strong></em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.<br>
 Exemplo de resposta bem-sucedida  contendo um <em>ID Token</em> assinado:<br></p>
 
 <p>HTTP/1.1 200 OK<br>
@@ -3044,25 +3168,21 @@ Content-Type: application/json<br>
 Cache-Control: no-store<br>
 Pragma: no-cache<br></p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{<br>
-   &quot;access_token&quot;: &quot;SlAV32hkKG&quot;,<br>
-   &quot;token_type&quot;: &quot;Bearer&quot;,<br>
-   &quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,<br>
-   &quot;expires_in&quot;: 3600,<br>
-   &quot;id_token&quot;: &quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc<br>
-     yI6ICJodHRwOi8vc2VydmVyLmV4YW1wbGUuY29tIiwKICJzdWIiOiAiMjQ4Mjg5<br>
-     NzYxMDAxIiwKICJhdWQiOiAiczZCaGRSa3F0MyIsCiAibm9uY2UiOiAibi0wUzZ<br>
-     fV3pBMk1qIiwKICJleHAiOiAxMzExMjgxOTcwLAogImlhdCI6IDEzMTEyODA5Nz<br>
-     AKfQ.ggW8hZ1EuVLuxNuuIJKX_V8a_OMXzR0EHR9R6jgdqrOOF4daGU96Sr_P6q<br>
-     Jp6IcmD3HP99Obi1PRs-cwh3LO-p146waJ8IhehcwL7F09JdijmBqkvPeB2T9CJ<br>
-     NqeGpe-gccMg4vfKjkM8FcGvnzZUN4_KSP0aAp1tOJ1zZwgjxqGByKHiOtX7Tpd<br>
-     QyHE5lcMiKPXfEIQILVq0pc_E2DzL7emopWoaoZTF_m0_N0YzFC6g6EJbOEoRoS<br>
-     K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4<br>
-     XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;<br>
-}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;access_token&quot;: &quot;SlAV32hkKG&quot;,</strong><br>
+<strong>&quot;token_type&quot;: &quot;Bearer&quot;,</strong><br>
+<strong>&quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,</strong><br>
+<strong>&quot;expires_in&quot;: &quot;3600&quot;,</strong><br>
+<strong>&quot;id_token&quot;: &quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc</strong><br>
+  <strong>yI6ICJodHRwOi8vc2VydmVyLmV4YW1wbGUuY29tIiwKICJzdWIiOiAiMjQ4Mjg5</strong><br>
+  <strong>NzYxMDAxIiwKICJhdWQiOiAiczZCaGRSa3F0MyIsCiAibm9uY2UiOiAibi0wUzZ</strong><br>
+  <strong>fV3pBMk1qIiwKICJleHAiOiAxMzExMjgxOTcwLAogImlhdCI6IDEzMTEyODA5Nz</strong><br>
+  <strong>AKfQ.ggW8hZ1EuVLuxNuuIJKX_V8a_OMXzR0EHR9R6jgdqrOOF4daGU96Sr_P6q</strong><br>
+  <strong>Jp6IcmD3HP99Obi1PRs-cwh3LO-p146waJ8IhehcwL7F09JdijmBqkvPeB2T9CJ</strong><br>
+  <strong>NqeGpe-gccMg4vfKjkM8FcGvnzZUN4_KSP0aAp1tOJ1zZwgjxqGByKHiOtX7Tpd</strong><br>
+  <strong>QyHE5lcMiKPXfEIQILVq0pc_E2DzL7emopWoaoZTF_m0_N0YzFC6g6EJbOEoRoS</strong><br>
+  <strong>K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4</strong><br>
+  <strong>XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;}</strong><br>
 </span></p>
 
 <h2 id='jwt'>JWT</h2>
@@ -3072,13 +3192,9 @@ Pragma: no-cache<br></p>
 <p>O JWT é formado por três seções: <em>Header, Payload</em> e <em>Signature</em>.<br>
 O <em>Header</em> contém somente a informação tipo e algoritmo:</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{<br>
-    &quot;typ&quot;: &quot;JWT&quot;,<br>
-    &quot;alg&quot;: &quot; PS256&quot;<br>
-}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;typ&quot;: &quot;JWT&quot;,</strong><br>
+<strong>&quot;alg&quot;: &quot; PS256&quot;}</strong><br>
 </span></p>
 
 <h3 id='payload'><em>Payload</em></h3>
@@ -3089,89 +3205,77 @@ Essas <em>claims</em> podem ser de 3 tipos:</p>
 
 <p><em><strong>Reserved claims</strong></em>: São <em>claims</em> definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de <em>Reserved Claims</em> em <a href='https://www.iana.org/assignments/jwt/jwt.xhtml#claims'target="_blank">[IANA JSON Web Token Claims Registry]</a>.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;<br>
-iss (issuer) = Emissor do token;<br>
-exp (expiration) = Timestamp de quando o token irá expirar;<br>
-iat (issued at) = Timestamp de quando o token foi criado;<br>
-aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;sub&quot;: &quot;Subject, entidade à quem o token pertence, normalmente o ID do usuário&quot;,</strong><br>
+<strong>&quot;iss&quot;: &quot;Issuer, emissor do token&quot;,</strong><br>
+<strong>&quot;exp&quot;: &quot;Expiration, timestamp de quando o token irá expirar&quot;,</strong><br>
+<strong>&quot;iat&quot;: &quot;Issued at, timestamp de quando o token foi criado&quot;,</strong><br>
+<strong>&quot;aud&quot;: &quot;Audience, destinatário do token, representa a aplicação que irá usá-lo&quot;}</strong><br>
 </span></p>
 
 <p><em><strong>Public claims</strong></em>: atributos utilizados nas aplicações. Normalmente armazenamos as informações do usuário autenticado na aplicação.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-name<br>
-roles<br>
-permissions<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;name&quot;: &quot;Joe&quot;,</strong><br>
+<strong>&quot;roles&quot;: &quot;Administrator&quot;,</strong><br>
+<strong>&quot;permissions&quot;: &quot;Full&quot;}</strong><br>
 </span></p>
 
 <p><em><strong>Private claims</strong></em>: são <em>claims</em> personalizadas e contém atributos definidos  para compartilhar informações entre aplicações.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{<br>
-    &quot;sub&quot;: &quot;1234567890&quot;,<br>
-    &quot;name&quot;: &quot;Jose Doe&quot;<br>
-    &quot;admin&quot;: &quot;true&quot;<br>
-}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;sub&quot;: &quot;1234567890&quot;,</strong><br>
+<strong>&quot;name&quot;: &quot;Jose Doe&quot;</strong><br>
+<strong>&quot;admin&quot;: &quot;true&quot;}</strong><br>
 </span></p>
 
 <p>Conjunto de <em>claims</em> para um <em>ID Token</em> do Open Banking:</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{<br>
-&quot; iss&quot;: Emissor do token<br>
-&quot;sub&quot;: Identificador único do subject<br>
-&quot;openbanking_intent_id&quot;: Intent ID da solicitação<br>
-&quot;aud&quot;: Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)<br>
-&quot;exp&quot;: Data/hora de expiração do token<br>
-&quot;iat&quot;: Data/hora de emissão do token<br>
-&quot;auth_time&quot;: Data/hora de autenticação do End-user<br>
-&quot;nonce&quot;: Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay<br>
-&quot;acr&quot;: Authentication Context Class Reference<br>
-&quot;amr&quot;: Authentication Methods References<br>
-&quot;azp&quot;: Authorized party<br>
-&quot;s_hash&quot;: State hash value<br>
-&quot;at_hash&quot;: Access Token hash value<br>
-&quot;c_hash&quot;: Code hash value<br>
-}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;iss&quot;: &quot;Emissor do token&quot;,</strong><br>
+<strong>&quot;sub&quot;: &quot;Identificador único do subject&quot;,</strong><br>
+<strong>&quot;openbanking_intent_id&quot;: &quot;Intent ID da solicitação&quot;,</strong><br>
+<strong>&quot;aud&quot;: &quot;Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)&quot;,</strong><br>
+<strong>&quot;exp&quot;: &quot;Data/hora de expiração do token&quot;,</strong><br>
+<strong>&quot;iat&quot;: &quot;Data/hora de emissão do token&quot;,</strong><br>
+<strong>&quot;auth_time&quot;: &quot;Data/hora de autenticação do End-user&quot;,</strong><br>
+<strong>&quot;nonce&quot;: &quot;Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay&quot;,</strong><br>
+<strong>&quot;acr&quot;: &quot;Authentication Context Class Reference&quot;,</strong><br>
+<strong>&quot;amr&quot;: &quot;Authentication Methods References&quot;,</strong><br>
+<strong>&quot;azp&quot;: &quot;Authorized party&quot;,</strong><br>
+<strong>&quot;s_hash&quot;: &quot;State hash value&quot;,</strong><br>
+<strong>&quot;at_hash&quot;: &quot;Access Token hash value&quot;,</strong><br>
+<strong>&quot;c_hash&quot;: &quot;Code hash value&quot;}</strong><br>
 </span></p>
 
 <h3 id='assinatura'>Assinatura</h3>
 
 <p>A assinatura é o <em>header</em> e o <em>payload</em> criptografados com um <em>secret</em>.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-PS256-RSASSA-PSS(<br>
-base64UrlEncode(header) + &quot;.&quot; +<br>
-base64UrlEncode(payload),<br>
-secret)<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>PS256(</strong><br>
+<strong>base64UrlEncode(header) + &quot;.&quot; +</strong><br>
+<strong>base64UrlEncode(payload),</strong><br>
+<strong>secret)</strong><br>
 </span></p>
 
-<p>Para obter o token JWT, as três seções <em>(header, payload, signature)</em> são codificadas com Base64-URL e unidas por pontos.</p>
+<p>Para obter o token JWT, as três seções <em>header</em> (vermelho), <em>payload</em> (roxo) e <em>signature</em> (azul) são codificadas com Base64-URL e unidas por pontos.</p>
 
-<p><font size="6">
+<p><font size="4">
 <span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">eyJz</span><br>
 <span style="color:purple">dWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4g</span><br>
 <span style="color:purple">RG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span>.<span style="color:blue">SflKxwRJSM</span><br>
 <span style="color:blue">eKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span><br>
 </font></p>
 
+<p><strong>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.</strong> -&gt; <em><strong>Header</strong></em> <br>
+<strong>eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.</strong> -&gt; <em><strong>Payload</strong></em> <br>
+<strong>SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</strong> -&gt; <em><strong>Signature</strong></em> <br></p>
+
 <p>Este token JWT deve ser enviado no cabeçalho <em>Authentication</em> HTTP usando o esquema <em>Bearer</em>. O conteúdo do cabeçalho deve seguir este formato:</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-Authorization: Bearer <token>
-</span>
+<p><span style="font-family: Courier New">
+<strong>Authorization: Bearer <token></strong>
 </span></p>
 <h2 id='fluxo-openid-connect-oidc'>Fluxo OpenID Connect (OIDC)</h2>
 <p>O OpenID Connect define os seguintes fluxos: </p>
@@ -3182,7 +3286,7 @@ Authorization: Bearer <token>
 <li><em>Hybrid flow</em>: O <em>Hybrid Flow</em>, combina elementos do <em>Authorization Code Flow</em> e <em>Implicit Flow</em>, esse modelo permite retornar um <em>ID Token</em> e um <em>Authorization Code</em> como uma resposta ao <em>front-end</em> do <em>client</em>, deixando o <em>backend</em> obter um <em>Access Token</em> e opcionalmente um <em>Refresh Token</em> do <em>endpoint</em> de token utilizando o <em>Authorization Code</em>. Esse padrão de autenticação foi escolhido como mandatório pelo Open Banking e pode ser observado no diagrama a seguir. </li>
 </ul>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Hybrid_Flow-fa9b68b4.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Hybrid_Flow-b6bd4214.png'/></p>
 
 <p>Diagrama - Fluxo <em>Hybrid Flow</em></p>
 
@@ -3194,21 +3298,21 @@ Authorization: Bearer <token>
 <li> <em>Authorization Server</em> direciona o <em>End-User</em> de volta ao <em>client</em> com um código de autorização e, dependendo do tipo da resposta, com parâmetros adicionais. </li>
 <li> O <em>Client</em> solicita uma resposta ao <em>Authorization Server</em> com o código de autorização para obter os demais tokens. </li>
 <li> O <em>Authorization Server</em> responde com o <em>ID Token</em> e um <em>Access Token</em>. </li>
-<li> O <em>Client</em> valida o <em>ID Token</em> e busca o <em>Subject Identifier</em> do <em>End-User</em>. O <em>Authorization Server</em> deve suportar <em>request objects</em> conforme especificado na seção 6.1 (Request Object) do OIDC.
+<li> O <em>Client</em> valida o <em>ID Token</em> e busca o <em>Subject Identifier</em> do <em>End-User</em>. O <em>Authorization Server</em> deve suportar <em>request objects</em> conforme especificado na seção 6.1 (<em>Request Object</em>) do OIDC.
 <h2 id='financial-grade-api-fapi'>Financial-grade API (FAPI)</h2>
 <p>Financial-grade API, o FAPI, é uma especificação técnica desenvolvida pelo Grupo de Trabalho Financial-grade API da OpenID Foundation. Ele utiliza OAuth 2.0 e OpenID Connect (OIDC) como sua base e define requisitos técnicos adicionais para o setor financeiro e outros setores que exigem maior segurança.</p></li>
 </ol>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/FAPI-d288dca4.png'/></p>
 
-<h3 id='fapi-read-and-write-api-security-profile'>FAPI: Read and Write API Security Profile</h3>
+<h3 id='fapi-read-and-write-api-security-profile'>FAPI: <em>Read and Write API Security Profile</em></h3>
 
-<p>É obrigatório o uso do perfil de segurança FAPI-Financial-grade API: Read and Write API Security Profile, referenciado no endereço: <a href='https://openid.net/specs/openid-financial-api-part-2-wd-06.html'target="_blank">https://openid.net/specs/openid-financial-api-part-2-wd-06.html</a>.</p>
+<p>É obrigatório o uso do perfil de segurança <em>FAPI-Financial-grade API: Read and Write API Security Profile</em>, referenciado no endereço: <a href='https://openid.net/specs/openid-financial-api-part-2-wd-06.html'target="_blank">https://openid.net/specs/openid-financial-api-part-2-wd-06.html</a>.</p>
 
-<h3 id='fapi-ciba-client-initiated-backchannel-authentication-profile'>FAPI: CIBA-Client Initiated Backchannel Authentication Profile</h3>
+<h3 id='fapi-ciba-client-initiated-backchannel-authentication-profile'>FAPI: <em>CIBA-Client Initiated Backchannel Authentication Profile</em></h3>
 
 <p>A autenticação pelo CIBA fornece um fluxo desacoplado, possibilitando autorizar um pagamento por exemplo em um terminal de ponto de venda ou em um posto de combustível.
-O perfil de segurança CIBA: Client Initiated Backchannel Authentication Profle será opcional pelos participantes do Open Banking, referenciado no endereço: <a href='https://openid.net/specs/openid-financial-api-ciba.html'target="_blank">https://openid.net/specs/openid-financial-api-ciba.html</a>.</p>
+O perfil de segurança CIBA: <em>Client Initiated Backchannel Authentication Profle</em> será opcional pelos participantes do Open Banking, referenciado no endereço: <a href='https://openid.net/specs/openid-financial-api-ciba.html'target="_blank">https://openid.net/specs/openid-financial-api-ciba.html</a>.</p>
 
 <h2 id='fluxos-de-autenticacao-e-autorizacao'>Fluxos de autenticação e autorização</h2>
 
@@ -3249,49 +3353,49 @@ A autenticação e a autorização representam funções fundamentalmente difere
 
 <h3 id='fluxo-client-credentials'>Fluxo <em>client</em> credentials</h3>
 
-<p>Com aplicativos machine-to-machine (M2M), como serviços em execução no back-end, o sistema autentica e autoriza o <em>Client</em> em vez de um usuário. Para este cenário, esquemas de autenticação típicos como nome de usuário + senha ou logins sociais não fazem sentido.</p>
+<p>Com aplicativos machine-to-machine (M2M), como serviços em execução no <em>back-end</em>, o sistema autentica e autoriza o <em>Client</em> em vez de um usuário. Para este cenário, esquemas de autenticação típicos como nome de usuário + senha ou logins sociais não fazem sentido.</p>
 
-<p>Em vez disso, as aplicações M2M usam o fluxo  <em>Client</em> Credentials utilizando mTLS (definido em <a href='https://tools.ietf.org/html/rfc8705'target="_blank">OAuth 2.0 Mutual-TLS <em>Client</em> Authentication and Certificate-Bound RFC 8705)</a> e infraestrutura de chave pública (PKI). No qual o <em>Client</em>, o Authorization Server e o Servidor API são autenticados usando certificados X.509. O Access Token também é vinculado ao <em>Client</em> e validado utilizando certificados X.509.</p>
+<p>Em vez disso, as aplicações M2M usam o fluxo  <em>Client</em> <em>Credentials</em> utilizando mTLS (definido em <a href='https://tools.ietf.org/html/rfc8705'target="_blank">OAuth 2.0 Mutual-TLS <em>Client</em> <em>Authentication and Certificate-Bound</em> RFC 8705)</a> e infraestrutura de chave pública (PKI). No qual o <em>Client</em>, o <em>Authorization Server</em> e o Servidor API são autenticados usando certificados X.509. O <em>Access Token</em> também é vinculado ao <em>Client</em> e validado utilizando certificados X.509.</p>
 
-<p>Este método acrescenta uma restrição com chave de confirmação (ou prova de posse) ao <em>Client</em> que deseja utilizar um token emitido, com isso ele mitiga a possibilidade de uso abusivo dos Access Tokens Oauth tradicionais em caso de vazamento.</p>
+<p>Este método acrescenta uma restrição com chave de confirmação (ou prova de posse) ao <em>Client</em> que deseja utilizar um token emitido, com isso ele mitiga a possibilidade de uso abusivo dos <em>Access Tokens</em> Oauth tradicionais em caso de vazamento.</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Client_Credentials-2c6df70e.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Client_Credentials-4fb58cdc.png'/></p>
 
 <p>Diagrama – Fluxo de credenciais do <em>client</em>.</p>
 
 <ol>
-<li> O <em>client</em> e o servidor de autenticação estabelecem uma conexão mTLS, e o <em>Client</em> solicita um Access Token.</li>
-<li> O Servidor de Autenticação gera uma impressão digital SHA-256 do certificado do <em>Client</em> e a incorpora em um Access Token JWT. Isto limita o Access Token ao <em>Client</em>.</li>
-<li> O servidor de autenticação emite o Access Token como uma resposta ao <em>Client</em>.</li>
-<li> Os <em>Clients</em> fazem uma solicitação de recursos ao Servidor API usando o Access Token.</li>
-<li> O Servidor de API solicita ao Authorization Server que valide o Access Token.</li>
-<li> O Servidor API usa a impressão digital embutida para validar o Access Token.</li>
+<li> O <em>client</em> e o servidor de autenticação estabelecem uma conexão mTLS, e o <em>Client</em> solicita um <em>Access Token</em>.</li>
+<li> O Servidor de Autenticação gera uma impressão digital SHA-256 do certificado do <em>Client</em> e a incorpora em um Access Token JWT. Isto limita o <em>Access Token</em> ao <em>Client</em>.</li>
+<li> O servidor de autenticação emite o <em>Access Token</em> como uma resposta ao <em>Client</em>.</li>
+<li> Os <em>Clients</em> fazem uma solicitação de recursos ao Servidor API usando o <em>Access Token</em>.</li>
+<li> O Servidor de API solicita ao <em>Authorization Server</em> que valide o <em>Access Token</em>.</li>
+<li> O Servidor API usa a impressão digital embutida para validar o <em>Access Token</em>.</li>
 <li> O Servidor de Autenticação retorna o resultado da validação do token.</li>
 <li> O Servidor API responde com o recurso solicitado.</li>
 </ol>
 
-<p>Conforme definido na Seção 6.1 do RFC8705, os endpoints utilizados para emissão e validação de tokens que requerem uma conexão mTLS são endpoints convencionais separados por hostname ou porta diferente.</p>
+<p>Conforme definido na Seção 6.1 do RFC8705, os <em>endpoints</em> utilizados para emissão e validação de tokens que requerem uma conexão mTLS são <em>endpoints</em> convencionais separados por <em>hostname</em> ou porta diferente.</p>
 
-<h3 id='fluxo-do-authorization-code'>Fluxo do Authorization Code</h3>
+<h3 id='fluxo-do-authorization-code'>Fluxo do <em>Authorization Code</em></h3>
 
-<p>No Fluxo do Authorization Code, o <em>Client</em> pode recuperar um Access Token e, opcionalmente, um Refresh Token. É considerada a escolha mais segura, pois o Access Token é passado diretamente para o servidor que hospeda o <em>Client</em>, sem passar pelo navegador do usuário e correr o risco de exposição.</p>
+<p>No Fluxo do <em>Authorization Code</em>, o <em>Client</em> pode recuperar um <em>Access Token</em> e, opcionalmente, um <em>Refresh Token</em>. É considerada a escolha mais segura, pois o <em>Access Token</em> é passado diretamente para o servidor que hospeda o <em>Client</em>, sem passar pelo navegador do usuário e correr o risco de exposição.</p>
 
-<p>Como os <em>Clients</em> são aplicativos do lado do servidor em que o código-fonte não é exposto publicamente, eles podem usar o fluxo do Authorization Code (definido no OAuth 2.0  <a href='https://tools.ietf.org/html/rfc6749#section-4.1'target="_blank">[RFC 6749]</a>, seção 4.1 ), que troca um Authorization Code por um token. Seu <em>Client</em> deve estar no lado do servidor, porque durante essa troca, você também deve passar adiante o <em>client</em> secret do seu <em>Client</em>, que deve ser mantido sempre seguro, e deve armazená-lo em seu <em>client</em>.</p>
+<p>Como os <em>Clients</em> são aplicativos do lado do servidor em que o código-fonte não é exposto publicamente, eles podem usar o fluxo do <em>Authorization Code</em> (definido no OAuth 2.0  <a href='https://tools.ietf.org/html/rfc6749#section-4.1'target="_blank">[RFC 6749]</a>, seção 4.1 ), que troca um <em>Authorization Code</em> por um token. Seu <em>Client</em> deve estar no lado do servidor, porque durante essa troca, você também deve passar adiante o <em>client</em> <em>secret</em> do seu <em>Client</em>, que deve ser mantido sempre seguro, e deve armazená-lo em seu <em>client</em>.</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Authorization_code-6e70b04f.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Authorization_code-eb3cdc0a.png'/></p>
 
 <p>Diagrama - Fluxo do código de autorização.</p>
 
 <ol>
-<li> O usuário clica em Login no <em>Client</em>.</li>
-<li> O <em>client</em> redireciona o usuário para o Authorization Server. </li>
-<li> O Authorization Server redireciona o usuário para o prompt de login e autorização.</li>
+<li> O usuário clica em <em>Login</em> no <em>Client</em>.</li>
+<li> O <em>client</em> redireciona o usuário para o <em>Authorization Server</em>. </li>
+<li> O <em>Authorization Server</em> redireciona o usuário para o <em>prompt</em> de <em>login</em> e autorização.</li>
 <li> O usuário se autentica usando uma das opções de login configuradas e verá uma página de consentimento listando as permissões que o Autorizador dará ao <em>Client</em>.</li>
-<li> O Authorization Server redireciona o usuário de volta ao <em>client</em> com um Authorization Code, que é válido para um uso.</li>
+<li> <em>O Authorization Server</em> redireciona o usuário de volta ao <em>client</em> com um <em>Authorization Code</em>, que é válido para um uso.</li>
 <li> O <em>client</em> envia esse código para o Authorization Server junto com o  <em>Client</em> ID e o <em>client</em> secret do <em>Client</em>.</li>
-<li> O Authorization Server verifica o código, o <em>Client</em> ID e o <em>client</em> secret do <em>client</em>.</li>
-<li> O Authorization Server responde com um ID Token e um Access Token (e, opcionalmente, um Refresh Token).</li>
-<li> O <em>Client</em> usa o Access Token para chamar uma API para acessar informações sobre o usuário.</li>
+<li> O <em>Authorization Server</em> verifica o código, o <em>Client</em> ID e o <em>client</em> <em>secret</em> do <em>client</em>.</li>
+<li> O <em>Authorization Server</em> responde com um <em>ID Token</em> e um <em>Access Token</em> (e, opcionalmente, um <em>Refresh Token</em>).</li>
+<li> O <em>Client</em> usa o <em>Access Token</em> para chamar uma API para acessar informações sobre o usuário.</li>
 <li>A API responde com os dados solicitados.</li>
 </ol>
 
@@ -3304,24 +3408,24 @@ A instituição receptora de dados detentora de consentimentos e de tokens de au
 
 <h3 id='padrao-lodging-intent'>Padrão Lodging Intent</h3>
 
-<p>Essa seção descreve o padrão Lodging Intent, utilizado para parametrizar solicitações de autorização OAuth complexas de maneira confiável e segura.<br>
-O OAuth por si, suporta apenas autorizar ações simples de leitura, o parâmetro scope é definido por uma lista delimitada por espaços contendo strings simples, quando se trata de autorizações mais complexas, como o início de um pagamento, o suporte integrado do OAuth não é suficiente.
-O padrão Lodging Intent pode ser utilizado para passar informações de forma confiável para o processo de autorização, independente das restrições de comprimento de URL, enquanto as informações também são protegidas contra modificação sem a necessidade de assiná-las digitalmente, reduzindo os custos de implementação.
-Executar um processo de autorização utilizando o padrão Lodging Intent e o Code Flow, funciona da seguinte maneira:</p>
+<p>Essa seção descreve o padrão <em>Lodging Intent</em>, utilizado para parametrizar solicitações de autorização OAuth complexas de maneira confiável e segura.<br>
+O OAuth por si, suporta apenas autorizar ações simples de leitura, o parâmetro <em>scope</em> é definido por uma lista delimitada por espaços contendo strings simples, quando se trata de autorizações mais complexas, como o início de um pagamento, o suporte integrado do OAuth não é suficiente.
+O padrão <em>Lodging Intent</em> pode ser utilizado para passar informações de forma confiável para o processo de autorização, independente das restrições de comprimento de URL, enquanto as informações também são protegidas contra modificação sem a necessidade de assiná-las digitalmente, reduzindo os custos de implementação.
+Executar um processo de autorização utilizando o padrão <em>Lodging Intent</em> e o <em>Code Flow</em>, funciona da seguinte maneira:</p>
 
 <ul>
-<li>O <em>client</em> cria um recurso contendo todos os dados necessários para informar o processo de autorização no Authorization Server, a criação do Lodging Intent pode exigir uma autorização própria, nesse caso, o <em>client</em> precisa obter antecipadamente um Access Token com o escopo adequado, normalmente usando a concessão do <em>Client</em> Credentials com o Authorization Server.</li>
-<li>O serviço de Lodging Intent responde ao <em>client</em> com um id e/ou link para o recurso criado.</li>
-<li>O <em>client</em> então envia a referência do recurso com o pedido de autorização para o Authorization Server. O Authorization Server obtém os dados da transação do recurso de hospedagem e depois de autenticar o usuário, utiliza-os para apresentar uma interface de consentimento. Por exemplo, no caso de um pagamento, o Authorization Server mostra ao devedor, o valor e informações adicionais sobre a transação de pagamento ao usuário e pede o seu consentimento.</li>
-<li>Se o usuário consentir com a autorização solicitada, o Authorization Server associa os dados de autorização à concessão criada (ou atualizada) e os respectivos Access Tokens emitidos com base nessa concessão. Por último, o Authorization Server precisa fornecer os dados de autorização ao respectivo Resource Server, para que seja incorporado no Access Token ou na resposta de Introspection do Token.</li>
+<li>O <em>client</em> cria um recurso contendo todos os dados necessários para informar o processo de autorização no <em>Authorization Server</em>, a criação do <em>Lodging Intent</em> pode exigir uma autorização própria, nesse caso, o <em>client</em> precisa obter antecipadamente um <em>Access Token</em> com o escopo adequado, normalmente usando a concessão do <em>Client</em> <em>Credentials</em> com o* Authorization Server*.</li>
+<li>O serviço de <em>Lodging Intent</em> responde ao <em>client</em> com um id e/ou link para o recurso criado.</li>
+<li>O <em>client</em> então envia a referência do recurso com o pedido de autorização para o <em>Authorization Server</em>. O <em>Authorization Server</em> obtém os dados da transação do recurso de hospedagem e depois de autenticar o usuário, utiliza-os para apresentar uma interface de consentimento. Por exemplo, no caso de um pagamento, o <em>Authorization Server</em> mostra ao devedor, o valor e informações adicionais sobre a transação de pagamento ao usuário e pede o seu consentimento.</li>
+<li>Se o usuário consentir com a autorização solicitada, o <em>Authorization Server</em> associa os dados de autorização à concessão criada (ou atualizada) e os respectivos <em>Access Tokens</em> emitidos com base nessa concessão. Por último, o <em>Authorization Server</em> precisa fornecer os dados de autorização ao respectivo <em>Resource Server</em>, para que seja incorporado no <em>Access Token</em> ou na resposta de <em>Introspection</em> do Token.</li>
 </ul>
 
-<p>Mais detalhes sobre o funcionamento do padrão Lodging Intent pode ser consultado em <a href='https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md'target="_blank">https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md </a>.</p>
+<p>Mais detalhes sobre o funcionamento do padrão <em>Lodging Intent</em> pode ser consultado em <a href='https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md'target="_blank">https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md </a>.</p>
 
 <h2 id='assinatura-de-mensagens'>Assinatura de mensagens</h2>
 
 <p>A assinatura de mensagens deve ser aplicada a APIs específicas, de acordo com a necessidade e a criticidade, levantamento a ser feito junto com o GT de Dados.<br>
-Para a assinatura de mensagens, deve ser suportado o uso de um JWT assinado (JWS).  JWS representa o conteúdo protegido com assinaturas digitais ou com Message Authentication Codes (MACs) utilizando estruturas de dados JSON, referenciado em [RFC 7515]. </p>
+Para a assinatura de mensagens, deve ser suportado o uso de um JWT assinado (JWS).  JWS representa o conteúdo protegido com assinaturas digitais ou com <em>Message Authentication Codes</em> (MACs) utilizando estruturas de dados JSON, referenciado em [RFC 7515]. </p>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/JWS-efb7fa19.png'/></p>
 
@@ -3537,7 +3641,7 @@ No Brasil, a hierarquia da Certificação Digital obedece ao ICP-Brasil, que dev
 
 <h3 id='emissao-de-certificados-pelo-diretorio-de-participantes'>Emissão de certificados pelo Diretório de Participantes</h3>
 
-<p>O Diretório de Participantes foi escolhido como uma alternativa para a emissão de certificados, tornando-se uma Autoridade Certificadora para emissão de certificados para Clients (aplicativos).</p>
+<p>O Diretório de Participantes foi escolhido como uma alternativa para a emissão de certificados, tornando-se uma Autoridade Certificadora para emissão de certificados para <em>Clients</em> (aplicativos).</p>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Directory_cert_flow-b8c65455.png'/></p>
 
@@ -3546,26 +3650,47 @@ No Brasil, a hierarquia da Certificação Digital obedece ao ICP-Brasil, que dev
 <p>A obtenção de um Certificado Digital pelo Diretório, compreende 3 etapas:</p>
 
 <ol>
-<li>Solicitação: O solicitante deve assinar a solicitação (CSR) utilizando o e-CNPJ e efetuar o upload no Diretório de Participantes.</li>
+<li>Solicitação: O solicitante deve assinar a solicitação (CSR) utilizando o e-CNPJ e efetuar o <em>upload</em> no Diretório de Participantes.</li>
 <li>Verificação: O Diretório realiza a verificação, estando em conformidade, prossegue para o processo de emissão.</li>
 <li>Emissão: O Diretório emite um certificado e retorna para o solicitante.</li>
 </ol>
 
 <h2 id='csr'>CSR</h2>
 
-<p>Esse bloco consiste em um exemplo de como gerar o Certificate Signing Requests (CSR) para o PKI do Open Banking.<br>
+<p>Esse bloco consiste em um exemplo de como gerar o <em>Certificate Signing Requests</em> (CSR) para o PKI do Open Banking.<br>
 Existem vários utilitários para gerar CSRs para serem enviados a uma autoridade certificadora, neste exemplo vamos utilizar OpenSSL para demonstrar como um CSR válido é gerado para enviar ao Open Banking para emitir um certificado x509 de transporte ou assinatura.<br>
 OpenSSL é compatível com Windows ou Linux, podendo ser emitido no sistema operacional preferido:<br></p>
 
-<p>Gerando CSR de transporte<br>
-$ openssl req -new -config transporte.cnf -out transporte.csr -keyout transporte.key</p>
+<p>Gerando CSR de transporte <br>
+<span style="font-family: Courier New">
+$ openssl req -new -config transporte.cnf -out transporte.csr -keyout transporte.key
+</span></p>
 
 <p>Gerando CSR de assinatura<br>
-$ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura.key</p>
+<span style="font-family: Courier New">
+$ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura.key
+</span></p>
 
-<p>Exemplo</p>
+<p>Exemplo:</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Generate_CSR-e9a8a729.png'/></p>
+<p><span style="font-family: Courier New">
+$ openssl req -new -config /share/ob/transporte.cnf -out transporte.csr -keyout transporte.key<br>
+Generating a RSA private key<br>
+........................................+++++<br>
+............+++++<br>
+writing new private key to &#39;assinatura.key&#39;<br>
+Enter PEM pass phrase:<br>
+Verifying - Enter PEM pass phrase:<br>
+-----<br>
+You are about to be asked to enter information that will be incorporated<br>
+into your certificate request.<br>
+What you are about to enter is what is called a Distinguished Name or a DN.<br>
+There are quite a few fields but you can leave some blank<br>
+For some fields there will be a default value,<br>
+If you enter &#39;.&#39;, the field will be left blank.<br>
+-----<br>
+BR []:BR<br>
+</span></p>
 
 <p>O CSR resultante deve ser carregado para o Open Banking PKI para emitir um certificado público de transporte ou assinatura associado à sua chave privada. Os arquivos resultantes devem ser protegidos pelas políticas de segurança da instituição. </p>
 
@@ -3702,11 +3827,18 @@ As instituições Transmissoras devem utilizar as informações técnicas contid
 
 <p>Depois que todas as verificações forem realizadas, será estabelecido uma conexão TLS segura, mutuamente autenticada entre o Diretório e o TPP. </p>
 <h3 id='funcoes-operacionais-dos-participantes'>Funções Operacionais dos Participantes</h3>
-<p>Fluxos para Instituições Provedoras (TPP)</p>
+<p><br><br>
+<strong>Fluxos para Instituições Provedoras (TPP)</strong></p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/TPP-72dc7342.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/TPP-7c6a3087.png'/></p>
 
-<p>Fluxos para Instituições Transmissoras (ASPSP)</p>
+<p><br>
+<br>
+<br>
+<br>
+<br></p>
+
+<p><strong>Fluxos para Instituições Transmissoras (ASPSP)</strong></p>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/ASPPSP-ab9ca183.png'/></p>
 <h3 id='registro-no-diretorio-de-participantes'>Registro no diretório de participantes</h3>
@@ -3718,17 +3850,12 @@ O ASPSP deve implementar um processo de integração do TPP ao seu sistema, esse
 <li>Validar as informações do TPP.</li>
 </ul>
 
-<p>Após o TPP realizar o registro no Diretório de Participantes o mesmo poderá realizar o registro de clients (aplicações) na ASPSP.
-Para a realização do registro de clients no Open Banking, é mandatório a disponibilização de dois processos:</p>
-
-<ul>
-<li>Registo de Client dinâmico, conforme <a href="preferencial">RFC 7591</a>.</li>
-<li>Registro Manual via Portal do Desenvolvedor (backup).</li>
-</ul>
+<p>Após o TPP realizar o registro no Diretório de Participantes o mesmo poderá realizar o registro de <em>clients</em> (aplicações) na ASPSP.
+Para a realização do registro de <em>clients</em> no Open Banking, é mandatório a disponibilização do processo de registro de <em>Client</em> dinâmico, conforme <a href='https://tools.ietf.org/html/rfc7591'target="_blank">[RFC 7591]</a>.  </p>
 
 <h2 id='registro-de-client-dinamico'>Registro de client dinâmico</h2>
 
-<p>O Registro Dinâmico de Client é mandatório para os participantes do Open Banking e deve ser utilizado preferencialmente. 
+<p>O registro de Client dinâmico é mandatório para os participantes do Open. 
 Com uma API de registro de client dinâmico do Open Banking, utilizando o padrão de segurança OpenID Connect, os TPPs podem se registrar junto aos ASPSPs.  </p>
 
 <ul>
@@ -3738,41 +3865,30 @@ Com uma API de registro de client dinâmico do Open Banking, utilizando o padrã
 
 <p>O diagrama abaixo mostra o fluxo do registro dinâmico de um TPP. </p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/RegistroDinamicoFluxo-a57fe7f6.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/RegistroDinamicoFluxo-064f2ad6.png'/></p>
 
 <p>Diagrama - Fluxo de registro dinâmico.</p>
 
 <p>Os TPPs precisam obter o SSA do Diretório de Participantes do Open Banking.<br>
-Uma API de Registro dinâmico consiste em endpoints, que realizam a concessão de credencias do client e a autenticação mútua de TLS para autenticar o TPP. A API deve permitir que as seguintes operações sejam realizadas:</p>
+Uma API de Registro dinâmico consiste em <em>endpoints</em>, que realizam a concessão de credencias do client e a autenticação mútua de TLS para autenticar o TPP. A API deve permitir que as seguintes operações sejam realizadas:</p>
 
 <ul>
-<li>Registro de um Client. </li>
-<li>Recuperar um Client.</li>
-<li>Atualizar um Client.</li>
-<li>Excluir um Client.</li>
+<li>Registro de um <em>Client</em>. </li>
+<li>Recuperar um <em>Client</em>.</li>
+<li>Atualizar um <em>Client</em>.</li>
+<li>Excluir um <em>Client</em>.</li>
 </ul>
-
-<h3 id='registro-manual-via-portal-do-desenvolvedor'>Registro Manual via Portal do Desenvolvedor</h3>
-
-<p>Para que uma TPP comece a consumir serviços de Open Banking, ela deve estar registrada no Diretório de Participantes junto ao órgão regulador que autoriza e supervisiona os serviços Open Banking fornecidos pela TPP.<br>
-A realização de um registro manual deve ser feita apenas quando o registro dinâmico estiver indisponível, onde o TPP deverá solicitar via portal do ASPSP, na qual o ASPSP solicita informações do TPP através de um formulário durante o processo de inscrição e permite que o TPP utilize o ambiente de teste, sandbox e produção.<br>
-O ASPSP aprovará o TPP com base em suas informações e permitirá que os aplicativos usem as APIs.<br>
-Segue um exemplo de processo de integração do TPP com o ASPSP via Portal do Desenvolvedor.<br></p>
-
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/RegistroPortalDesenvolvedor-1ca65369.png'/></p>
-
-<p>Diagrama – Fluxo de registro manual.</p>
 
 <h2 id='teste-e-homologacao'>Teste e homologação</h2>
 
 <p>A fase de teste e homologação, tem como finalidade, garantir que os participantes que desejam operar no Ecossistema do Open Banking, possam fazer isso de forma assertiva e segura. Isso incluí o suporte aos TPPs com a capacidade de testar seus produtos e serviços desde o lançamento, quanto nas atualizações, fornecendo uma série de ferramentas e infraestrutura no serviço de Diretório para garantir que seus produtos tenham sido testados tempestivamente antes de entrar em produção.<br>
-É obrigatório o teste e a homologação para TPPs e ASPSPs. Instituições receptoras devem utilizar o serviço de Sandbox fornecido pelo Diretório.<br>
+É obrigatório o teste e a homologação para TPPs e ASPSPs. Instituições receptoras devem utilizar o serviço de <em>Sandbox</em> fornecido pelo Diretório.<br>
 As ASPSPs devem prover um ambiente de teste que possibilite TPPs autorizados a realizarem testes de conexão e testes funcionais de seus produtos e serviços. Este recurso deve refletir ao máximo o ambiente de produção e deve fornecer o acesso aos desenvolvedores com os seguintes aspectos:</p>
 
 <ul>
 <li>Funcionalidade: Deve incluir todas as funcionalidades da interface de produção relacionadas aos casos de uso. Deve funcionar de maneira equivalente ou representativa para a interface de produção, incluindo casos de uso negativos e códigos de erro.</li>
 <li>Segurança: Deve utilizar o mesmo perfil de segurança das APIs em produção.</li>
-<li> On-boarding: Deve replicar o processo de on-boarding das instalações de produção do ASPSP, incluindo o on-boarding e a troca de certificados para identificação e assinatura de mensagem.</li>
+<li> <em>On-boarding</em>: Deve replicar o processo de <em>on-boarding</em> das instalações de produção do ASPSP, incluindo o <em>on-boarding</em> e a troca de certificados para identificação e assinatura de mensagem.</li>
 <li> Certificados: Deve permitir o uso de certificados de teste (que têm o mesmo formato/estrutura dos certificados de produção) de modo que os TPPs possam replicar a funcionalidade relacionados à troca de certificados para identificação e assinatura de mensagens.</li>
 <li>Dados de teste: Não deve incluir quaisquer dados reais de usuários finais. O volume e a variação dos dados devem ser suficientes para dar suporte a todos os testes técnicos e funcionais, incluindo paginação (onde for compatível com a interface dedicada).</li>
 <li>Contas de teste: Deve fornecer aos TPPs um número de contas de teste que habilitem a funcionalidade e o acesso aos dados que os usuários reais experimentarão na produção.</li>
@@ -3786,8 +3902,8 @@ As ASPSPs devem prover um ambiente de teste que possibilite TPPs autorizados a r
 Os testes para TPPs devem acontecer em 3 etapas:</p>
 
 <ul>
-<li>Testes de integração: Testes utilizando APIs de um Banco de exemplo no Sandbox do Diretório.</li>
-<li>Testes no Ecossistema: Testes realizados no ecossistema apenas em Sandbox para validar novas funcionalidades ou melhorias.</li>
+<li>Testes de integração: Testes utilizando APIs de um Banco de exemplo no <em>Sandbox</em> do Diretório.</li>
+<li>Testes no Ecossistema: Testes realizados no ecossistema apenas em <em>Sandbox</em> para validar novas funcionalidades ou melhorias.</li>
 <li>Testes de primeira ocorrência: Testes baseados em acordos entre transmissoras e receptoras efetuados no ambiente de produção.</li>
 </ul>
 
