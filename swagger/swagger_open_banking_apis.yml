@@ -7271,7 +7271,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/CreditCardsAccountIdentificationBrand'
+          $ref: '#/components/schemas/CreditCardsAccountIdentification'
         links:
           $ref: '#/components/schemas/Links'
         meta:

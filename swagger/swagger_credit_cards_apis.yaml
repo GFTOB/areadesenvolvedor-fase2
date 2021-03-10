@@ -393,129 +393,119 @@ components:
       properties:
         data:
           type: object
+          description: Conjunto de informações referentes à identificação da conta de pagamento pós-paga.
           required:
-            - creditCardAccount
+            - creditCardAccountId
+            - requestDateTime
+            - brandName
+            - companyCnpj
+            - name
+            - productType
+            - creditCardNetwork
+            - paymentMethod
           properties:
-            creditCardAccount:
+            creditCardAccountId:
+              type: string
+              description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
+              maxLength: 40
+              example: XXZTR3459087
+            requestDateTime:
+              type: string
+              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+              description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+              maxLength: 20
+              example: '2020-07-21T08:30:00Z'
+            brandName:
+              type: string
+              pattern: \w*\W*
+              description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
+              maxLength: 80
+              example: Organização A
+            name:
+              type: string
+              pattern: \w*\W*
+              description: |
+                Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: 'conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos'.
+              maxLength: 50
+              example: Cartão Universitário
+            companyCnpj:
+              type: string
+              pattern: '\d{14}|^NA$'
+              description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
+              maxLength: 14
+              example: '21128159000166'
+            productType:
+              type: string
+              description: 'Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.'
+              enum:
+                - CLASSIC_NACIONAL
+                - CLASSIC_INTERNACIONAL
+                - GOLD
+                - PLATINUM
+                - INFINITE
+                - ELECTRON
+                - STANDARD_NACIONAL
+                - STANDARD_INTERNACIONAL
+                - ELETRONIC
+                - BLACK
+                - REDESHOP
+                - MAESTRO_MASTERCARD_MAESTRO
+                - GREEN
+                - BLUE
+                - BLUEBOX
+                - PROFISSIONAL_LIBERAL
+                - CHEQUE_ELETRONICO
+                - CORPORATIVO
+                - EMPRESARIAL
+                - COMPRAS
+                - OUTROS
+              example: CLASSIC_NACIONAL
+            productAdditionalInfo:
+              type: string
+              pattern: \w*\W*
+              description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
+              maxLength: 50
+            creditCardNetwork:
+              type: string
+              description: |
+                Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).
+                Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.
+              enum:
+                - VISA
+                - MASTERCARD
+                - AMERICAN_EXPRESS
+                - DINERS_CLUB
+                - HIPERCARD
+                - BANDEIRA_PROPRIA
+                - CHEQUE_ELETRONICO
+                - ELO
+                - OUTRAS
+              example: VISA
+            networkAdditionalInfo:
+              type: string
+              pattern: \w*\W*
+              description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
+              maxLength: 50
+            paymentMethod:
               type: object
+              description: Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga
               required:
-                - identification
+                - identificationNumber
+                - isMultipleCreditCard
               properties:
-                identification:
-                  type: object
-                  description: Conjunto de informações referentes à identificação da conta de pagamento pós-paga.
-                  required:
-                    - creditCardAccountId
-                    - requestDateTime
-                    - brandName
-                    - companyCnpj
-                    - name
-                    - productType
-                    - creditCardNetwork
-                    - paymentMethod
-                  properties:
-                    creditCardAccountId:
-                      type: string
-                      description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
-                      maxLength: 40
-                      example: XXZTR3459087
-                    requestDateTime:
-                      type: string
-                      pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                      description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-                      maxLength: 20
-                      example: '2020-07-21T08:30:00Z'
-                    brandName:
-                      type: string
-                      pattern: \w*\W*
-                      description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-                      maxLength: 80
-                      example: Organização A
-                    name:
-                      type: string
-                      pattern: \w*\W*
-                      description: |
-                        Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: 'conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos'.
-                      maxLength: 50
-                      example: Cartão Universitário
-                    companyCnpj:
-                      type: string
-                      pattern: '\d{14}|^NA$'
-                      description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
-                      maxLength: 14
-                      example: '21128159000166'
-                    productType:
-                      type: string
-                      description: 'Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.'
-                      enum:
-                        - CLASSIC_NACIONAL
-                        - CLASSIC_INTERNACIONAL
-                        - GOLD
-                        - PLATINUM
-                        - INFINITE
-                        - ELECTRON
-                        - STANDARD_NACIONAL
-                        - STANDARD_INTERNACIONAL
-                        - ELETRONIC
-                        - BLACK
-                        - REDESHOP
-                        - MAESTRO_MASTERCARD_MAESTRO
-                        - GREEN
-                        - BLUE
-                        - BLUEBOX
-                        - PROFISSIONAL_LIBERAL
-                        - CHEQUE_ELETRONICO
-                        - CORPORATIVO
-                        - EMPRESARIAL
-                        - COMPRAS
-                        - OUTROS
-                      example: CLASSIC_NACIONAL
-                    productAdditionalInfo:
-                      type: string
-                      pattern: \w*\W*
-                      description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
-                      maxLength: 50
-                    creditCardNetwork:
-                      type: string
-                      description: |
-                        Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).
-                        Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.
-                      enum:
-                        - VISA
-                        - MASTERCARD
-                        - AMERICAN_EXPRESS
-                        - DINERS_CLUB
-                        - HIPERCARD
-                        - BANDEIRA_PROPRIA
-                        - CHEQUE_ELETRONICO
-                        - ELO
-                        - OUTRAS
-                      example: VISA
-                    networkAdditionalInfo:
-                      type: string
-                      pattern: \w*\W*
-                      description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
-                      maxLength: 50
-                    paymentMethod:
-                      type: object
-                      description: Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga
-                      required:
-                        - identificationNumber
-                        - isMultipleCreditCard
-                      properties:
-                        identificationNumber:
-                          type: number
-                          description: |
-                            Número de identificação do cartão:  corresponde aos 4 últimos dígitos
-                          maxLength: 4
-                          example: 4453
-                        isMultipleCreditCard:
-                          type: boolean
-                          description: |
-                            Informa se a conta de Pagamento pós paga é Múltipla. "Cartões  denominados múltiplos possuem tanto a função crédito quanto a débito, devendo o proprietário do cartão, no momento de sua utilização, informar se o pagamento é na função crédito (que leva a um pagamento futuro, por meio de uma fatura do cartão de crédito) ou na função débito".
-                            Fonte: Tipos de cartão - Banco Central do Brasilwww.bcb.gov.br › port ›folder_serie_I_tipos_de_
-                            cartao
-                          example: true
+                identificationNumber:
+                  type: number
+                  description: |
+                    Número de identificação do cartão:  corresponde aos 4 últimos dígitos
+                  maxLength: 4
+                  example: 4453
+                isMultipleCreditCard:
+                  type: boolean
+                  description: |
+                    Informa se a conta de Pagamento pós paga é Múltipla. "Cartões  denominados múltiplos possuem tanto a função crédito quanto a débito, devendo o proprietário do cartão, no momento de sua utilização, informar se o pagamento é na função crédito (que leva a um pagamento futuro, por meio de uma fatura do cartão de crédito) ou na função débito".
+                    Fonte: Tipos de cartão - Banco Central do Brasilwww.bcb.gov.br › port ›folder_serie_I_tipos_de_
+                    cartao
+                  example: true
         links:
           $ref: '#/components/schemas/ResponseCreditCardAccountsLimits/properties/links'
         meta:
