@@ -419,6 +419,9 @@
             <a href="#apis-do-open-banking-brasil-api-cart-o-de-cr-dito" class="toc-h1 toc-link" data-title="API - Cartão de Crédito">API - Cartão de Crédito</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#lista-de-cartoes-de-credito" class="toc-h2 toc-link" data-title="Lista de cartões de crédito">Lista de cartões de crédito</a>
+                  </li>
+                  <li>
                     <a href="#identificacao-de-cartao-de-credito" class="toc-h2 toc-link" data-title="Identificação de cartão de crédito">Identificação de cartão de crédito</a>
                   </li>
                   <li>
@@ -1221,6 +1224,9 @@
                   </li>
                   <li>
                     <a href="#tocS_ResponseBusinessCustomersQualification" class="toc-h2 toc-link" data-title="ResponseBusinessCustomersQualification">ResponseBusinessCustomersQualification</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_ResponseCreditCardAccounts" class="toc-h2 toc-link" data-title="ResponseCreditCardAccounts">ResponseCreditCardAccounts</a>
                   </li>
                   <li>
                     <a href="#tocS_ResponseCreditCardAccountsIdentification" class="toc-h2 toc-link" data-title="ResponseCreditCardAccountsIdentification">ResponseCreditCardAccountsIdentification</a>
@@ -5726,6 +5732,270 @@ OpenId ( Scopes: openId customers )
 
 <h1 id="apis-do-open-banking-brasil-api-cart-o-de-cr-dito">API - Cartão de Crédito</h1>
 
+<h2 id='lista-de-cartoes-de-credito'>Lista de cartões de crédito</h2>
+
+<p><a id="opIdgetAccountsCreditCard"></a></p>
+
+<blockquote>
+<p>Exemplo de código</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">readystatechange</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/credit-cards-accounts/v1/accounts</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-auth-date</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-customer-ip-address</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-fapi-interaction-id</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">x-customer-user-agent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-auth-date'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-customer-ip-address'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-fapi-interaction-id'</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
+    <span class="s">'x-customer-user-agent'</span><span class="p">:</span> <span class="s">"string"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/credit-cards-accounts/v1/accounts"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/credit-cards-accounts/v1/accounts"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-auth-date"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-customer-ip-address"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-fapi-interaction-id"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-customer-user-agent"</span><span class="o">,</span> <span class="s">"string"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre></div>
+
+<p><code>GET /credit-cards-accounts/v1/accounts</code></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-7'>Visão Geral</h3>
+
+<p>Método para obter a lista de contas de pagamento pós-paga mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento</p>
+
+<p>Tags: <a href="#glossarioBandeira">Bandeira (Credit Card Network)</a>, <a href="#glossarioCartaoMultiplo">Cartão Múltiplo (Multiple CreditCard)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a> e <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-7'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Identification-d0335f68.png"/></p>
+
+<h3 id='der-diagramas-de-entidade-e-relacionamento-7'>DER - Diagramas de Entidade e Relacionamento</h3>
+
+<ul>
+<li>DER Conceitual</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/credit_cards/DER_CreditCardAccount-c69c9d4a.png"/></p>
+
+<p><a href="images/der/credit_cards/DER_CreditCardAccount-c69c9d4a.png" target="_blank">Fazer download do DER Conceitual</a></p>
+
+<ul>
+<li>DER Lógico</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/credit_cards/DER_CreditCardAccount_Identification-ec6e84a9.png"/></p>
+
+<p><a href="images/der/credit_cards/DER_CreditCardAccount_Identification-ec6e84a9.png" target="_blank">Fazer download do DER Lógico</a></p>
+
+<h3 id='dicionario-de-dados-7'>Dicionário de dados</h3>
+
+<p><a href="dictionary/credit_cards_accounts_identification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+
+<p><a href="dictionary/example/examples_credit_cards_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a></p>
+
+<h3 id='especificacao-em-oas-3-0-7'>Especificação em OAS 3.0</h3>
+
+<p><a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
+
+<h3 id="lista-de-cartões-de-crédito-parameters">Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>a definir</td>
+</tr>
+<tr>
+<td>x-fapi-auth-date</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Data em que o usuário logou pela última vez com o receptor. Representada de acordo com a <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.Exemplo: Sun, 10 Sep 2017 19:43:31 UTC</td>
+</tr>
+<tr>
+<td>x-fapi-customer-ip-address</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>O endereço IP do usuário se estiver atualmente logado com o receptor.</td>
+</tr>
+<tr>
+<td>x-fapi-interaction-id</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Um UID <a href="https://tools.ietf.org/html/rfc4122">RFC4122</a> usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta.</td>
+</tr>
+<tr>
+<td>x-customer-user-agent</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Indica o user-agent que o usuário utiliza.</td>
+</tr>
+<tr>
+<td>creditCardAccountId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Identificador da conta de pagamento pós-paga.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"CreditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h3 id="lista-de-cartões-de-crédito-responses">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+<th>Descrição</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.</td>
+<td><a href="#schemaresponsecreditcardaccounts">ResponseCreditCardAccounts</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>406</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>429</td>
+<td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+Para realizar esta operação, você deve ser autenticado por meio de um dos seguintes métodos:
+OpenId ( Scopes: openId credit-card )
+</aside>
+
 <h2 id='identificacao-de-cartao-de-credito'>Identificação de cartão de crédito</h2>
 
 <p><a id="opIdgetAccountsCreditCardAccountId"></a></p>
@@ -5795,17 +6065,17 @@ OpenId ( Scopes: openId customers )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-7'>Visão Geral</h3>
+<h3 id='visao-geral-8'>Visão Geral</h3>
 
 <p>Obtém dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga</p>
 
 <p>Tags: <a href="#glossarioBandeira">Bandeira (Credit Card Network)</a>, <a href="#glossarioCartaoMultiplo">Cartão Múltiplo (Multiple CreditCard)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a> e <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-7'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-8'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Identification-d0335f68.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-7'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-8'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -5823,13 +6093,13 @@ OpenId ( Scopes: openId customers )
 
 <p><a href="images/der/credit_cards/DER_CreditCardAccount_Identification-ec6e84a9.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-7'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-8'>Dicionário de dados</h3>
 
 <p><a href="dictionary/credit_cards_accounts_identification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_credit_cards_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-7'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-8'>Especificação em OAS 3.0</h3>
 
 <p><a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
 
@@ -6064,17 +6334,17 @@ OpenId ( Scopes: openId credit-card )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-8'>Visão Geral</h3>
+<h3 id='visao-geral-9'>Visão Geral</h3>
 
 <p>Obtém dados dos limites: de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioEmprestimoCartaoConsignado">Empréstimo Cartão Consignado (Payroll Loan)</a> e <a href="#glossarioLimiteFlexivel">Limite Flexível (Flexible Limit)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-8'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-9'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Limits-fe0e358e.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-8'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-9'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -6092,13 +6362,13 @@ OpenId ( Scopes: openId credit-card )
 
 <p><a href="images/der/credit_cards/DER_CreditCardAccount_Limits-04885622.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-8'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-9'>Dicionário de dados</h3>
 
 <p><a href="dictionary/credit_cards_accounts_limits.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_credit_cards_accounts_limits.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-8'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-9'>Especificação em OAS 3.0</h3>
 
 <p><a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
 
@@ -6369,17 +6639,17 @@ OpenId ( Scopes: openId credit-card )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-9'>Visão Geral</h3>
+<h3 id='visao-geral-10'>Visão Geral</h3>
 
 <p>Obtém dados das transações relativas à conta de pagamento pós-paga.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a> e <a href="#glossarioMCC">MCC (Merchant Category Code)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-9'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-10'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccounts_Transactions-d888e801.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-9'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-10'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -6397,13 +6667,13 @@ OpenId ( Scopes: openId credit-card )
 
 <p><a href="images/der/credit_cards/DER_CreditCardAccount_Transactions-3ec790c3.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-9'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-10'>Dicionário de dados</h3>
 
 <p><a href="dictionary/credit_cards_accounts_transactions.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_credit_cards_accounts_transactions.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-9'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-10'>Especificação em OAS 3.0</h3>
 
 <p><a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
 
@@ -6723,17 +6993,17 @@ OpenId ( Scopes: openId credit-card )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-10'>Visão Geral</h3>
+<h3 id='visao-geral-11'>Visão Geral</h3>
 
 <p>Obtém dados referentes à fatura da conta de pagamento pós-paga.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a> e <a href="#glossarioFatura">Fatura (Bill)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-10'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-11'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Bill-6de33c88.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-10'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-11'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -6751,13 +7021,13 @@ OpenId ( Scopes: openId credit-card )
 
 <p><a href="images/der/credit_cards/DER_CreditCardAccount_Bill-a74ba4ac.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-10'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-11'>Dicionário de dados</h3>
 
 <p><a href='dictionary/credit_cards_accounts_bill.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_credit_cards_billing.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-10'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-11'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_credit_cards_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7042,7 +7312,7 @@ OpenId ( Scopes: openId credit-card )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-11'>Visão Geral</h3>
+<h3 id='visao-geral-12'>Visão Geral</h3>
 
 <p>Obtém a lista de contas consentidas pelo cliente.</p>
 
@@ -7052,11 +7322,11 @@ OpenId ( Scopes: openId credit-card )
       <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioAgencia">Agencia (Agency)</a>, <a href="#glossarioContaDepositoVista">Conta depósito à vista (Current Account)</a>, <a href="#glossarioContaPoupanca">Conta Poupança (Savings Account)</a>,
       <a href="#glossarioContaPagamentoPrePaga">Conta de Pagamento Pré-Paga (Prepayd Payment Account)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-11'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-12'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_Lista-3ae2ea95.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-11'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-12'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -7074,13 +7344,13 @@ OpenId ( Scopes: openId credit-card )
 
 <p><a href="images/der/accounts/DER_Lista_Accounts-a8044239.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-11'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-12'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_accounts.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-11'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-12'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7350,7 +7620,7 @@ OpenId ( Scopes: openId accounts )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-12'>Visão Geral</h3>
+<h3 id='visao-geral-13'>Visão Geral</h3>
 
 <p>Obtém os dados de identificação da conta mantidos na instituição transmissora</p>
 
@@ -7360,11 +7630,11 @@ OpenId ( Scopes: openId accounts )
       <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioAgencia">Agencia (Agency)</a>, <a href="#glossarioContaDepositoVista">Conta depósito à vista (Current Account)</a>, <a href="#glossarioContaPoupanca">Conta Poupança (Savings Account)</a>,
       <a href="#glossarioContaPagamentoPrePaga">Conta de Pagamento Pré-Paga (Prepayd Payment Account)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-12'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-13'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.v1-0eff3ae2.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-12'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-13'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -7382,13 +7652,13 @@ OpenId ( Scopes: openId accounts )
 
 <p><a href="images/der/accounts/DER_Accounts_Identification.v2-0f670ea1.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-12'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-13'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_identification.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-12'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-13'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7656,7 +7926,7 @@ OpenId ( Scopes: openId accounts )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-13'>Visão Geral</h3>
+<h3 id='visao-geral-14'>Visão Geral</h3>
 
 <p>Obtém os saldos da conta mantidos na instituição transmissora</p>
 
@@ -7664,11 +7934,11 @@ OpenId ( Scopes: openId accounts )
 
 <p>Tags: <a href="#glossarioAgencia">Agência (Branch)</a>, <a href="#glossarioISPB">Código Número (ISPB) (IspbCode)</a>, <a href="#glossarioSaldo">Saldo (Account Balance)</a>, <a href="#glossarioSaldoBloqueado">Saldo Bloqueado (Cash Blocked)</a>, <a href="#glossarioSaldoDisponivel">Saldo Disponível (Cash Amount)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a> e <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-13'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-14'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.v1-8e5025a9.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-13'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-14'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -7686,13 +7956,13 @@ OpenId ( Scopes: openId accounts )
 
 <p><a href="images/der/accounts/DER_Accounts_Balances.v2-a5644351.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-13'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-14'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_balances.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_accounts_balances.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-13'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-14'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7947,7 +8217,7 @@ OpenId ( Scopes: openId accounts )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-14'>Visão Geral</h3>
+<h3 id='visao-geral-15'>Visão Geral</h3>
 
 <p>Obtém a lista de transações da conta mantidos na instituição transmissora</p>
 
@@ -7955,11 +8225,11 @@ OpenId ( Scopes: openId accounts )
 
 <p>Tags: <a href="#glossarioISPB">Código Número (ISPB) (IspbCode)</a>, <a href="#glossarioCredito">Crédito (Credit)</a>, <a href="#glossarioDebito">Débito (Debit)</a>, <a href="#glossarioPagador">Pagador (Payer)</a>, <a href="#glossarioPagamentoAutorizado">Pagamento autorizado (Authorised Payment)</a>, <a href="#glossarioRecebedor">Recebedor (Payee)</a>, <a href="#glossarioTransacaoAgendada">Transação Agendada (Scheduled Payment)</a>, <a href="#glossarioTransacaoRealizada">Transações Realizadas (Completed Transaction)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a> e <a href="#glossarioAgencia">Agência (Branch)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-14'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-15'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.v1-814348a8.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-14'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-15'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -7977,13 +8247,13 @@ OpenId ( Scopes: openId accounts )
 
 <p><a href="images/der/accounts/DER_Accounts_Transactions.v2-2b7daf59.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-14'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-15'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_transactions.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_accounts_transactions.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-14'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-15'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -8303,7 +8573,7 @@ OpenId ( Scopes: openId accounts )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-15'>Visão Geral</h3>
+<h3 id='visao-geral-16'>Visão Geral</h3>
 
 <p>Obtém os dados de limite de cheque especial e de adiantamento a depositante  da conta mantidos na instituição transmissora</p>
 
@@ -8311,11 +8581,11 @@ OpenId ( Scopes: openId accounts )
 
 <p>Tags: <a href="#glossarioAdiantamentoDepositante">Adiantamento a Depositante (Unarranged Account Overdraft)</a>, <a href="#glossarioChequeEspecial">Cheque Especial (Arranged Overdraft)</a>, <a href="#glossarioISPB">Código Número (ISPB) (IspbCode)</a>, <a href="#glossarioSaldo">Saldo (Account Balance)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioAgencia">Agência (Branch)</a> e <a href="#glossarioContaDepositoVista">Conta de depósito à vista (Account)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-15'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-16'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.v1.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-15'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-16'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -8333,13 +8603,13 @@ OpenId ( Scopes: openId accounts )
 
 <p><a href="images/der/accounts/DER_Accounts_OverdraftLimits.v2-7278deb6.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-15'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-16'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_overdraft_limits.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_accounts_overdraft_limits.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-15'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-16'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -8603,17 +8873,17 @@ OpenId ( Scopes: openId accounts )
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-16'>Visão Geral</h3>
+<h3 id='visao-geral-17'>Visão Geral</h3>
 
 <p>Obtém dados referentes à identificação da operação de crédito de Empréstimos</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioCET">Custo Efetivo Total (CET)</a>, <a href="#glossarioEmprestimo">Empréstimo (Loan)</a>, <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioEnteConsignante">Ente Consignante (CnpjConsignee)</a>, <a href="#glossarioIPOC">Identificador padronizado da operação de crédito – Ipoc Code</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a>, <a href="#glossarioSAC">Sistema de Amortização Constante (SAC)</a>, <a href="#glossarioPrice">Sistema Francês de Amortização (Price)</a>, <a href="#glossarioSAM">Sociedade de arrendamento mercantil  (SAM)</a>, <a href="#glossarioTarifa">Tarifa (Fee)</a>, <a href="#glossarioTaxaEfetiva">Taxa Efetiva (EffectiveTax)</a> e <a href="#glossarioTaxaNominal">Taxa nominal (NominalTax)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-16'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-17'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/loans/TLD_Loans_Contract-a641dede.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-16'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-17'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -8631,13 +8901,13 @@ OpenId ( Scopes: openId accounts )
 
 <p><a href="images/der/loans/DER_Loans_Contract-ae01cd41.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-16'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-17'>Dicionário de dados</h3>
 
 <p><a href='dictionary/loans_contract.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_loans_contract.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-16'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-17'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -8910,17 +9180,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-17'>Visão Geral</h3>
+<h3 id='visao-geral-18'>Visão Geral</h3>
 
 <p>Obtém dados referentes às garantias que avalizam a operação de crédito de Empréstimos contratada</p>
 
 <p>Tags: <a href="#glossarioEmprestimo">Empréstimo (Loan)</a> e <a href="#glossarioGarantia">Garantia (Warranty)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-17'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-18'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/loans/TLD_Loans_Warranties-cdf52eb9.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-17'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-18'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -8938,13 +9208,13 @@ This operation does not require authentication
 
 <p><a href="images/der/loans/DER_Loans_Warranties-c0be160e.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-17'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-18'>Dicionário de dados</h3>
 
 <p><a href='dictionary/loans_warranties.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_loans_warranties.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-17'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-18'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -9192,17 +9462,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-18'>Visão Geral</h3>
+<h3 id='visao-geral-19'>Visão Geral</h3>
 
 <p>Obtém dados dos pagamentos referentes às operações de crédito de Empréstimos contratadas</p>
 
 <p>Tags: <a href="#glossarioEmprestimo">Empréstimo (Loan)</a>, <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioSaldoDevedor">Saldo Devedor (Outstanding Balance)</a> e <a href="#glossarioTarifa">Tarifa (Fee)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-18'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-19'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/loans/TLD_Loans_Payments-fa546b17.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-18'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-19'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -9220,13 +9490,13 @@ This operation does not require authentication
 
 <p><a href="images/der/loans/DER_Loans_Payments-ced0a3e0.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-18'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-19'>Dicionário de dados</h3>
 
 <p><a href='dictionary/loans_payments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_loans_payments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-18'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-19'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -9493,17 +9763,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-19'>Visão Geral</h3>
+<h3 id='visao-geral-20'>Visão Geral</h3>
 
 <p>Obtém dados referentes às parcelas / prestações da operação de crédito de Empréstimos contratadas</p>
 
 <p>Tags: <a href="#glossarioEmprestimo">Empréstimo (Loan)</a> e <a href="#glossarioPrestacaoRegular">Prestação Regular (Instalment)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-19'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-20'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/loans/TLD_Loans_Instalments-70a223d5.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-19'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-20'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -9521,13 +9791,13 @@ This operation does not require authentication
 
 <p><a href="images/der/loans/DER_Loans_Instalments-a82bdc07.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-19'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-20'>Dicionário de dados</h3>
 
 <p><a href='dictionary/loans_instalments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_loans_instalments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-19'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-20'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -9781,17 +10051,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-20'>Visão Geral</h3>
+<h3 id='visao-geral-21'>Visão Geral</h3>
 
 <p>Obtém dados referentes à identificação da operação de crédito de Financiamentos</p>
 
 <p>Tags: <a href="#glossarioCET">Custo Efetivo Total (CET)</a>, <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioEnteConsignante">Ente Consignante (CnpjConsignee)</a>, <a href="#glossarioFinanciamento">Financiamento (Financing)</a>, <a href="#glossarioIPOC">Identificador padronizado da operação de crédito – Ipoc Code</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a>, <a href="#glossarioSAC">Sistema de Amortização Constante (SAC)</a>, <a href="#glossarioPrice">Sistema Francês de Amortização (Price)</a>, <a href="#glossarioSAM">Sociedade de arrendamento mercantil  (SAM)</a>, <a href="#glossarioTarifa">Tarifa (Fee)</a>, <a href="#glossarioTaxaEfetiva">Taxa Efetiva (EffectiveTax)</a> e <a href="#glossarioTaxaNominal">Taxa nominal (NominalTax)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-20'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-21'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/financings/TLD_Financings_Contract-38f44171.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-20'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-21'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -9809,13 +10079,13 @@ This operation does not require authentication
 
 <p><a href="images/der/financings/DER_Financings_Contract-54a8dfee.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-20'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-21'>Dicionário de dados</h3>
 
 <p><a href='dictionary/financings_contract.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_financings_contract.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-20'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-21'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -10087,17 +10357,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-21'>Visão Geral</h3>
+<h3 id='visao-geral-22'>Visão Geral</h3>
 
 <p>Obtém dados referentes às garantias que avalizam a operação de crédito de Financiamentos contratada</p>
 
 <p>Tags: <a href="#glossarioFinanciamento">Financiamento (Financing)</a> e <a href="#glossarioGarantia">Garantia (Warranty)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-21'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-22'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/financings/TLD_Financings_Warranties-c1b3f58c.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-21'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-22'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -10115,13 +10385,13 @@ This operation does not require authentication
 
 <p><a href="images/der/financings/DER_Financings_Warranties-676ecfae.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-21'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-22'>Dicionário de dados</h3>
 
 <p><a href='dictionary/financings_warranties.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_financings_warranties.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-21'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-22'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -10369,17 +10639,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-22'>Visão Geral</h3>
+<h3 id='visao-geral-23'>Visão Geral</h3>
 
 <p>Obtém dados dos pagamentos referentes às operações de crédito de Financiamentos contratadas</p>
 
 <p>Tags: <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioFinanciamento">Financiamento (Financing)</a>, <a href="#glossarioSaldoDevedor">Saldo Devedor (Outstanding Balance)</a> e <a href="#glossarioTarifa">Tarifa (Fee)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-22'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-23'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/financings/TLD_Financings_Payments-407955b9.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-22'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-23'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -10397,13 +10667,13 @@ This operation does not require authentication
 
 <p><a href="images/der/financings/DER_Financings_Payments-513564e2.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-22'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-23'>Dicionário de dados</h3>
 
 <p><a href='dictionary/financings_payments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_financings_payments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-22'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-23'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -10670,17 +10940,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-23'>Visão Geral</h3>
+<h3 id='visao-geral-24'>Visão Geral</h3>
 
 <p>Obtém dados referentes às parcelas / prestações da operação de crédito de Financiamentos contratadas</p>
 
 <p>Tags: <a href="#glossarioFinanciamento">Financiamento (Financing)</a> e <a href="#glossarioPrestacaoRegular">Prestação Regular (Instalment)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-23'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-24'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/financings/TLD_Financings_Instalments-3ab8733b.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-23'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-24'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -10698,13 +10968,13 @@ This operation does not require authentication
 
 <p><a href="images/der/financings/DER_Financings_Instalments-83be6204.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-23'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-24'>Dicionário de dados</h3>
 
 <p><a href='dictionary/financings_instalments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_financings_instalments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-23'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-24'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -10958,17 +11228,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-24'>Visão Geral</h3>
+<h3 id='visao-geral-25'>Visão Geral</h3>
 
 <p>Obtém dados referentes à identificação da operação de crédito de Adiantamento a Depositantes</p>
 
 <p>Tags: <a href="#glossarioAdiantamentoDepositante">Adiantamento a Depositante (Unarranged Account Overdraft)</a>, <a href="#glossarioCET">Custo Efetivo Total (CET)</a>, <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioIPOC">Identificador padronizado da operação de crédito – Ipoc Code</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a>, <a href="#glossarioSAC">Sistema de Amortização Constante (SAC)</a>, <a href="#glossarioPrice">Sistema Francês de Amortização (Price)</a>, <a href="#glossarioSAM">Sociedade de arrendamento mercantil  (SAM)</a>, <a href="#glossarioTarifa">Tarifa (Fee)</a>, <a href="#glossarioTaxaEfetiva">Taxa Efetiva (EffectiveTax)</a> e <a href="#glossarioTaxaNominal">Taxa nominal (NominalTax)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-24'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-25'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Contract-bd966e75.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-24'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-25'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -10986,13 +11256,13 @@ This operation does not require authentication
 
 <p><a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Contract-9446d521.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-24'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-25'>Dicionário de dados</h3>
 
 <p><a href='dictionary/unarranged_accounts_overdraft_contract.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_unarranged_accounts_overdraft_contract.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-24'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-25'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -11264,17 +11534,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-25'>Visão Geral</h3>
+<h3 id='visao-geral-26'>Visão Geral</h3>
 
 <p>Obtém dados referentes às garantias que avalizam a operação de crédito de Adiantamento a Depositantes contratada</p>
 
 <p>Tags: <a href="#glossarioAdiantamentoDepositante">Adiantamento a Depositante (Unarranged Account Overdraft)</a> e <a href="#glossarioGarantia">Garantia (Warranty)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-25'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-26'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Warranties-9bf4c68a.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-25'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-26'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -11292,13 +11562,13 @@ This operation does not require authentication
 
 <p><a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Warranties-9e16ae9c.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-25'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-26'>Dicionário de dados</h3>
 
 <p><a href='dictionary/unarranged_accounts_overdraft_warranties.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_unarranged_accounts_overdraft_warranties.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-25'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-26'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -11546,17 +11816,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-26'>Visão Geral</h3>
+<h3 id='visao-geral-27'>Visão Geral</h3>
 
 <p>Obtém dados dos pagamentos referentes às operações de crédito de Adiantamento a Depositantes contratadas</p>
 
 <p>Tags: <a href="#glossarioAdiantamentoDepositante">Adiantamento a Depositante (Unarranged Account Overdraft)</a>, <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioSaldoDevedor">Saldo Devedor (Outstanding Balance)</a> e <a href="#glossarioTarifa">Tarifa (Fee)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-26'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-27'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Payments-abf035c1.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-26'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-27'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -11574,13 +11844,13 @@ This operation does not require authentication
 
 <p><a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Payments-9f8b657a.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-26'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-27'>Dicionário de dados</h3>
 
 <p><a href='dictionary/unarranged_accounts_overdraft_payments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_unarranged_accounts_overdraft_payments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-26'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-27'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -11847,17 +12117,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-27'>Visão Geral</h3>
+<h3 id='visao-geral-28'>Visão Geral</h3>
 
 <p>Obtém dados referentes às parcelas / prestações da operação de crédito de Adiantamento a Depositantes contratadas</p>
 
 <p>Tags: <a href="#glossarioAdiantamentoDepositante">Adiantamento a Depositante (Unarranged Account Overdraft)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-27'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-28'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Instalments-7a3e5768.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-27'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-28'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -11875,13 +12145,13 @@ This operation does not require authentication
 
 <p><a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Instalments-d3743c1e.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-27'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-28'>Dicionário de dados</h3>
 
 <p><a href='dictionary/unarranged_accounts_overdraft_instalments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_unarranged_accounts_overdraft_instalments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-27'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-28'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -12135,17 +12405,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-28'>Visão Geral</h3>
+<h3 id='visao-geral-29'>Visão Geral</h3>
 
 <p>Obtém dados referentes à identificação da operação de crédito de Direitos Creditórios Descontados</p>
 
 <p>Tags: <a href="#glossarioCET">Custo Efetivo Total (CET)</a>, <a href="#glossarioDireitoCreditorioDescontado">Direito Creditório Descontado (Invoice Financing)</a>, <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioEnteConsignante">Ente Consignante (CnpjConsignee)</a>, <a href="#glossarioIPOC">Identificador padronizado da operação de crédito – Ipoc Code</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a>, <a href="#glossarioSAC">Sistema de Amortização Constante (SAC)</a>, <a href="#glossarioPrice">Sistema Francês de Amortização (Price)</a>, <a href="#glossarioSAM">Sociedade de arrendamento mercantil  (SAM)</a>, <a href="#glossarioTarifa">Tarifa (Fee)</a>, <a href="#glossarioTaxaEfetiva">Taxa Efetiva (EffectiveTax)</a> e <a href="#glossarioTaxaNominal">Taxa nominal (NominalTax)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-28'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-29'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Contract-52037be9.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-28'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-29'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -12163,13 +12433,13 @@ This operation does not require authentication
 
 <p><a href="images/der/invoice_financings/DER_InvoiceFinancings_Contract-fce9c1e9.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-28'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-29'>Dicionário de dados</h3>
 
 <p><a href='dictionary/invoice_financings_contract.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_invoice_financings_contract.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-28'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-29'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -12441,17 +12711,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-29'>Visão Geral</h3>
+<h3 id='visao-geral-30'>Visão Geral</h3>
 
 <p>Obtém dados referentes às garantias que avalizam a operação de crédito de Direitos Creditórios Descontados contratada</p>
 
 <p>Tags: <a href="#glossarioDireitoCreditorioDescontado">Direito Creditório Descontado (Invoice Financing)</a> e <a href="#glossarioGarantia">Garantia (Warranty)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-29'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-30'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Warranties-43c64b00.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-29'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-30'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -12469,13 +12739,13 @@ This operation does not require authentication
 
 <p><a href="images/der/invoice_financings/DER_InvoiceFinancings_Warranties-35e65c98.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-29'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-30'>Dicionário de dados</h3>
 
 <p><a href='dictionary/invoice_financings_warranties.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_invoice_financings_warranties.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-29'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-30'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -12723,17 +12993,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-30'>Visão Geral</h3>
+<h3 id='visao-geral-31'>Visão Geral</h3>
 
 <p>Obtém dados dos pagamentos referentes às operações de crédito de Direitos Creditórios Descontados contratadas</p>
 
 <p>Tags: <a href="#glossarioDireitoCreditorioDescontado">Direito Creditório Descontado (Invoice Financing)</a>, <a href="#glossarioEncargo">Encargo (Charge)</a>, <a href="#glossarioSaldoDevedor">Saldo Devedor (Outstanding Balance)</a> e <a href="#glossarioTarifa">Tarifa (Fee)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-30'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-31'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Payments-6ddebf30.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-30'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-31'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -12751,13 +13021,13 @@ This operation does not require authentication
 
 <p><a href="images/der/invoice_financings/DER_InvoiceFinancings_Payments-748e2c68.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-30'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-31'>Dicionário de dados</h3>
 
 <p><a href='dictionary/invoice_financings_payments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_invoice_financings_payments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-30'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-31'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -13024,17 +13294,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-31'>Visão Geral</h3>
+<h3 id='visao-geral-32'>Visão Geral</h3>
 
 <p>Obtém dados referentes às parcelas / prestações da operação de crédito de Direitos Creditórios Descontados contratadas</p>
 
 <p>Tags: <a href="#glossarioDireitoCreditorioDescontado">Direito Creditório Descontado (Invoice Financing)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-31'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-32'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Instalments-8cad1030.png"/></p>
 
-<h3 id='der-diagramas-de-entidade-e-relacionamento-31'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='der-diagramas-de-entidade-e-relacionamento-32'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -13052,13 +13322,13 @@ This operation does not require authentication
 
 <p><a href="images/der/invoice_financings/DER_InvoiceFinancings_Instalments-34eb4eab.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='dicionario-de-dados-31'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-32'>Dicionário de dados</h3>
 
 <p><a href='dictionary/invoice_financings_instalments.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_invoice_financings_instalments.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='especificacao-em-oas-3-0-31'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-32'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -28549,6 +28819,113 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 </tr>
 </tbody></table>
 
+<h2 id="tocS_ResponseCreditCardAccounts">ResponseCreditCardAccounts</h2>
+
+<p><a id="schemaresponsecreditcardaccounts"></a>
+<a id="schema_ResponseCreditCardAccounts"></a>
+<a id="tocSresponsecreditcardaccounts"></a>
+<a id="tocsresponsecreditcardaccounts"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"CreditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='propriedades-234'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>true</td>
+<td>Conjunto de informações das Contas de pagamento pós paga</td>
+</tr>
+<tr>
+<td>» brandName</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
+</tr>
+<tr>
+<td>» companyCnpj</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>true</td>
+<td>Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: &#39;conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos</td>
+</tr>
+<tr>
+<td>» productType</td>
+<td><a href="#schemaenumcreditcardaccountsproducttype">EnumCreditCardAccountsProductType</a></td>
+<td>true</td>
+<td>Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.</td>
+</tr>
+<tr>
+<td>» productAdditionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Informações complementares se tipo de Cartão &#39;OUTROS&#39;</td>
+</tr>
+<tr>
+<td>» creditCardNetwork</td>
+<td><a href="#schemaenumcreditcardaccountnetwork">EnumCreditCardAccountNetwork</a></td>
+<td>true</td>
+<td>Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).<br>Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.</td>
+</tr>
+<tr>
+<td>» networkAdditionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;</td>
+</tr>
+<tr>
+<td>» CreditCardAccountId</td>
+<td>string</td>
+<td>true</td>
+<td>Um identificador único e imutável usado para identificar o recurso da conta de pagamento pós paga. Este identificador não tem significado para o proprietário da conta</td>
+</tr>
+<tr>
+<td>links</td>
+<td><a href="#schemalinks">Links</a></td>
+<td>true</td>
+<td>Referências para outros recusos da API requisitada.</td>
+</tr>
+<tr>
+<td>meta</td>
+<td><a href="#schemameta">Meta</a></td>
+<td>true</td>
+<td>Meta informações referente a API requisitada.</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_ResponseCreditCardAccountsIdentification">ResponseCreditCardAccountsIdentification</h2>
 
 <p><a id="schemaresponsecreditcardaccountsidentification"></a>
@@ -28584,7 +28961,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-234'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-235'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28668,7 +29045,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-235'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-236'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28768,7 +29145,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-236'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-237'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28848,7 +29225,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-237'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-238'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28897,7 +29274,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-238'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-239'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28971,7 +29348,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-239'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-240'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29114,7 +29491,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-240'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-241'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29193,7 +29570,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-241'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-242'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29295,7 +29672,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-242'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-243'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29363,7 +29740,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-243'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-244'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29446,7 +29823,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-244'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-245'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29510,7 +29887,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-245'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-246'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29613,7 +29990,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-246'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-247'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29681,7 +30058,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-247'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-248'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29764,7 +30141,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-248'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-249'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29828,7 +30205,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-249'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-250'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29930,7 +30307,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-250'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-251'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29998,7 +30375,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-251'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-252'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30081,7 +30458,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-252'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-253'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30145,7 +30522,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-253'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-254'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30247,7 +30624,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-254'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-255'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30315,7 +30692,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-255'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-256'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30398,7 +30775,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-256'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-257'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30462,7 +30839,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-257'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-258'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30502,7 +30879,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">800.87</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-258'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-259'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30558,7 +30935,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.</p>
 
-<h3 id='propriedades-259'>Propriedades</h3>
+<h3 id='propriedades-260'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30702,7 +31079,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-260'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-261'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30745,7 +31122,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações relativas às parcelas não regulares do contrato da modalidade de crédito consultada</p>
 
-<h3 id='propriedades-261'>Propriedades</h3>
+<h3 id='propriedades-262'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30783,7 +31160,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"feeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-262'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-263'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30829,7 +31206,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-263'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-264'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30912,7 +31289,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes à identificação da operação de crédito de adiantamento a depositantes</p>
 
-<h3 id='propriedades-264'>Propriedades</h3>
+<h3 id='propriedades-265'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31101,7 +31478,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas</p>
 
-<h3 id='propriedades-265'>Propriedades</h3>
+<h3 id='propriedades-266'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31180,7 +31557,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-266'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-267'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31216,7 +31593,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito</p>
 
-<h3 id='propriedades-267'>Propriedades</h3>
+<h3 id='propriedades-268'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31281,7 +31658,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada</p>
 
-<h3 id='propriedades-268'>Propriedades</h3>
+<h3 id='propriedades-269'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31335,7 +31712,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito</p>
 
-<h3 id='propriedades-269'>Propriedades</h3>
+<h3 id='propriedades-270'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31420,7 +31797,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"chargeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-270'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-271'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31475,7 +31852,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada</p>
 
-<h3 id='propriedades-271'>Propriedades</h3>
+<h3 id='propriedades-272'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31546,7 +31923,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito contratadas</p>
 
-<h3 id='propriedades-272'>Propriedades</h3>
+<h3 id='propriedades-273'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31591,7 +31968,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-273'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-274'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31618,7 +31995,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-274'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-275'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31678,7 +32055,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas</p>
 
-<h3 id='propriedades-275'>Propriedades</h3>
+<h3 id='propriedades-276'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31738,7 +32115,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações dos pagamentos referentes às operações de crédito de adiantamento a depositantes contratadas</p>
 
-<h3 id='propriedades-276'>Propriedades</h3>
+<h3 id='propriedades-277'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31834,7 +32211,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-277'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-278'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31868,7 +32245,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Lista dos pagamentos realizados no período</p>
 
-<h3 id='propriedades-278'>Propriedades</h3>
+<h3 id='propriedades-279'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31918,7 +32295,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="nl">"taxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='propriedades-279'>Propriedades</h3>
+</span></code></pre></div><h3 id='propriedades-280'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31975,7 +32352,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada</p>
 
-<h3 id='propriedades-280'>Propriedades</h3>
+<h3 id='propriedades-281'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -32030,7 +32407,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 
 <p>Conjunto de informações de operações de crédito contratadas</p>
 
-<h3 id='propriedades-281'>Propriedades</h3>
+<h3 id='propriedades-282'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -32071,7 +32448,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w"></p>
 
-<p></span></code></pre></div><h3 id='propriedades-282'>Propriedades</h3>
+<p></span></code></pre></div><h3 id='propriedades-283'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
